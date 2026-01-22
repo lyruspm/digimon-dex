@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digimon Trials Dex</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #eee;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #dex {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .digimon-card {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .types {
+      margin: 8px 0;
+    }
+
+    .type {
+      display: inline-block;
+      padding: 4px 8px;
+      margin-right: 5px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Element 1 typings */
+   .fire { background: orange; }
+    .water { background: #03a9f4; }
+    .ice { background: #80deea; }
+    .electric { background: #ffeb3b; }
+    .dark { background: #616161; color: #fff; }
+    .holy { background: #fff176; }
+    .none {background: #ffffff;}
+    .dragon {background: #3333cc;}
+    .steel {background: #999999;}
+    .fairy {background: #ff99ff;}
+    .undead {background: #800080;}
+    .bug {background: #84e184;}
+    .poison {background: #cc00cc;}
+    .ground {background: #ac7139;}
+    .rock {background: #804000;}
+    .grass {background: #5bd75b;}
+    .magic {background: #ff66d9;}
+    .normal {background: #fffae6;}
+    .fighting {background: #cc0000;}
+    .flying {background: #b3daff;}
+    
+
+    /* Element 2 typings */
+    .fire { background: orange; }
+    .water { background: #03a9f4; }
+    .ice { background: #80deea; }
+    .electric { background: #ffeb3b; }
+    .dark { background: #616161; color: #fff; }
+    .holy { background: #fff176; }
+    .dragon {background: #3333cc;}
+    .steel {background: #999999;}
+    .fairy {background: #ff99ff;}
+    .undead {background: #800080;}
+    .bug {background: #84e184;}
+    .poison {background: #cc00cc;}
+    .ground {background: #ac7139;}
+    .rock {background: #804000;}
+    .grass {background: #5bd75b;}
+    .magic {background: #ff66d9;}
+    .normal {background: #fffae6;}
+    .fighting {background: #cc0000;}
+    .flying {background: #b3daff;}
+    
+  background: #8e24aa;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Digimon Trials Dex</h1>
+  <div style="text-align: center; opacity: 0.85; margin-bottom: 20px; font-size: 0.95em;">
+  <p>
+    <strong>Digimon Trials</strong> is a fan-made ROM hack of <em>Pokémon Emerald</em><br>
+    created by <strong>Ferio Triforce</strong>
+  </p>
+
+  <p>
+    <strong>Contributors from the Digimon Trials Discord:</strong> papabert04, Vex Vitality, Duke, Isaiah<br>
+    <strong>Website by:</strong> Lyrus_PM
+  </p>
+
+  <p style="font-size: 0.85em; margin-top: 10px;">
+    Pokémon © Nintendo, Game Freak, and The Pokémon Company.<br>
+    Digimon © Bandai Namco Entertainment.<br>
+    This project is non-commercial and not affiliated with or endorsed by Nintendo,
+    Game Freak, The Pokémon Company, or Bandai Namco.
+  </p>
+</div>
+
+
+
+<input
+  type="text"
+  id="search"
+  placeholder="Search Digimon..."
+  style="
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 20px 0;
+    border-radius: 6px;
+    border: none;
+  "
+>
+
+  <div id="dex"></div>
+
+  <script>
+  /***********************
+   * DIGIMON DATA
+   ***********************/
+  const digimonDex = [
+    {
+      name: "Agumon",
+      level: "3 Rookie",
+      type1: "Fire",
+      type2: "None",
+      description: "Route 101"
+    },
+   
+    {
+      name: "Greymon",
+      level: "4 Adult",
+      type1: "Fire",
+      type2: "None",
+      description: "Level 18 from Agumon"
+    },
+    
+     {
+      name: "MetalGreymon",
+      level: "5 Perfect",
+      type1: "Fire",
+      type2: "Steel",
+      description: "Level 32 from Greymon"
+    },
+    
+    {
+      name: "WarGreymon",
+      level: "6 Mega",
+      type1: "Fire",
+      type2: "Dragon",
+      description: "Level 54 from MetalGreymon"
+    },
+    
+     {
+      name: "ShineGreymon",
+      level: "6 Mega",
+      type1: "Fire",
+      type2: "Holy",
+      description: "Auspicious Armour given to MetalGreymon"   
+      },
+      
+      {
+      name: "BlitzGreymon",
+      level: "6 Mega",
+      type1: "Steel",
+      type2: "Electric",
+      description: "Level up MetalGreymon in New Mauville"      
+      },
+            
+      {
+      name: "LaeusGreymon",
+      level: "6 Mega",
+      type1: "Fire",
+      type2: "Dragon",
+      description: "AW Genes given to Greymon"
+      
+      },      
+      {
+      name: "Omegamon",
+      level: "7 Mega+",
+      type1: "Fire",
+      type2: "Ice",
+      description: "Jogress with MetalGarurumon"
+      },
+      
+      {
+      name: "Gabumon",
+      level: "3 Child",
+      type1: "Fire",
+      type2: "Ice",
+      description: "Route 101"
+      },
+      
+      {
+      name: "Garurumon",
+      level: "4 Adult",
+      type1: "Fire",
+      type2: "Ice",
+      description: "Level 18 Digivolution of Gabumon"      
+      },
+      
+      {
+      name: "WereGarurumon",
+      level: "5 Perfect",
+      type1: "Ice",
+      type2: "Fighting",
+      description: "Level 32 Digivolution of Garurumon"
+      },
+      
+      {
+      name: "MetalGarurumon",
+      level: "6 Mega",
+      type1: "Steel",
+      type2: "Ice",
+      description: "Level 32 Digivolution of Garurumon"
+      },
+      
+            {
+      name: "CresGarurumon",
+      level: "6 Mega",
+      type1: "Ice",
+      type2: "Fighting",
+      description: "Auspicious Armour given to WereGarurumon"
+      },
+      
+            {
+      name: "ZinoGarurumon",
+      level: "6 Mega",
+      type1: "Ice",
+      type2: "Electric",
+      description: "AW Genes given to Garurumon"
+      },
+      
+            {
+      name: "Omegamon Alter-S",
+      level: "7 Mega+",
+      type1: "Electric",
+      type2: "Fighting",
+      description: "Jogress with BlitzGreymon"
+      },
+      
+            {
+      name: "Patamon",
+      level: "3 Child",
+      type1: "Holy",
+      type2: "None",
+      description: "Starter or Spear Pillar F1"
+      },
+      
+      {
+      name: "Angemon",
+      level: "4 Adult",
+      type1: "Holy",
+      type2: "Flying",
+      description: "Level 20 Digivolution of Patamon"
+      },
+      
+            {
+      name: "Pegasmon",
+      level: "4 Adult",
+      type1: "Holy",
+      type2: "Flying",
+      description: "Light Data given to Patamon"
+      },
+      
+      {
+      name: "MagnaAngemon",
+      level: "5 Perfect",
+      type1: "Holy",
+      type2: "Flying",
+      description: "Level 35 Digivolution of Angemon"
+      },
+                  {
+      name: "Magna Angemon Priest Mode",
+      level: "5 Perfect",
+      type1: "Holy",
+      type2: "Flying",
+      description: "Level 35 Digivolution of Pegasmon"
+      },
+            {
+      name: "Seraphimon",
+      level: "6 Mega",
+      type1: "Holy",
+      type2: "Flying",
+      description: "Level 56 Digivolution of MagnaAngemon"
+      },
+                  {
+      name: "Goddramon",
+      level: "7 Mega+",
+      type1: "Dragon",
+      type2: "Holy",
+      description: "Seraphmon given Light Data, or Level 80"
+      },
+                  {
+      name: "Lopmon",
+      level: "3 Child",
+      type1: "Normal",
+      type2: "None",
+      description: "Starter, or Spear Pillar F1"
+      },
+                  {
+      name: "Turuiemon",
+      level: "4 Adult",
+      type1: "Fighting",
+      type2: "None",
+      description: "Level 20 Digivolution of Lopmon"
+      },
+                  {
+      name: "Wendimon",
+      level: "4 Adult",
+      type1: "Fighting",
+      type2: "Dark",
+      description: "Dark Data given to Lopmon"
+      },
+                  {
+      name: "Antylamon Deva",
+      level: "5 Perfect",
+      type1: "Fighting",
+      type2: "Holy",
+      description: "Level 35 Digivolution of Turuiemon, Slide Digivolution into Vice with Dark Data"
+      },
+                  {
+      name: "Antylamon Vice",
+      level: "5 Perfect",
+      type1: "Fighting",
+      type2: "Dark",
+      description: "Level 35 Digivolution of Wendimon, Slide Digivolution into Virtue with Light Data"
+      },
+                  {
+      name: "Cherubimon Virtue",
+      level: "6 Mega",
+      type1: "Fighting",
+      type2: "Holy",
+      description: "Level 56 Digivolution of Antylamon Virtue, Slide Digivolution into Vice with Dark Data"
+      },
+       {
+      name: "Cherubimon Vice",
+      level: "6 Mega",
+      type1: "Fighting",
+      type2: "Dark",
+      description: "Level 56 Digivolution of Antylamon Vice, Slide Digivolution into Virtue with Light Data "
+      },
+      
+    
+  ];
+
+  const dexContainer = document.getElementById("dex");
+  const searchInput = document.getElementById("search");
+
+  function renderDex(list) {
+    dexContainer.innerHTML = "";
+
+    list.forEach(d => {
+      const card = document.createElement("div");
+      card.className = "digimon-card";
+
+      card.innerHTML = `
+        <h2>${d.name}</h2>
+        <p><strong>Level:</strong> ${d.level}</p>
+        <div class="types">
+          <span class="type ${d.type1.toLowerCase()}">${d.type1}</span>
+          <span class="type ${d.type2.toLowerCase()}">${d.type2}</span>
+        </div>
+        <p>${d.description}</p>
+      `;
+
+      dexContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderDex(digimonDex);
+
+  // Live search
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+
+    const filtered = digimonDex.filter(d =>
+      d.name.toLowerCase().includes(query) ||
+      d.level.toLowerCase().includes(query) ||
+      d.type1.toLowerCase().includes(query) ||
+      d.type2.toLowerCase().includes(query)
+    );
+
+    renderDex(filtered);
+  });
+</script>
