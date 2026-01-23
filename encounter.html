@@ -16,42 +16,7 @@ h1 {
   text-align: center;
 }
 
-.route {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.route h2 {
-  margin-top: 0;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid #333;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background: #222;
-}
-
-.encounter-type {
-  font-size: 0.85em;
-  opacity: 0.8;
-}
-a { color: #8ab4ff; }
-
+/* NAV */
 .nav-buttons {
   display: flex;
   justify-content: center;
@@ -76,11 +41,9 @@ a { color: #8ab4ff; }
 .nav-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
-  box-shadow:
-    0 6px 20px rgba(102, 187, 106, 0.55),
-    inset 0 0 0 1px rgba(255,255,255,0.25);
 }
 
+/* SEARCH */
 .search-box {
   width: 100%;
   max-width: 500px;
@@ -100,10 +63,70 @@ a { color: #8ab4ff; }
   color: #aaa;
 }
 
+/* ROUTES */
+.route {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
 
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
 
+.route-header h2 {
+  margin: 0;
+}
+
+.toggle {
+  font-size: 1.2em;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.encounter-type {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+.route-content {
+  margin-top: 10px;
+}
+
+.route.collapsed .route-content {
+  display: none;
+}
+
+.route.collapsed .toggle {
+  transform: rotate(-90deg);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #222;
+}
 </style>
 </head>
+
 <body>
 
 <h1>Route Encounters</h1>
@@ -120,89 +143,90 @@ a { color: #8ab4ff; }
   class="search-box"
 />
 
-
 <!-- ROUTE 101 -->
-<div class="route searchable">
-  <h2>Route 101</h2>
+<div class="route searchable collapsed">
+  <div class="route-header">
+    <h2>Route 101</h2>
+    <span class="toggle">▾</span>
+  </div>
   <div class="encounter-type">Grass</div>
-  
-  <table>
-    <tr>
-      <th>Digimon</th>
-      <th>Level</th>
-      <th>Held Item</th>
-    </tr>
-    <tr>
-      <td>Agumon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Shoemon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Angoramon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Kudamon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Lopmon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-  </table>
+
+  <div class="route-content">
+    <table>
+      <tr><th>Digimon</th><th>Level</th><th>Held Item</th></tr>
+      <tr><td>Gazimon</td><td>5</td><td>None</td></tr>
+      <tr><td>Agumon</td><td>5</td><td>None</td></tr>
+      <tr><td>Kudamon</td><td>5</td><td>None</td></tr>
+      <tr><td>Shoemon</td><td>5</td><td>None</td></tr>
+      <tr><td>Terriermon</td><td>5</td><td>None</td></tr>
+      <tr><td>Labramon</td><td>5</td><td>None</td></tr>
+      <tr><td>Gabumon</td><td>5</td><td>None</td></tr>
+      <tr><td>Agumon</td><td>5</td><td>None</td></tr>
+      <tr><td>Veemon</td><td>5</td><td>None</td></tr>
+      <tr><td>Angoramon</td><td>5</td><td>None</td></tr>
+      <tr><td>Armadillomon</td><td>5</td><td>None</td></tr>
+      <tr><td>Culumon</td><td>5</td><td>Rare Candy</td></tr>
+    </table>
+  </div>
 </div>
 
-<!-- ROUTE 103 -->
-<div class="route searchable">
-  <h2>Route 103</h2>
+<!-- FORMATTING END -->
+
+<div class="route searchable collapsed">
+  <div class="route-header">
+    <h2>Route 103</h2>
+    <span class="toggle">▾</span>
+  </div>
+
   <div class="encounter-type">Grass</div>
 
-  <table>
-    <tr>
-      <th>Digimon</th>
-      <th>Level</th>
-      <th>Held Item</th>
-    </tr>
-    <tr>
-      <td>Hawkmon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Veemon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Salamon</td>
-      <td>5</td>
-      <td>None</td>
-    </tr>
-  </table>
+  <div class="route-content">
+    <table>
+      <tr>
+        <th>Digimon</th>
+        <th>Level</th>
+        <th>Held Item</th>
+      </tr>
+      <tr><th>Digimon</th><th>Level</th><th>Held Item</th></tr>
+    <tr><td>Betamon</td><td>5</td><td>None</td></tr>
+    <tr><td>Pteromon</td><td>5</td><td>None</td></tr>
+    <tr><td>Wormmon</td><td>5</td><td>None</td></tr>
+    <tr><td>Falcomon</td><td>5</td><td>None</td></tr>
+    <tr><td>Hawkmon</td><td>5</td><td>Wood Data</td></tr>
+    <tr><td>Piyomon</td><td>5</td><td>None</td></tr>
+    <tr><td>Jellymon</td><td>5</td><td>None</td></tr>
+    <tr><td>Pomumon</td><td>5</td><td>Wood Data</td></tr>
+    <tr><td>Sangomon</td><td>5</td><td>Water Data</td></tr>
+    <tr><td>Chuumon</td><td>5</td><td>None</td></tr>
+    <tr><td>Culumon</td><td>5</td><td>Rare Candy</td></tr>
+    </table>
+  </div>
 </div>
 
 <script>
-  const searchInput = document.getElementById("search");
-  const routes = document.querySelectorAll(".searchable");
+const searchInput = document.getElementById("search");
+const routes = document.querySelectorAll(".route.searchable");
 
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
+/* SEARCH */
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
 
-    routes.forEach(route => {
-      const text = route.innerText.toLowerCase();
-      route.style.display = text.includes(query) ? "block" : "none";
-    });
+  routes.forEach(route => {
+    const text = route.innerText.toLowerCase();
+    const match = text.includes(query);
+
+    route.style.display = match ? "block" : "none";
+    if (match) route.classList.remove("collapsed");
   });
-</script>
+});
 
+/* COLLAPSE TOGGLE */
+document.querySelectorAll(".route-header").forEach(header => {
+  header.addEventListener("click", () => {
+    header.closest(".route").classList.toggle("collapsed");
+  });
+});
+</script>
 
 </body>
 </html>
