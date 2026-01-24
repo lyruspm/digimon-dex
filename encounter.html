@@ -863,78 +863,76 @@ document.querySelectorAll(".scan-header").forEach(b =>
 <!-- SEARCH INPUT -->
 <script>
 const searchInput = document.querySelector(".search");
-const clearBtn = document.querySelector(".search-clear");
-const routes = document.querySelectorAll(".route");
+
 const scanSections = document.querySelectorAll(".scan-section");
-
-function resetScan() {
-  // Clear input
-  searchInput.value = "";
-
-  // Show everything
-  routes.forEach(route => {
-    route.style.display = "block";
-    route.classList.remove("open");
-  });
-
-  // Collapse top-level scan folders (Earth / Water)
-  scanSections.forEach(section => {
-    section.classList.remove("open");
-  });
-
-  // Hide clear button
-  clearBtn.style.display = "none";
-}
+const routes = document.querySelectorAll(".route");
 
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase().trim();
 
-  // Toggle clear button
-  clearBtn.style.display = query ? "block" : "none";
+  // ===== RESET MODE =====
+  if (query === "") {
+    scanSections.forEach(section => {
+      section.classList.remove("open"); // collapse earth/water
+    });
 
-  // If empty → reset everything
-  if (!query) {
-    resetScan();
+    routes.forEach(route => {
+      route.style.display = "block";
+      route.classList.remove("open");
+
+      route.querySelectorAll(".encounter-grid").forEach(row => {
+        row.style.display = "grid";
+      });
+    });
+
     return;
   }
 
-  routes.forEach(route => {
-    const routeName =
-      route.querySelector(".route-header")?.textContent.toLowerCase() || "";
+  // ===== SEARCH MODE =====
+  scanSections.forEach(section => {
+    let sectionHasMatch = false;
 
-    const rows = route.querySelectorAll(".encounter-grid:not(.header)");
-    let routeMatch = routeName.includes(query);
-    let rowMatchFound = false;
+    const sectionTitle =
+      section.querySelector(".scan-header")?.innerText.toLowerCase() || "";
 
-    rows.forEach(row => {
-      const digimon = row.children[0]?.textContent.toLowerCase() || "";
-      const item = row.children[2]?.textContent.toLowerCase() || "";
+    const sectionMatches = sectionTitle.includes(query);
 
-      const rowMatch =
-        digimon.includes(query) ||
-        item.includes(query);
+    section.querySelectorAll(".route").forEach(route => {
+      const routeHeader = route.querySelector(".route-header");
+      const routeName = routeHeader.innerText.toLowerCase();
 
-      row.style.display = rowMatch || routeMatch ? "grid" : "none";
+      let routeHasMatch = routeName.includes(query);
+      let rowMatchFound = false;
 
-      if (rowMatch) rowMatchFound = true;
+      route.querySelectorAll(".encounter-grid").forEach(row => {
+        if (row.classList.contains("header")) return;
+
+        const rowText = row.innerText.toLowerCase();
+        const match =
+          rowText.includes(query) ||
+          routeName.includes(query) ||
+          sectionTitle.includes(query);
+
+        row.style.display = match ? "grid" : "none";
+        if (match) rowMatchFound = true;
+      });
+
+      if (routeHasMatch || rowMatchFound || sectionMatches) {
+        route.style.display = "block";
+        route.classList.add("open");
+        sectionHasMatch = true;
+      } else {
+        route.style.display = "none";
+        route.classList.remove("open");
+      }
     });
-
-    if (routeMatch || rowMatchFound) {
-      route.style.display = "block";
-      route.classList.add("open");
-
-      // Ensure parent scan section opens
-      const scanSection = route.closest(".scan-section");
-      if (scanSection) scanSection.classList.add("open");
+    if (sectionHasMatch || sectionMatches) {
+      section.classList.add("open");
     } else {
-      route.style.display = "none";
-      route.classList.remove("open");
+      section.classList.remove("open");
     }
   });
 });
-
-// Clear button click
-clearBtn.addEventListener("click", resetScan);
 </script>
 
 <!-- WATER ENCOUNTERS DIVIDE -->
