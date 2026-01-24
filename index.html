@@ -2,1476 +2,606 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Digimon Trials Dex — D-Ark</title>
+<title>Digimon Trials Dex</title>
 
 <style>
+/* =====================
+   THEME
+===================== */
+:root {
+  --bg-main: #0f1115;
+  --bg-panel: #171a21;
+  --bg-card: #1f2430;
+  --bg-subtle: #232838;
+
+  --text-main: #f2f4f8;
+  --text-dim: #a8b0c2;
+
+  --border: rgba(255,255,255,0.08);
+}
+
 /* =====================
    BASE
 ===================== */
 body {
   margin: 0;
-  padding: 30px;
-  font-family: "Courier New", monospace;  
-  background: radial-gradient(circle at top, #0a1412, #020504 70%);
-  color: #dfffe9;
+  padding: 32px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* =====================
-   D-ARK SHELL
-===================== */
-.d-ark {
+.app {
   max-width: 1400px;
   margin: auto;
-  padding: 18px;
-  border-radius: 26px;
-  background: linear-gradient(180deg, #1b1b1b, #050505);
-  box-shadow:
-    0 0 0 3px #2b2b2b,
-    0 25px 80px rgba(0,0,0,0.9);
-}
-
-.d-ark-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #7dffcf;
-  opacity: 0.85;
-  padding: 6px 12px;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.led {
-  width: 9px;
-  height: 9px;
-  background: #7dffcf;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #7dffcf;
 }
 
 /* =====================
-   SCREEN
+   HEADER
 ===================== */
-.screen {
-  margin-top: 14px;
-  padding: 22px;
-background:
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2)),
-    #0b2a24;;
-
-  border-radius: 18px;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.9);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Scanlines */
-.screen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.025),
-    rgba(255,255,255,0.025) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events: none;
-}
-
-/* =====================
-   HEADER TEXT
-===================== */
-h1 {
+h1,
+.subtitle {
   text-align: center;
-  letter-spacing: 0.2em;
-  margin-bottom: 8px;      
 }
 
-.intro {
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
   text-align: center;
-  font-size: 0.8rem;
-  opacity: 0.75;
-  margin-bottom: 20px;
 }
 
-/* =====================
-   NAV
-===================== */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 24px;
-}
-
-.nav a {
-  padding: 8px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #7dffcf;
-  border: 1px solid #3e8f78;
-  background: rgba(0,0,0,0.3);
-}
-
-.nav a:hover {
-  background: #7dffcf;
-  color: #003328;
-}
 
 /* =====================
    SEARCH
 ===================== */
+.search-box::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
 .search-box {
-  display: block;
-  margin: 0 auto 30px;
-  max-width: 520px;
+display: block;
+margin: 24px auto 0 auto;
   width: 100%;
-  padding: 14px;
-  background: #031c17;
-  color: #dfffe9;
-  border-radius: 12px;
-  border: 1px solid #3e8f78;
-  outline: none;
+  max-width: 720px;    
+  padding: 14px 16px;
+  text:al  
+  font-size: 0.95rem;
+  border-radius: 10px;  
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: #ffffff;
 }
 
-.search-box::placeholder {
-  color: #7faea0;
+/* =====================
+   FILTERS
+===================== */
+.filters {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
 }
+
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.filter-group select {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+#clearFilters {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #0b0d12;
+  color: #d0d4dc;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#clearFilters:hover {
+  background: #161a22;
+  color: #ffffff;
+}
+.clear-group {
+  justify-content: flex-end;
+}
+
+#clearFilters {
+  height: 36px; /* matches select height */
+}
+
+
+
 
 /* =====================
    GRID
 ===================== */
 #dex {
+  margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
 }
+
+
 
 /* =====================
-   CARDS
+   CARD
 ===================== */
-.card {
-  background: linear-gradient(180deg, #0b261f, #051612);
-  border: 1px solid #245f4f;
-  border-radius: 14px;
+.entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 16px;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.03),
-    0 6px 18px rgba(0,0,0,0.7);
-}
-
-.card:hover {
-  box-shadow:
-    0 0 0 1px #7dffcf,
-    0 10px 28px rgba(0,0,0,0.9);
-}
-
-.card h2 {
-  font-size: 1.05rem;
-  letter-spacing: 0.12em;
-  color: #7dffcf;
-  margin: 0 0 6px;
-  font-weight: 600;
-}
-
-.card {
   cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    max-height 0.35s ease;
-  overflow: hidden;
-  max-height: 220px; /* collapsed height */
+
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
-/* Expanded state */
-.card.expanded {
-  max-height: 800px; /* enough for long evo trees */
-  box-shadow:
-    0 0 0 1px #7dffcf,
-    0 14px 40px rgba(0,0,0,0.95);
+.entry:hover {
+  background: #262c3a;
   transform: translateY(-2px);
 }
 
-/* Hide evo section until expanded (mobile clarity) */
-.card .evo {
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+/* =====================
+   CARD HEADER
+===================== */
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card.expanded .evo {
-  opacity: 1;
-  transform: translateY(0);
+.entry-title {
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
+.stage {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  color: var(--text-dim);
+}
 
 /* =====================
-   STAGE BADGE
+   META (PILLS + DESC)
 ===================== */
-.stage {
-  font-size: 0.55rem;
-  padding: 3px 8px;
-  margin-left: 6px;
-  border-radius: 999px;
-  background: #062a22;
-  border: 1px solid #3e8f78;
+.entry-meta {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 /* =====================
    TYPES
 ===================== */
 .types {
-  margin: 6px 0 8px;
-}
-.type {
-  animation: chipGlow 3s ease-in-out infinite;
-}
-
-@keyframes chipGlow {
-  0%, 100% { box-shadow: 0 0 10px rgba(0,0,0,0.4); }
-  50% { box-shadow: 0 0 14px rgba(255,255,255,0.35); }
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .type {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 70px;
-  padding: 6px 14px;
-
+  padding: 4px 10px;
   font-size: 0.65rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
   border-radius: 999px;
-  margin-right: 6px;
-  margin-top: 6px;
-
-  position: relative;
-  z-index: 2;
-
-  color: #fff;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(0,0,0,0.35),
-    0 0 10px rgba(0,0,0,0.4);
+  border: 1.5px solid currentColor;
+  font-weight: 600;
 }
 
-.normal   { background: #cfd8dc; color: #102027; box-shadow: 0 0 10px rgba(207,216,220,0.6); }
-.fire     { background: #ff7043; }
-.water    { background: #42a5f5; }
-.ice      { background: #4dd0e1; color: #00363a; }
-.electric { background: #ffee58; color: #3a3000; }
-.grass    { background: #66bb6a; }
-.bug      { background: #8bc34a; }
-.fighting { background: #e53935; }
-.flying   { background: #90caf9; color: #0d2c54; }
-.dark     { background: #5e35b1; }
-.holy     { background: #fff176; color: #3a2f00; }
-.dragon   { background: #3949ab; }
-.steel    { background: #b0bec5; color: #263238; }
-.poison   { background: #ab47bc; }
-.rock     { background: #8d6e63; }
-.ground   { background: #bc8f6a; }
-.fairy    { background: #f48fb1; color: #4a0033; }
-.magic    { background: #ec407a; }
-.undead   { background: #6a1b9a; }
-.mystery  { background: #26c6da; }
-
-
+/* TYPE COLORS */
+.normal   { color: #cfd8dc; }
+.fire     { color: #ff8a65; }
+.water    { color: #64b5f6; }
+.ice      { color: #4dd0e1; }
+.electric { color: #ffee58; }
+.grass    { color: #81c784; }
+.bug      { color: #aed581; }
+.fighting { color: #ef5350; }
+.flying   { color: #90caf9; }
+.dark     { color: #9575cd; }
+.holy     { color: #fff59d; }
+.dragon   { color: #7986cb; }
+.steel    { color: #b0bec5; }
+.poison   { color: #ba68c8; }
+.ground   { color: #bc8f6a; }
+.fairy    { color: #f48fb1; }
+.magic    { color: #ec407a; }
+.undead   { color: #7e57c2; }
+.mystery  { color: #26c6da; }
 
 /* =====================
-   DIGIVOLUTION
+   DESCRIPTION
 ===================== */
-.evo {
-  margin-top: 10px;
-  padding-left: 10px;
-  border-left: 3px solid #7dffcf;
-  font-size: 0.75rem;
+.entry-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.35;
+
+  max-height: 44px;
+  overflow-y: auto;
+  padding-right: 6px;
 }
 
-.evo ul {
-  padding-left: 16px;
-  margight: 1.35;
+/* =====================
+   DIGIVOLUTION STRIP
+===================== */
+.evo-strip {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-dim);
 }
-.evo span {
-  opacity: 0.7;
+
+.evo-strip strong {
+  display: block;
+  font-size: 0.65rem;
+  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+}
+
+.evo-strip ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+/* =====================
+   MODAL
+===================== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hidden { display: none; }
+
+.modal {
+  width: min(720px, 92vw);
+  background: var(--bg-panel);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+/* =====================
+   ABILITIES (MODAL)
+===================== */
+.abilities {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: var(--bg-subtle);
+  border-radius: 12px;
+}
+
+.abilities strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.abilities ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.abilities li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.abilities.muted {
+  opacity: 0.6;
   font-style: italic;
 }
 
 
-/* =====================
-   TERRIERMON PAGEDOLL
-===================== */
-.pagedoll {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
 
-  width: 120px;
-  pointer-events: none; /* doesn't block UI */
-  z-index: 20;
-
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.6));
-  animation: terrier-float 4s ease-in-out infinite;
-}
-
-.pagedoll img {
-  width: 100%;
-  image-rendering: auto;
-}
-
-/* Gentle idle float */
-@keyframes terrier-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-.system-credit {
-  text-align: center;
-  font-size: 1.10rem;
-  letter-spacing: 0.06em;
-  opacity: 0.85;
-  margin: 18px 0 32px;
-  color: #9cffdc;
-  line-height: 1.5;
-}
-
-.system-credit p {
-  margin: 8px 0;
-}
-
-.system-credit strong {
-  color: #c9ffe8;
-  font-weight: 700;
-}
-
-.system-credit .legal {
-  font-size: 0.90rem;
-  opacity: 0.7;
-  margin-top: 12px;
-}
-
-
-
+          
 </style>
 </head>
 
-
 <body>
+<div class="app">
 
-<div class="d-ark">
-  <div class="d-ark-header">
-    <div class="status">
-      <span class="led"></span>
-      D-ARK SYSTEM
-    </div>
-    <div>ONLINE</div>
-  </div>
+<div class="top-controls">
+  <h1>DIGIMON TRIALS DEX</h1>
+  <div class="subtitle">Fan-made Digimon reference tool</div>
 
-  <div class="screen">
+  <input id="search" class="search-box" placeholder="Search Digimon...">  
 
-    <h1>DIGIMON TRIALS DEX</h1>
-    <div class="system-credit">
-  <p>
-    <strong>DIGIMON TRIALS</strong> — Fan-made ROM hack of <em>Pokémon Emerald</em><br>
-    Created by <strong>Ferio Triforce</strong>
-  </p>
-
-  <p>
-    <strong>VERSION:</strong> 7.0.3 Beta<br>
-    <strong>CONTRIBUTORS:</strong> papabert04 · vexvitality · docbio13 · vicho3185
-  </p>
-
-  <p class="legal">
-   <strong> Pokémon © </strong> Nintendo, Game Freak, The Pokémon Company<br>
-    <Strong> Digimon © </strong> Bandai / Bandai Namco Entertainment<br>
-    Non-commercial fan project — not affiliated or endorsed
-  </p>
-</div>
-
-
-
-    <div class="nav">
-      <a href="index.html">DIGIMON</a>
-      <a href="encounter.html">ENCOUNTERS</a>
+  <div class="filters">
+    <div class="filter-group">
+      <label>Stage</label>
+      <select id="stageFilter">
+        <option value="">All</option>
+        <option value="Child">Child</option>
+        <option value="Adult">Adult</option>
+        <option value="Perfect">Perfect</option>
+        <option value="Mega">Mega</option>
+        <option value="Mega+">Mega+</option>
+      </select>
     </div>
 
-    <input id="search" class="search-box" placeholder="SCAN DIGIMON DATA...">
+    <div class="filter-group">
+      <label>Type</label>
+      <select id="typeFilter">
+        <option value="">All</option>
+        <option value="Normal">Normal</option>
+        <option value="Fire">Fire</option>
+        <option value="Water">Water</option>
+        <option value="Ice">Ice</option>
+        <option value="Electric">Electric</option>
+        <option value="Grass">Grass</option>
+        <option value="Bug">Bug</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Flying">Flying</option>
+        <option value="Dark">Dark</option>
+        <option value="Holy">Holy</option>
+        <option value="Dragon">Dragon</option>
+        <option value="Steel">Steel</option>
+        <option value="Poison">Poison</option>
+        <option value="Ground">Ground</option>
+        <option value="Fairy">Fairy</option>
+        <option value="Magic">Magic</option>
+        <option value="Undead">Undead</option>
+        <option value="Mystery">Mystery</option>
+      </select>
+    </div>
+    </div>
 
-    <div id="dex"></div>
+<div class="filter-group clear-group">
+  <label>&nbsp;</label>
+  <button id="clearFilters">Clear Filters</button>
+</div>
 
+
+
+
+  <div id="dex"></div>
+</div>
+
+
+  <div id="dex"></div>
+</div>
+
+
+<div id="overlay" class="overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <div id="modal-title" class="modal-title"></div>
+      <div id="modal-close" class="close-btn">✖</div>
+    </div>
+    <div id="modal-body"></div>
   </div>
 </div>
 
-
-<div class="pagedoll">
-  <img
-    src="https://file.garden/aWHKyi8voz-ckxWf/Image/Terriermon_vg.webp"
-    alt="Terriermon"
-  >
-</div>
 <script>
-/* =====================
-   DATA
-===================== */
 const digimonDex = [
-{
-  name: "Lopmon",
-  level: "3 Child",
-  type1: "Normal",
-  type2: "None",
-  description: "Starter, or Spear Pillar F1",
-  digivolutions: [
-    { to: "Turuiemon", condition: "Level 20" },
-    { to: "Wendimon", condition: "Dark Data" }
-  ]
-},
-{
-  name: "Turuiemon",
-  level: "4 Adult",
-  type1: "Fighting",
-  type2: "None",
-  description: "Level 20 Digivolution of Lopmon",
-  digivolutions: [
-    { to: "Antylamon Good", condition: "Level 35" }
-  ]
-},
-{
-  name: "Wendimon",
-  level: "4 Adult",
-  type1: "Fighting",
-  type2: "Dark",
-  description: "Dark Data given to Lopmon",
-  digivolutions: [
-    { to: "Antylamon Evil", condition: "Level 35" }
-  ]
-},
-{
-  name: "Antylamon Good",
-  level: "5 Perfect",
-  type1: "Fighting",
-  type2: "Holy",
-  description: "Level 35 Digivolution of Turuiemon",
-  digivolutions: [
-    { to: "Cherubimon Good", condition: "Level 56" },
-    { to: "Antylamon Evil", condition: "Slide Digivolution with Dark Data" }
-  ]
-},
-{
-  name: "Antylamon Evil",
-  level: "5 Perfect",
-  type1: "Fighting",
-  type2: "Dark",
-  description: "Level 35 Digivolution of Wendimon",
-  digivolutions: [
-    { to: "Cherubimon Evil", condition: "Level 56" },
-    { to: "Antylamon Good", condition: "Slide Digivolution with Light Data" }
-  ]
-},
-{
-  name: "Cherubimon Good",
-  level: "6 Mega",
-  type1: "Fighting",
-  type2: "Holy",
-  description: "Level 56 Digivolution of Antylamon Good",
-  digivolutions: [
-    { to: "Cherubimon Evil", condition: "Slide Digivolution with Dark Data" }
-  ]
-},
-{
-  name: "Cherubimon Evil",
-  level: "6 Mega",
-  type1: "Fighting",
-  type2: "Dark",
-  description: "Level 56 Digivolution of Antylamon Evil",
-  digivolutions: [
-    { to: "Cherubimon Good", condition: "Slide Digivolution with Light Data" }
-  ]
-},
-{
-  name: "Patamon",
-  level: "3 Child",
-  type1: "Holy",
-  type2: "None",
-  description: "Starter or Spear Pillar F1",
-  digivolutions: [
-    { to: "Angemon", condition: "Level 20" },
-    { to: "Pegasmon", condition: "Light Data" }
-  ]
-},
-{
-  name: "Angemon",
-  level: "4 Adult",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Level 20 Digivolution of Patamon",
-  digivolutions: [
-    { to: "MagnaAngemon", condition: "Level 35" }
-  ]
-},
-{
-  name: "Pegasmon",
-  level: "4 Adult",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Light Data given to Patamon",
-  digivolutions: [
-    { to: "Magna Angemon Priest Mode", condition: "Level 35" }
-  ]
-},
-{
-  name: "MagnaAngemon",
-  level: "5 Perfect",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Level 35 Digivolution of Angemon",
-  digivolutions: [
-    { to: "Seraphimon", condition: "Level 56" }
-  ]
-},
-{
-  name: "Magna Angemon Priest Mode",
-  level: "5 Perfect",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Level 35 Digivolution of Pegasmon",
-  digivolutions: [
-    { to: "Seraphimon", condition: "Level 56" }
-  ]
-},
-{
-  name: "Seraphimon",
-  level: "6 Mega",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Level 56 Digivolution of MagnaAngemon",
-  digivolutions: [
-    { to: "Goddramon", condition: "Light Data or Level 80" }
-  ]
-},
-{
-  name: "Goddramon",
-  level: "7 Mega+",
-  type1: "Dragon",
-  type2: "Holy",
-  description: "Seraphimon given Light Data, or Level 80"
-},
-{
-  name: "Salamon",
-  level: "3 Child",
-  type1: "Holy",
-  type2: "None",
-  description: "Starter, or Spear Pillar F1",
-  digivolutions: [
-    { to: "Gatomon", condition: "Level 20" },
-    { to: "Nefertimon", condition: "Light Data" }
-  ]
-},
-{
-  name: "Gatomon",
-  level: "4 Adult",
-  type1: "Holy",
-  type2: "None",
-  description: "Level 20 Digivolution of Salamon",
-  digivolutions: [
-    { to: "Angewomon", condition: "Level 35" }
-  ]
-},
-{
-  name: "Nefertimon",
-  level: "4 Adult",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Light Data given to Salamon",
-  digivolutions: [
-    { to: "Kyukimon", condition: "Level 35" }
-  ]
-},
-{
-  name: "Angewomon",
-  level: "5 Perfect",
-  type1: "Holy",
-  type2: "Fairy",
-  description: "Level 35 Digivolution of Gatomon",
-  digivolutions: [
-    { to: "Ophanimon", condition: "Level 56" }
-  ]
-},
-{
-  name: "Kyukimon",
-  level: "5 Perfect",
-  type1: "Holy",
-  type2: "Flying",
-  description: "Level 35 Digivolution of Nefertimon",
-  digivolutions: [
-    { to: "Holydramon", condition: "Level 80" }
-  ]
-},
-{
-  name: "Ophanimon",
-  level: "6 Mega",
-  type1: "Holy",
-  type2: "Fairy",
-  description: "Level 56 Digivolution of Angewomon"
-},
-{
-  name: "Holydramon",
-  level: "7 Mega+",
-  type1: "Holy",
-  type2: "Dragon",
-  description: "Level 80 Digivolution of Kyukimon"
-},
-{
-  name: "Agumon",
-  level: "3 Child",
-  type1: "Fire",
-  type2: "None",
-  description: "Route 101",
-  digivolutions: [
-    { to: "Greymon", condition: "Level 18" }
-  ]
-},
-{
-  name: "Greymon",
-  level: "4 Adult",
-  type1: "Fire",
-  type2: "None",
-  description: "Level 18 from Agumon",
-  digivolutions: [
-    { to: "MetalGreymon", condition: "Level 32" },
-    { to: "LaeusGreymon", condition: "AW Genes" }
-  ]
-},
-{
-  name: "MetalGreymon",
-  level: "5 Perfect",
-  type1: "Fire",
-  type2: "Steel",
-  description: "Level 32 from Greymon",
-  digivolutions: [
-    { to: "WarGreymon", condition: "Level 54" },
-    { to: "ShineGreymon", condition: "Auspicious Armour" },
-    { to: "BlitzGreymon", condition: "New Mauville" }
-  ]
-},
-{
-  name: "WarGreymon",
-  level: "6 Mega",
-  type1: "Fire",
-  type2: "Ice",
-  description: "Mega Stage",
-  digivolutions: [
-    { to: "Omegamon", condition: "Jogress with MetalGarurumon" }
-  ]
-},
-{
-  name: "Gabumon",
-  level: "3 Child",
-  type1: "Fire",
-  type2: "Ice",
-  description: "Route 101",
-  digivolutions: [
-    { to: "Garurumon", condition: "Level 18" }
-  ]
-},
-{
-  name: "Garurumon",
-  level: "4 Adult",
-  type1: "Fire",
-  type2: "Ice",
-  description: "Level 18 Digivolution of Gabumon",
-  digivolutions: [
-    { to: "WereGarurumon", condition: "Level 32" },
-    { to: "ZinoGarurumon", condition: "AW Genes" }
-  ]
-},
-{
-  name: "WereGarurumon",
-  level: "5 Perfect",
-  type1: "Ice",
-  type2: "Fighting",
-  description: "Level 32 Digivolution of Garurumon",
-  digivolutions: [
-    { to: "MetalGarurumon", condition: "Level 54" },
-    { to: "CresGarurumon", condition: "Auspicious Armour" }
-  ]
-},
-{
-  name: "MetalGarurumon",
-  level: "6 Mega",
-  type1: "Steel",
-  type2: "Ice",
-  description: "Level 54 Digivolution of WereGarurumon",
-  digivolutions: [
-    { to: "Omegamon", condition: "Jogress with WarGreymon" }
-  ]
-},
-{
-  name: "CresGarurumon",
-  level: "6 Mega",
-  type1: "Ice",
-  type2: "Fighting",
-  description: "Auspicious Armour given to WereGarurumon"
-},
-{
-  name: "ZinoGarurumon",
-  level: "6 Mega",
-  type1: "Ice",
-  type2: "Electric",
-  description: "AW Genes given to Garurumon"
-},
-{
-  name: "Gomamon",
-  level: "3 Child",
-  type1: "Water",
-  type2: "None",
-  description: "Base. Route 104",
-  digivolutions: [
-    { to: "Ikkakumon", condition: "Level 18" }
-  ]
-},
-{
-  name: "Ikkakumon",
-  level: "4 Adult",
-  type1: "Water",
-  type2: "Ice",
-  description: "Level 18 Digivolution of Gomamon",
-  digivolutions: [
-    { to: "Zudomon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Zudomon",
-  level: "5 Perfect",
-  type1: "Water",
-  type2: "Ice",
-  description: "Level 32 Digivolution of Ikkakumon",
-  digivolutions: [
-    { to: "Vikemon", condition: "Level 54" },
-    { to: "Plesiomon", condition: "King's Rock item" }
-  ]
-},
-{
-  name: "Vikemon",
-  level: "6 Mega",
-  type1: "Water",
-  type2: "Ice",
-  description: "Level 54 Digivolution of Zudomon"
-},
-{
-  name: "Plesiomon",
-  level: "6 Mega",
-  type1: "Water",
-  type2: "None",
-  description: "King's Rock Digivolution of Zudomon",
-  digivolutions: [
-    { to: "AegisDramon", condition: "Jogress with MetalSeadramon" }
-  ]
-},
-{
-  name: "AegisDramon",
-  level: "7 Mega+",
-  type1: "Steel",
-  type2: "Water",
-  description: "Jogress Digivolution of Plesiomon and MetalSeadramon"
-},
-{
-  name: "Veemon",
-  level: "3 Child",
-  type1: "Dragon",
-  type2: "None",
-  description: "Route 101",
-  digivolutions: [
-    { to: "ExVeemon", condition: "Level 18" },
-    { to: "Flamedramon", condition: "Fire Data" },
-    { to: "Raidramon", condition: "Thunder Data" },
-    { to: "Gargoylemon", condition: "Light Data" }
-  ]
-},
-{
-  name: "ExVeemon",
-  level: "4 Adult",
-  type1: "Dragon",
-  type2: "Flying",
-  description: "Level 18 Digivolution of Veemon",
-  digivolutions: [
-    { to: "AeroVeedramon", condition: "Level 32" },
-    { to: "Paildramon", condition: "Level 30 with Stingmon in party" }
-  ]
-},
-{
-  name: "Flamedramon",
-  level: "4 Adult",
-  type1: "Dragon",
-  type2: "Fire",
-  description: "Fire Data given to Veemon",
-  digivolutions: [
-    { to: "Magnamon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Raidramon",
-  level: "4 Adult",
-  type1: "Dragon",
-  type2: "Electric",
-  description: "Thunder Data given to Veemon",
-  digivolutions: [
-    { to: "Majiramon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Gargoylemon",
-  level: "4 Adult",
-  type1: "Dragon",
-  type2: "Holy",
-  description: "Light Data given to Veemon",
-  digivolutions: [
-    { to: "Manticoremon", condition: "Level 32" }
-  ]
-},
-{
-  name: "AeroVeedramon",
-  level: "5 Perfect",
-  type1: "Dragon",
-  type2: "Flying",
-  description: "Level 32 Digivolution of ExVeemon",
-  digivolutions: [
-    { to: "UlforceVeedramon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Paildramon",
-  level: "5 Perfect",
-  type1: "Dragon",
-  type2: "Bug",
-  description: "Level 30 Digivolution of ExVeemon with Stingmon in party",
-  digivolutions: [
-    { to: "Imperialdramon Dragon Mode", condition: "Level 54" }
-  ]
-},
-{
-  name: "Imperialdramon Dragon Mode",
-  level: "6 Mega",
-  type1: "Dragon",
-  type2: "Bug",
-  description: "Level 54 Digivolution of Paildramon",
-  digivolutions: [
-    { to: "Imperialdramon Fighter Mode", condition: "Use Positron Laser at Level 62" }
-  ]
-},
-{
-  name: "Imperialdramon Fighter Mode",
-  level: "7 Mega+",
-  type1: "Dragon",
-  type2: "Fighting",
-  description: "Using Positron Laser as Imperialdramon DM",
-  digivolutions: [
-    { to: "Imperialdramon Paladin Mode", condition: "Omega Blade" }
-  ]
-},
-{
-  name: "Magnamon",
-  level: "5 Perfect",
-  type1: "Dragon",
-  type2: "Steel",
-  description: "Meteor Falls wild encounter, Level 32 Digivolution of Flamedramon",
-  digivolutions: [
-    { to: "Magnamon X", condition: "Antibody GX" }
-  ]
-},
-{
-  name: "Majiramon",
-  level: "5 Perfect",
-  type1: "Dragon",
-  type2: "Electric",
-  description: "Level 32 Digivolution of Raidramon",
-  digivolutions: [
-    { to: "Azulongmon", condition: "Level 70" }
-  ]
-},
-{
-  name: "Manticoremon",
-  level: "5 Perfect",
-  type1: "Dragon",
-  type2: "Holy",
-  description: "Level 32 Digivolution of Gargoylemon"
-},
-{
-  name: "UlforceVeedramon",
-  level: "6 Mega",
-  type1: "Dragon",
-  type2: "Flying",
-  description: "Level 54 Digivolution of AeroVeedramon"
-},
-{
-  name: "Azulongmon",
-  level: "7 Mega+",
-  type1: "Dragon",
-  type2: "Electric",
-  description: "Level 70 Digivolution of Majiramon"
-},
-{
-  name: "Wormmon",
-  level: "3 Child",
-  type1: "Bug",
-  type2: "Poison",
-  description: "Petalburg Forest",
-  digivolutions: [
-    { to: "Stingmon", condition: "Level 18" }
-  ]
-},
-{
-  name: "Stingmon",
-  level: "4 Adult",
-  type1: "Bug",
-  type2: "Poison",
-  description: "Level 18 Digivolution of Wormmon",
-  digivolutions: [
-    { to: "JewelBeemon", condition: "Level 32" },
-    { to: "DinoBeemon", condition: "Level 30 with ExVeemon in party" }
-  ]
-},
-{
-  name: "JewelBeemon",
-  level: "5 Perfect",
-  type1: "Bug",
-  type2: "Poison",
-  description: "Level 32 Digivolution of Stingmon",
-  digivolutions: [
-    { to: "BanchoStingmon", condition: "Gakuran" }
-  ]
-},
-{
-  name: "BanchoStingmon",
-  level: "6 Mega",
-  type1: "Bug",
-  type2: "Poison",
-  description: "Gakuran given to JewelBeemon"
-},
-{
-  name: "DinoBeemon",
-  level: "5 Perfect",
-  type1: "Bug",
-  type2: "Dragon",
-  description: "Level 30 Digivolution of Stingmon with ExVeemon in party",
-  digivolutions: [
-    { to: "Imperialdramon Dragon Mode", condition: "Level 54" }
-  ]
-},
-{
-  name: "Armadillomon",
-  level: "3 Child",
-  type1: "Ground",
-  type2: "None",
-  description: "Route 103 or Petalburg Forest",
-  digivolutions: [
-    { to: "Ankylomon", condition: "Level 18" },
-    { to: "Digmon", condition: "Earth Data" },
-    { to: "Submarimon", condition: "Water Data" }
-  ]
-},
-{
-  name: "Ankylomon",
-  level: "4 Adult",
-  type1: "Ground",
-  type2: "Steel",
-  description: "Level 18 Digivolution of Armadillomon",
-  digivolutions: [
-    { to: "Shakkoumon", condition: "Level 30 with Angemon or Pegasmon in party" },
-    { to: "Brachiomon", condition: "Level 32 without Angemon or Pegasmon" }
-  ]
-},
-{
-  name: "Digmon",
-  level: "4 Adult",
-  type1: "Ground",
-  type2: "Bug",
-  description: "Earth Data given to Armadillomon",
-  digivolutions: [
-    { to: "SkullScorpiomon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Submarimon",
-  level: "4 Adult",
-  type1: "Ground",
-  type2: "Water",
-  description: "Water Data given to Armadillomon",
-  digivolutions: [
-    { to: "Whamon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Shakkoumon",
-  level: "5 Perfect",
-  type1: "Steel",
-  type2: "Holy",
-  description: "Level 30 Digivolution of Ankylomon with Angemon or Pegasmon in party",
-  digivolutions: [
-    { to: "Slash Angemon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Brachiomon",
-  level: "5 Perfect",
-  type1: "Ground",
-  type2: "None",
-  description: "Level 32 Digivolution of Ankylomon without Angemon or Pegasmon",
-  digivolutions: [
-    { to: "Ultimate Brachiomon", condition: "Level 54" }
-  ]
-},
-{
-  name: "SkullScorpiomon",
-  level: "5 Perfect",
-  type1: "Ground",
-  type2: "Bug",
-  description: "Level 32 Digivolution of Digmon",
-  digivolutions: [
-    { to: "Eldoradimon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Whamon",
-  level: "5 Perfect",
-  type1: "Water",
-  type2: "None",
-  description: "Level 32 Digivolution of Submarimon",
-  digivolutions: [
-    { to: "Marin Angemon", condition: "Level 54" },
-    { to: "KingWhamon", condition: "King's Rock" }
-  ]
-},
-{
-  name: "Slash Angemon",
-  level: "6 Mega",
-  type1: "Steel",
-  type2: "Holy",
-  description: "Level 54 Digivolution of Shakkoumon"
-},
-{
-  name: "Ultimate Brachiomon",
-  level: "6 Mega",
-  type1: "Ground",
-  type2: "Steel",
-  description: "Level 54 Digivolution of Brachiomon"
-},
-{
-  name: "Eldoradimon",
-  level: "6 Mega",
-  type1: "Ground",
-  type2: "Grass",
-  description: "Level 54 Digivolution of SkullScorpiomon",
-  digivolutions: [
-    { to: "Tlalocmon", condition: "Jogress with SaberLeomon" }
-  ]
-},
-{
-  name: "Marin Angemon",
-  level: "6 Mega",
-  type1: "Water",
-  type2: "Holy",
-  description: "Level 54 Digivolution of Whamon"
-},
-{
-  name: "KingWhamon",
-  level: "6 Mega",
-  type1: "Water",
-  type2: "Ground",
-  description: "King's Rock used on Whamon"
-},
-{
-  name: "Tlalocmon",
-  level: "7 Mega+",
-  type1: "Grass",
-  type2: "Electric",
-  description: "Jogress Digivolution of ElDoradimon and SaberLeomon"
-},
-{
-  name: "Hawkmon",
-  level: "3 Child",
-  type1: "Flying",
-  type2: "None",
-  description: "Route 103",
-  digivolutions: [
-    { to: "Aquilamon", condition: "Level 18" },
-    { to: "Halsemon", condition: "Wind Data" },
-    { to: "Shurimon", condition: "Wood Data" }
-  ]
-},
-{
-  name: "Aquilamon",
-  level: "4 Adult",
-  type1: "Flying",
-  type2: "None",
-  description: "Level 18 Digivolution of Hawkmon",
-  digivolutions: [
-    { to: "Hippogriffomon", condition: "Level 32" },
-    { to: "Silphymon", condition: "Level 30 with Gatomon in party" }
-  ]
-},
-{
-  name: "Halsemon",
-  level: "4 Adult",
-  type1: "Flying",
-  type2: "Fairy",
-  description: "Wind Data given to Hawkmon",
-  digivolutions: [
-    { to: "Peacockmon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Shurimon",
-  level: "4 Adult",
-  type1: "Flying",
-  type2: "Grass",
-  description: "Wood Data given to Hawkmon",
-  digivolutions: [
-    { to: "Fumamon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Peacockmon",
-  level: "5 Perfect",
-  type1: "Flying",
-  type2: "Steel",
-  description: "Level 32 Digivolution of Halsemon",
-  digivolutions: [
-    { to: "Valdurmon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Hippogriffomon",
-  level: "5 Perfect",
-  type1: "Flying",
-  type2: "Holy",
-  description: "Level 32 Digivolution of Aquilamon",
-  digivolutions: [
-    { to: "Griffomon", condition: "Level 54" },
-    { to: "Murmukusmon", condition: "Sachet item" }
-  ]
-},
-{
-  name: "Silphymon",
-  level: "5 Perfect",
-  type1: "Flying",
-  type2: "Holy",
-  description: "Level 30 Digivolution of Aquilamon with Gatomon in party",
-  digivolutions: [
-    { to: "Valkyriemon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Fumamon",
-  level: "5 Perfect",
-  type1: "Steel",
-  type2: "Undead",
-  description: "Level 32 Digivolution of Shurimon",
-  digivolutions: [
-    { to: "Tactimon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Murmukusmon",
-  level: "6 Mega",
-  type1: "Dark",
-  type2: "Flying",
-  description: "Sachet given to Hippogriffomon"
-},
-{
-  name: "Griffomon",
-  level: "6 Mega",
-  type1: "Flying",
-  type2: "None",
-  description: "Level 54 Digivolution of Hippogriffomon"
-},
-{
-  name: "Valkyriemon",
-  level: "6 Mega",
-  type1: "Flying",
-  type2: "Holy",
-  description: "Level 54 Digivolution of Silphymon"
-},
-{
-  name: "Tactimon",
-  level: "6 Mega",
-  type1: "Steel",
-  type2: "Undead",
-  description: "Level 54 Digivolution of Fumamon"
-},
-{
-  name: "Valdurmon",
-  level: "6 Mega",
-  type1: "Flying",
-  type2: "Holy",
-  description: "Level 54 Digivolution of Peacockmon",
-  digivolutions: [
-    { to: "Chaosmon Valdur Mode", condition: "Jogress with BanchoLeomon" }
-  ]
-},
-{
-  name: "Chaosmon Valdur Arm",
-  level: "7 Mega+",
-  type1: "Mystery",
-  type2: "None",
-  description: "Jogress with BanchoLeomon"
-},
-{
-  name: "Pulsemon",
-  level: "3 Child",
-  type1: "Electric",
-  type2: "None",
-  description: "Route 116",
-  digivolutions: [
-    { to: "Bulkmon", condition: "Level 18 knowing Work Up" },
-    { to: "Exermon", condition: "Level 18, no Work Up, knows Meditate" }
-  ]
-},
-{
-  name: "Bulkmon",
-  level: "4 Adult",
-  type1: "Electric",
-  type2: "Fighting",
-  description: "Level 18 Digivolution of Pulsemon (Work Up)",
-  digivolutions: [
-    { to: "Boutmon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Exermon",
-  level: "4 Adult",
-  type1: "Bug",
-  type2: "Magic",
-  description: "Level 18 Digivolution of Pulsemon (Meditate). Wild encounters in Tentomon's guardian area",
-  digivolutions: [
-    { to: "Climbmon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Boutmon",
-  level: "5 Perfect",
-  type1: "Electric",
-  type2: "Fighting",
-  description: "Level 32 Digivolution of Bulkmon",
-  digivolutions: [
-    { to: "Kazuchimon", condition: "Level 54" },
-    { to: "Shroudmon", condition: "Malicious Armor" }
-  ]
-},
-{
-  name: "Climbmon",
-  level: "5 Perfect",
-  type1: "Bug",
-  type2: "Magic",
-  description: "Level 32 Digivolution of Exermon",
-  digivolutions: [
-    { to: "Shivamon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Kazuchimon",
-  level: "6 Mega",
-  type1: "Electric",
-  type2: "Fighting",
-  description: "Level 54 Digivolution of Boutmon",
-  digivolutions: [
-    { to: "Fenriloogamon Takemikazuchi", condition: "Jogress with Fenriloogamon" }
-  ]
-},
-{
-  name: "Shroudmon",
-  level: "6 Mega",
-  type1: "Electric",
-  type2: "Dark",
-  description: "Malicious Armor used on Boutmon"
-},
-{
-  name: "Shivamon",
-  level: "6 Mega",
-  type1: "Bug",
-  type2: "Magic",
-  description: "Level 54 Digivolution of Climbmon"
-},
-{
-  name: "Fenriloogamon Takemikazuchi",
-  level: "7 Mega+",
-  type1: "Magic",
-  type2: "Electric",
-  description: "Jogress Digivolution of Kazuchimon and Fenriloogamon"
-},
-{
-  name: "Luxmon",
-  level: "3 Child",
-  type1: "Holy",
-  type2: "None",
-  description: "Route 102",
-  digivolutions: [
-    { to: "Piddmon", condition: "Level 18" }
-  ]
-},
-{
-  name: "Piddmon",
-  level: "4 Adult",
-  type1: "Holy",
-  type2: "Fire",
-  description: "Level 18 Digivolution of Luxmon",
-  digivolutions: [
-    {
-      to: "Arkhai Angemon",
-      condition: "Level 32, Summons Gargoylemon to empty party slot"
-    }
-  ]
-},
-{
-  name: "Arkhai Angemon",
-  level: "5 Perfect",
-  type1: "Holy",
-  type2: "Fire",
-  description: "Level 32 Digivolution of Piddmon, summons Gargoylemon",
-  digivolutions: [
-    { to: "ClavisAngemon", condition: "Level 54" }
-  ]
-},
-{
-  name: "ClavisAngemon",
-  level: "6 Mega",
-  type1: "Holy",
-  type2: "Fire",
-  description: "Level 54 Digivolution of Arkhai Angemon"
-},
-{
-  name: "Goblinmon",
-  level: "3 Child",
-  type1: "Dark",
-  type2: "Ground",
-  description: "Route 102, Granite Cave F1",
-  digivolutions: [
-    { to: "Ogremon", condition: "Level 18" },
-    { to: "Grottemon", condition: "Earth Data" }
-  ]
-},
-{
-  name: "Ogremon",
-  level: "4 Adult",
-  type1: "Dark",
-  type2: "Ground",
-  description: "Level 18 Digivolution of Goblinmon",
-  digivolutions: [
-    { to: "Rebellimon", condition: "Level 32" }
-  ]
-},
-{
-  name: "Grottemon",
-  level: "4 Adult",
-  type1: "Rock",
-  type2: "Ground",
-  description: "Earth Data given to Goblinmon",
-  digivolutions: [
-    { to: "Volcamon", condition: "Level 32" },
-    { to: "Gigasmon", condition: "Using Signature moves. Slide Digivolution" }
-  ]
-},
-{
-  name: "Rebellimon",
-  level: "5 Perfect",
-  type1: "Dark",
-  type2: "Steel",
-  description: "Level 32 Digivolution of Ogremon",
-  digivolutions: [
-    { to: "Titamon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Volcamon",
-  level: "5 Perfect",
-  type1: "Rock",
-  type2: "Ground",
-  description: "Slide Digivolution of Grottemon with Gigasmon",
-  digivolutions: [
-    { to: "AncientVolcamon", condition: "Level 54" }
-  ]
-},
-{
-  name: "Titamon",
-  level: "6 Mega",
-  type1: "Dark",
-  type2: "Ground",
-  description: "Level 54 Digivolution of Rebellimon"
-},
-{
-  name: "AncientVolcamon",
-  level: "6 Mega",
-  type1: "Rock",
-  type2: "Ground",
-  description: "Level 54 Digvolution of Volcamon"  
-},
+  {
+    name: "Lopmon",
+    level: "3 Child",
+    type1: ["Normal"],
+    type2: ["None"],
+    description: "Starter, or Spear Pillar F1",
+    abilities: ["Inner Focus", "Speed Boost"],
+    digivolutions: [
+      { to: "Turuiemon", condition: "Level 20" },
+      { to: "Wendimon", condition: "Dark Data" }
+    ]
+  },
+  {
+    name: "Turuiemon",
+    level: "4 Adult",
+    type1: ["Fighting"],
+    type2: ["None"],
+    description: "Level 20 Digivolution of Lopmon",
+    digivolutions: [
+      { to: "Antylamon Good", condition: "Level 35" }
+    ]
+  }
 ];
 
-/* =====================
-   RENDER
-===================== */
-const dex = document.getElementById("dex");
+
+
+const stageFilter = document.getElementById("stageFilter");
+const typeFilter = document.getElementById("typeFilter");
+const dexEl = document.getElementById("dex");
+const overlay = document.getElementById("overlay");
+const modalTitle = document.getElementById("modal-title");
+const modalBody = document.getElementById("modal-body");
+const modalClose = document.getElementById("modal-close");
 const search = document.getElementById("search");
 
-function render(list) {
-  dex.innerHTML = "";
-  list.forEach(d => {
-    const stage = d.level.split(" ")[1] || "";
-    dex.innerHTML += `
-      <div class="card" onclick="toggleCard(this)">        
-        <h2>${d.name}<span class="stage">${stage}</span></h2>
-        <div class="types">
-          <span class="type ${d.type1.toLowerCase()}">${d.type1}</span>
-          ${d.type2 !== "None" ? `<span class="type ${d.type2.toLowerCase()}">${d.type2}</span>` : ""}
-        </div>
-        <div>${d.description}</div>
-        ${d.digivolutions ? `
-          <div class="evo">
-            <strong>DIGIVOLVES:</strong>
+function createCard(d) {
+  const card = document.createElement("div");
+  card.className = "entry";
+
+  const stage = d.level.split(" ")[1] || "";
+
+  card.innerHTML = `
+    <div class="entry-header">
+      <div class="entry-title">${d.name}</div>
+      <div class="stage">${stage}</div>
+    </div>
+
+    <div class="entry-meta">
+      <div class="types">
+  ${d.type1
+    ? `<span class="type ${String(d.type1).toLowerCase()}">${d.type1}</span>`
+    : ""
+  }
+  ${d.type2 && d.type2 !== "None"
+    ? `<span class="type ${String(d.type2).toLowerCase()}">${d.type2}</span>`
+    : ""
+  }
+</div>
+
+      <div class="entry-desc">${d.description}</div>
+    </div>
+
+    <div class="evo-strip">
+      <strong>DIGIVOLVES</strong>
+      <ul>
+        ${d.digivolutions.map(e => `<li>${e.to} (${e.condition})</li>`).join("")}
+      </ul>
+    </div>
+  `;
+
+  card.onclick = () => openModal(d);
+  return card;
+}
+
+function openModal(d) {
+  modalTitle.textContent = d.name;
+
+  modalBody.innerHTML = `
+    <p>${d.description}</p>
+
+    ${
+      d.abilities && d.abilities.length
+        ? `
+          <div class="abilities">
+            <strong>ABILITIES</strong>
             <ul>
-              ${d.digivolutions.map(e =>
-                `<li>${e.to} <span>(${e.condition})</span></li>`
-              ).join("")}
+              ${d.abilities.map(a => `<li>${a}</li>`).join("")}
             </ul>
-          </div>` : ""}
-      </div>
-    `;
-  });
+          </div>
+        `
+        : `
+          <div class="abilities muted">
+            <strong>ABILITIES</strong>
+            <p>No data available.</p>
+          </div>
+        `
+    }
+  `;
+
+  overlay.classList.remove("hidden");
 }
-function toggleCard(card) {
-  document.querySelectorAll(".card.expanded").forEach(c => {
-    if (c !== card) c.classList.remove("expanded");
+
+
+modalClose.onclick = () => overlay.classList.add("hidden");
+overlay.onclick = e => e.target === overlay && overlay.classList.add("hidden");
+
+
+// =====================
+// FILTER + RENDER
+// =====================
+function applyFilters() {
+  const query = search.value.toLowerCase().trim();
+  const stageValue = stageFilter.value; // "" = all
+  const typeValue = typeFilter.value.toLowerCase(); // "" = all
+
+  const filtered = digimonDex.filter(d => {
+    // SEARCH
+    const matchesSearch =
+      !query ||
+      d.name.toLowerCase().includes(query) ||
+      (d.description && d.description.toLowerCase().includes(query));
+
+    // STAGE
+    const stage = d.level?.split(" ")[1] || "";
+    const matchesStage = !stageValue || stage === stageValue;
+
+    // TYPES (ARRAY-SAFE)
+    const types = [
+      ...(Array.isArray(d.type1) ? d.type1 : []),
+      ...(Array.isArray(d.type2) ? d.type2 : [])
+    ].map(t => t.toLowerCase());
+
+    const matchesType = !typeValue || types.includes(typeValue);
+
+    return matchesSearch && matchesStage && matchesType;
   });
 
-  card.classList.toggle("expanded");
+  render(filtered);
 }
 
-render(digimonDex);
+function clearFilters() {
+  search.value = "";
+  stageFilter.value = "";
+  typeFilter.value = "";
+      
+  render(digimonDex);
+}
 
-search.addEventListener("input", () => {
-  const q = search.value.toLowerCase();
-  render(digimonDex.filter(d =>
-    d.name.toLowerCase().includes(q) ||
-    d.type1.toLowerCase().includes(q) ||
-    d.type2.toLowerCase().includes(q) ||
-    d.level.toLowerCase().includes(q)
-  ));
+// =====================
+// RENDER
+// =====================
+function render(list) {
+  dexEl.innerHTML = "";
+  list.forEach(d => dexEl.appendChild(createCard(d)));
+}
+
+// =====================
+// LISTENERS
+// =====================
+const clearBtn = document.getElementById("clearFilters");
+search.addEventListener("input", applyFilters);
+stageFilter.addEventListener("change", applyFilters);
+typeFilter.addEventListener("change", applyFilters);
+clearBtn.addEventListener("click", () => {
+  search.value = "";
+  stageFilter.value = "";
+  typeFilter.value = "";
+
+  render(digimonDex);
 });
-</script>
 
+
+
+// INITIAL LOAD //
+render(digimonDex);
+</script>
 </body>
 </html>
