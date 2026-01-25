@@ -245,6 +245,7 @@ margin: 24px auto 0 auto;
 .magic    { color: #ec407a; }
 .undead   { color: #7e57c2; }
 .mystery  { color: #26c6da; }
+.rock     { color: #91543c; }
 
 /* =====================
    DESCRIPTION
@@ -471,7 +472,7 @@ h1 {
         <option value="Adult">Adult</option>
         <option value="Perfect">Perfect</option>
         <option value="Mega">Mega</option>
-        <option value="Mega+">Mega+</option>
+        <option value="Ultra">Ultra</option>
       </select>
     </div>
 
@@ -498,6 +499,7 @@ h1 {
         <option value="Magic">Magic</option>
         <option value="Undead">Undead</option>
         <option value="Mystery">Mystery</option>
+        <option value="Rock">Rock</option>
       </select>
     </div>
     </div>
@@ -714,7 +716,7 @@ const digimonDex = [
 },
 {
   name: "Goddramon",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Dragon"],
   type2: ["Holy"],
   description: "Seraphimon given Light Data, or Level 80",
@@ -809,7 +811,7 @@ const digimonDex = [
 ,
 {
   name: "Holydramon",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Holy"],
   type2: ["Dragon"],
   description: "Level 80 Digivolution of Kyukimon",
@@ -894,7 +896,7 @@ const digimonDex = [
 },
 {
   name: "Omegamon",
-  level: "6 Mega+",
+  level: "7 Ultra",
   type1: ["Fire"],
   type2: ["Ice"],
   description: "Jogress of WarGreymon with MetalGarurumon",
@@ -985,7 +987,7 @@ const digimonDex = [
 },
 {
   name: "Omegamon Alter-S",
-  level: "6 Mega+",
+  level: "7 Ultra",
   type1: ["Fighting"],
   type2: ["Electric"],
   description: "Jogress of CresGarurumon with BlitzGreymon",
@@ -1064,7 +1066,7 @@ const digimonDex = [
 },
 {
   name: "AegisDramon",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Steel"],
   type2: ["Water"],
   description: "Jogress Digivolution of Plesiomon and MetalSeadramon",
@@ -1141,8 +1143,7 @@ const digimonDex = [
   type2: ["Holy"],
   description: "Light Data given to Veemon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Sturdy"
   ],
   digivolutions: [
     { to: "Manticoremon", condition: "Level 32" }
@@ -1206,7 +1207,7 @@ const digimonDex = [
 },
 {
   name: "Imperialdramon Paladin Mode",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Dragon"],
   type2: ["Holy"],
   description: "(Mega Evolution) with the Omega Blade",
@@ -1267,13 +1268,13 @@ const digimonDex = [
 ,
 {
   name: "Azulongmon",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Dragon"],
   type2: ["Electric"],
   description: "Level 70 Digivolution of Majiramon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Hadron Engine",
+    "Dragon's Maw"
   ],
 }
 ,
@@ -1339,8 +1340,8 @@ const digimonDex = [
   type2: ["Dragon"],
   description: "Level 30 Digivolution of Stingmon with ExVeemon in party",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Compound Eyes",
+    "Tough Claw"
   ],
   digivolutions: [
     { to: "Imperialdramon Dragon Mode", condition: "Level 54" }
@@ -1353,8 +1354,8 @@ const digimonDex = [
   type2: ["None"],
   description: "Route 103 or Petalburg Forest",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Sturdy",
+    "Marvel Scale"
   ],
   digivolutions: [
     { to: "Ankylomon", condition: "Level 18" },
@@ -1439,8 +1440,8 @@ const digimonDex = [
   type2: ["Bug"],
   description: "Level 32 Digivolution of Digmon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Sturdy",
+    "Marvel Scales"
   ],
   digivolutions: [
     { to: "Eldoradimon", condition: "Level 54" }
@@ -1457,7 +1458,7 @@ const digimonDex = [
     "Marvel Scale"
   ],
   digivolutions: [
-    { to: "Marin Angemon", condition: "Level 54" },
+    { to: "MarineAngemon", condition: "Level 54" },
     { to: "KingWhamon", condition: "King's Rock" }
   ]
 },
@@ -1468,8 +1469,7 @@ const digimonDex = [
   type2: ["Holy"],
   description: "Level 54 Digivolution of Shakkoumon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Sharpness"
   ],
 }
 ,
@@ -1480,8 +1480,8 @@ const digimonDex = [
   type2: ["Steel"],
   description: "Level 54 Digivolution of Brachiomon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Long Reach",
+    "Sap Sapper"
   ],
 }
 ,
@@ -1492,22 +1492,22 @@ const digimonDex = [
   type2: ["Grass"],
   description: "Level 54 Digivolution of SkullScorpiomon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Solid Rock",
+    "Sap Sipper"
   ],
   digivolutions: [
     { to: "Tlalocmon", condition: "Jogress with SaberLeomon" }
   ]
 },
 {
-  name: "Marin Angemon",
+  name: "MarineAngemon",
   level: "6 Mega",
   type1: ["Water"],
   type2: ["Holy"],
   description: "Level 54 Digivolution of Whamon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Healer",
+    "Marvel Scale"
   ],
 }
 ,
@@ -1525,7 +1525,7 @@ const digimonDex = [
 ,
 {
   name: "Tlalocmon",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Grass"],
   type2: ["Electric"],
   description: "Jogress Digivolution of ElDoradimon and SaberLeomon",
@@ -1572,8 +1572,8 @@ const digimonDex = [
   type2: ["Fairy"],
   description: "Wind Data given to Hawkmon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Soul Heart",
+    "Friend Guard"
   ],
   digivolutions: [
     { to: "Peacockmon", condition: "Level 32" }
@@ -1681,8 +1681,8 @@ const digimonDex = [
   type2: ["Holy"],
   description: "Level 54 Digivolution of Silphymon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Gale Wings",
+    "Wind Rider"
   ],
 }
 ,
@@ -1714,7 +1714,7 @@ const digimonDex = [
 },
 {
   name: "Chaosmon Valdur Arm",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Mystery"],
   type2: ["None"],
   description: "Jogress with BanchoLeomon",
@@ -1833,7 +1833,7 @@ const digimonDex = [
 },
 {
   name: "Fenriloogamon Takemikazuchi",
-  level: "7 Mega+",
+  level: "7 Ultra",
   type1: ["Magic"],
   type2: ["Electric"],
   description: "Jogress Digivolution of Kazuchimon and Fenriloogamon",
@@ -1863,25 +1863,25 @@ const digimonDex = [
   type2: ["Fire"],
   description: "Level 18 Digivolution of Luxmon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Blaze",
+    "Justified"
   ],
   digivolutions: [
     {
-      to: "Arkhai Angemon",
+      to: "ArkhaiAngemon",
       condition: "Level 32, Summons Gargoylemon to empty party slot"
     }
   ]
 },
 {
-  name: "Arkhai Angemon",
+  name: "ArkhaiAngemon",
   level: "5 Perfect",
   type1: ["Holy"],
   type2: ["Fire"],
   description: "Level 32 Digivolution of Piddmon, summons Gargoylemon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Blaze",
+    "Justified"
   ],
   digivolutions: [
     { to: "ClavisAngemon", condition: "Level 54" }
@@ -1905,8 +1905,8 @@ const digimonDex = [
   type2: ["Ground"],
   description: "Route 102, Granite Cave F1",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Emergency Exit",
+    "Run Away"
   ],
   digivolutions: [
     { to: "Ogremon", condition: "Level 18" },
@@ -2609,7 +2609,7 @@ const digimonDex = [
 },
 
 {
-  name: "Wizarmon",
+  name: "Wizardmon",
   level: "Adult",
   type1: ["Dark"],
   type2: ["Magic"],
@@ -2656,7 +2656,7 @@ const digimonDex = [
   level: "Perfect",
   type1: ["Dark"],
   type2: ["Magic"],
-  description: "Digivolves from Wizarmon at level 32",
+  description: "Digivolves from Wizardmon at level 32",
   abilities: [
     "Magic Guard",
     "Magic Bounce"
