@@ -71,8 +71,59 @@ h1 {
 }
 
 /* =====================
-   SEARCH
+   DROPDOWN NAV
 ===================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.dropdown-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-subtle);
+}
+
+
+
+
+
 /* =====================
    SEARCH
 ===================== */
@@ -266,11 +317,20 @@ h1 {
   <h1>AREA ENCOUNTERS</h1>
   <div class="subtitle">Wild Digimon Encounters</div>
 
-  <div class="nav">
-    <a href="index.html">DIGIMON</a>
-    <a href="encounter.html">ENCOUNTERS</a>
-    <a href="credits.html">CREDITS</a>
+<div class="nav">
+  <a href="index.html">DIGIMON</a>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">GUIDE ▾</button>
+    <div class="dropdown-menu">
+      <a href="encounter.html">Encounters</a>
+      <a href="tamer-battles.html">Tamer Battles</a>
+      <a href="faq.html">FAQ</a>
+      <a href="credits.html">Credits</a>
+    </div>
   </div>
+</div>
+
 
 <div class="search-wrapper">
   <textarea
@@ -752,5 +812,27 @@ function resetView() {
 clearBtn.addEventListener("click", resetView);
 document.addEventListener("keydown", e => e.key === "Escape" && resetView());
 </script>
+
+<!-- /* =========================
+   NAV
+========================= */ -->
+
+<script>
+const dropdown = document.querySelector(".dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+toggle.addEventListener("click", e => {
+  e.stopPropagation();
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", () => {
+  menu.style.display = "none";
+});
+</script>
+
+
+
 </body>
 </html>
