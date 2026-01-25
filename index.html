@@ -644,8 +644,8 @@ const digimonDex = [
   type2: ["None"],
   description: "Level 20 Digivolution of Salamon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Cute Charm",
+    "Magic Bounce"
   ],
   digivolutions: [
     { to: "Angewomon", condition: "Level 35" }
@@ -712,8 +712,8 @@ const digimonDex = [
   type2: ["Dragon"],
   description: "Level 80 Digivolution of Kyukimon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Magic Bounce",
+    "Regenerator"
   ],
 }
 ,
@@ -769,12 +769,36 @@ const digimonDex = [
   type2: ["Ice"],
   description: "Mega Stage",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Blaze",
+    "Solar Power"
   ],
   digivolutions: [
     { to: "Omegamon", condition: "Jogress with MetalGarurumon" }
   ]
+},
+{
+  name: "BlitzGreymon",
+  level: "6 Mega",
+  type1: ["Electric"],
+  type2: ["Steel"],
+  description: "Digivolution of WarGreymon upon leveling up in New Mauville",
+  abilities: [
+    "Lighting Rod",
+    "Electric Surge"
+  ],
+  digivolutions: [
+    { to: "Omegamon", condition: "Jogress with MetalGarurumon" }
+  ]
+},
+{
+  name: "Omegamon",
+  level: "6 Mega+",
+  type1: ["Fire"],
+  type2: ["Ice"],
+  description: "Jogress of WarGreymon with MetalGarurumon",
+  abilities: [
+    "Protean"
+      ],
 },
 {
   name: "Gabumon",
@@ -856,8 +880,17 @@ const digimonDex = [
     "Motor Drive",
     "Hadron Engine"
   ],
-}
-,
+},
+{
+  name: "Omegamon Alter-S",
+  level: "6 Mega+",
+  type1: ["Fighting"],
+  type2: ["Electric"],
+  description: "Jogress of CresGarurumon with BlitzGreymon",
+  abilities: [
+    "Speed Boost"
+      ],
+},
 {
   name: "Gomamon",
   level: "3 Child",
@@ -934,8 +967,8 @@ const digimonDex = [
   type2: ["Water"],
   description: "Jogress Digivolution of Plesiomon and MetalSeadramon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Water",
+    "Steel"
   ],
 }
 ,
@@ -968,7 +1001,7 @@ const digimonDex = [
   ],
   digivolutions: [
     { to: "AeroVeedramon", condition: "Level 32" },
-    { to: "Paildramon", condition: "Level 30 with Stingmon in party" }
+    { to: "Paildramon", condition: "Level 30 with Stingmon in party, No Jogress Chip" }
   ]
 },
 {
@@ -978,8 +1011,8 @@ const digimonDex = [
   type2: ["Fire"],
   description: "Fire Data given to Veemon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Blaze",
+    "Adaptability"
   ],
   digivolutions: [
     { to: "Magnamon", condition: "Level 32" }
@@ -992,8 +1025,8 @@ const digimonDex = [
   type2: ["Electric"],
   description: "Thunder Data given to Veemon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Lighting Rod",
+    "Adaptability"
   ],
   digivolutions: [
     { to: "Majiramon", condition: "Level 32" }
@@ -1048,8 +1081,8 @@ const digimonDex = [
   type2: ["Bug"],
   description: "Level 54 Digivolution of Paildramon",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Mega Launcher",
+    "Tough Claws"
   ],
   digivolutions: [
     { to: "Imperialdramon Fighting Mode", condition: "Use Positron Laser at Level 62" }
@@ -1057,16 +1090,26 @@ const digimonDex = [
 },
 {
   name: "Imperialdramon Fighting Mode",
-  level: "7 Mega+",
+  level: "6 Mega",
   type1: ["Dragon"],
   type2: ["Fighting"],
   description: "Using Positron Laser as Imperialdramon DM",
   abilities: [
-    "UNKNOWN",
-    "UNKNOWN"
+    "Tough Claws",
+    "Mega Launcher"
   ],
   digivolutions: [
     { to: "Imperialdramon Paladin Mode", condition: "Omega Blade" }
+  ]
+},
+{
+  name: "Imperialdramon Paladin Mode",
+  level: "7 Mega+",
+  type1: ["Dragon"],
+  type2: ["Holy"],
+  description: "(Mega Evolution) with the Omega Blade",
+  abilities: [
+    "Justified"
   ]
 },
 {
@@ -1158,7 +1201,7 @@ const digimonDex = [
   ],
   digivolutions: [
     { to: "JewelBeemon", condition: "Level 32" },
-    { to: "DinoBeemon", condition: "Level 30 with ExVeemon in party" }
+    { to: "DinoBeemon", condition: "Level 30 with ExVeemon in party, No Jogress Chip" }
   ]
 },
 {
@@ -1228,7 +1271,7 @@ const digimonDex = [
     "Marvel Scale"
   ],
   digivolutions: [
-    { to: "Shakkoumon", condition: "Level 30 with Angemon or Pegasmon in party" },
+    { to: "Shakkoumon", condition: "Level 30 with Angemon or Pegasmon in party, No Jogress Chip" },
     { to: "Brachiomon", condition: "Level 32 without Angemon or Pegasmon" }
   ]
 },
@@ -1417,7 +1460,7 @@ const digimonDex = [
   ],
   digivolutions: [
     { to: "Hippogriffomon", condition: "Level 32" },
-    { to: "Silphymon", condition: "Level 30 with Gatomon in party" }
+    { to: "Silphymon", condition: "Level 30 with Gatomon in party, no Jogress Chip" }
   ]
 },
 {
@@ -1852,7 +1895,7 @@ const digimonDex = [
   level: "Adult",
   type1: ["Ground"],
   type2: ["None"],
-  description: "(Base)",
+  description: "Base, Route 103",
   abilities: ["Sand Veil", "Sand Force"],
   digivolutions: [
     { to: "Landramon", condition: "Level 18 without Withdraw" },
@@ -2348,7 +2391,7 @@ const digimonDex = [
   level: "Perfect",
   type1: ["Grass"],
   type2: ["Bug"],
-  description: "Digivolves from Arbormon or Petaldramon at Level 32",
+  description: "Digivolves from Arbormon or Petaldramon as a Jogress at Level 32. No Jogress Chip required",
   abilities: [
     "Sap Sipper",
     "Cursed Body"
@@ -2611,11 +2654,11 @@ const digimonDex = [
     { to: "Yukinamon", condition: "Level 54" }
   ]
 },
-   {
+{
   name: "Sakuyamon",
   level: "Mega",
   type1: ["Magic"],
-  type2: ["Fighting"],
+  type2: ["Fight"],
   description: "Digivolves from Taomon at level 54",
   abilities: [
     "Magic Bounce",
@@ -2639,6 +2682,7 @@ const digimonDex = [
 
   ]
 },
+
 {
   name: "Terriermon",
   level: "Child",
