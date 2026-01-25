@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digimon Trials – FAQ</title>
+
+<style>
+:root {
+  --bg-main: #0f1115;
+  --bg-panel: #171a21;
+  --bg-card: #1f2430;
+  --bg-subtle: #232838;
+
+  --text-main: #f2f4f8;
+  --text-dim: #a8b0c2;
+
+  --border: rgba(255,255,255,0.08);
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* HEADER */
+h1 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.nav a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.nav a:hover {
+  background: var(--bg-subtle);
+}
+
+/* SEARCH */
+.search-box {
+  display: block;
+  margin: 24px auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-main);
+}
+
+.search-box::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* FAQ */
+#faq {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.faq-item.hidden {
+  display: none;
+}
+
+.faq-question {
+  padding: 16px 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.faq-question:hover {
+  background: var(--bg-subtle);
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding: 0 18px;
+}
+
+.faq-item.open .faq-answer {
+  padding: 0 18px 18px;
+  max-height: 900px;
+}
+
+/* RICH TEXT */
+.faq-answer p {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.faq-answer strong {
+  color: var(--text-main);
+}
+
+.faq-answer ul {
+  margin: 10px 0 0 18px;
+}
+
+.faq-answer li {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+}
+/* =====================
+   DROPDOWN NAV
+===================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.dropdown-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-subtle);
+}
+
+          
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<h1>FAQ</h1>
+<div class="subtitle">Digimon Trials – Frequently Asked Questions</div>
+
+  <div class="nav">
+      <a href="index.html">DIGIMON</a>
+  <a href="credits.html">CREDITS</a>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">GUIDE ▾</button>
+    <div class="dropdown-menu">
+      <a href="encounter.html">Encounters</a>
+    </div>
+  </div>
+</div>
+
+<input id="search" class="search-box" placeholder="Search FAQ (Jogress, Android, EXP...)">
+
+<div id="faq"></div>
+
+</div>
+
+<script>
+// =====================
+// DATA
+// =====================
+const faqData = [
+  {
+    q: "Can Digimon Trials be played on Android or Mobile?",
+    a: `
+      <p>Yes. Like most Pokémon ROM hacks, Digimon Trials can be played on Android using a compatible GBA emulator. You’ll need to apply the Digimon Trials patch to a <strong> clean EU or NA Pokémon Emerald ROM </strong> using an online ROM patcher.
+
+<p>As of version 8.0. Beta, Digimon Trials <strong> is not a decomp hack,</strong> so it does not require the TrashMan version of Emerald. </p>
+
+<p><strong>Important:</strong><p>
+<p>ONLY download patches <strong>from Digimon Trials’ official Discord server.</strong></p> 
+<p>You can join the server using the link provided above.</p>
+    `
+  },
+  {
+    q: "So… what should I know when I first start off?",
+    a: `
+      <p><strong>One of the most important early-game tips:</strong> catch a Digimon that can learn <strong>Thief</strong> as soon as possible. </p>
+      <p>Many wild Digimon and trainer battles carry valuable held items that can greatly help your progression.</p>
+      <ul>
+        <li>Falcomon</li>
+        <li>Gazimon</li>
+        <li>Goblinmon</li>
+      </ul>
+    `
+  },
+  {
+    q: "How do I Jogress my Digimon?",
+    a: `
+<p>Jogress Digivolution requires special items called <strong>Jogress Chips</strong>, which are obtained as you progress through the story.</p>
+
+<p><strong>Jogress Chip 1</strong></p>
+<ul>
+  <li>Obtained through <strong>Gatomon’s Crest</strong></li>
+  <li>Can <strong>ONLY</strong> be used to combine:</li>
+  <ul>
+    <li><strong>Angewomon + Devimon → Mastemon</strong></li>
+  </ul>
+</ul>
+
+<p><strong>Jogress Chip 2</strong></p>
+<ul>
+  <li>Used for other Jogress Digimon such as:</li>
+  <ul>
+    <li><strong>Omegamon Alter-B</strong></li>
+    <li><strong>Susanoomon</strong></li>
+    <li>And more</li>
+  </ul>
+  <li>Obtained later in the game after battling a powerful trainer in <strong>Victory Road</strong></li>
+</ul>
+
+    `
+  },
+  {
+    q: "Is there a limitation to Jogress?",
+    a: `
+      <p><strong>Yes.</strong> Jogress Chips are limited to creating <strong>one Jogress Digimon total</strong> across your <strong>party and PC storage</strong>.</p>
+
+<p>This limitation also applies to <strong>Jogress Chip 1</strong>:</p>
+
+<ul>
+  <li>If you already have <strong>Mastemon</strong> in your party or PC</li>
+  <li>You will <strong>not</strong> be able to use <strong>Jogress Chip 2</strong></li>
+  <li>The reverse also applies</li>
+</ul>
+
+<p><strong>Exception:</strong></p>
+<ul>
+  <li>Digimon caught directly as <strong>Ultra</strong> or <strong>Mega+</strong> are not affected</li>
+  <li>Owning them will <strong>not</strong> prevent Jogress Chip usage</li>
+</ul>
+
+<p>As of version <strong>8.0.0</strong>, additional Ultra Digimon can be caught in the <strong>Artisan Cave</strong>, though at a <strong>very low catch rate</strong>.</p>
+
+    `
+  },
+  {
+    q: "Why do my Digimon stop gaining EXP at level 18?",
+    a: `
+<p>Your Digimon have reached the current <strong>level cap</strong>.</p>
+
+<p>They will not gain EXP until you defeat the next <strong>Crest Guardian</strong>.</p>
+
+<p>In most cases:</p>
+<ul>
+  <li>Each Crest Guardian increases the level cap by <strong>5 levels</strong></li>
+</ul>
+
+<p><strong>Exceptions exist.</strong>  
+For example, after obtaining the <strong>Palmon Crest</strong>, the level cap jumps directly to <strong>level 60</strong> after battling <strong>Team Aqua atop Mt. Pyre</strong>.</p>
+
+    `
+  },
+  {
+    q: "How do I Burst Digivolve or Mega Evolve?",
+    a: `
+ <ol>
+  <li>Obtain the <strong>Digivice IC</strong> from the <strong>Team Aqua Hideout</strong></li>
+  <li>Have your Digimon hold the required evolution item
+    <ul>
+<p> <em>Example:</em> <strong>Shine Soul</strong> for ShineGreymon</p>
+    </ul>
+  </li>
+  <li>During battle, select a move and press <strong>Start</strong></li>
+  <li>The Burst/Mega evolution icon will light up</li>
+  <li>Confirm the move to Burst or Mega Digivolve</li>
+</ol>
+
+<p><strong>⚠ Note:</strong><br>
+Only <strong>one Burst or Mega Digivolution</strong> can be performed per battle.</p>
+
+
+    `
+  }
+];
+
+// =====================
+// RENDER
+// =====================
+const faqEl = document.getElementById("faq");
+const searchEl = document.getElementById("search");
+
+function renderFAQ() {
+  faqEl.innerHTML = "";
+
+  faqData.forEach(item => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "faq-item";
+
+    const q = document.createElement("div");
+    q.className = "faq-question";
+    q.innerHTML = `<span>${item.q}</span><span class="faq-icon">+</span>`;
+
+    const a = document.createElement("div");
+    a.className = "faq-answer";
+    a.innerHTML = item.a;
+
+    q.addEventListener("click", () => {
+      wrapper.classList.toggle("open");
+    });
+
+    wrapper.append(q, a);
+    faqEl.appendChild(wrapper);
+  });
+}
+
+// =====================
+// SEARCH + ISOLATION
+// =====================
+searchEl.addEventListener("input", () => {
+  const term = searchEl.value.toLowerCase().trim();
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+
+    if (!term) {
+      item.classList.remove("hidden", "open");
+      return;
+    }
+
+    if (text.includes(term)) {
+      item.classList.remove("hidden");
+      item.classList.add("open");
+    } else {
+      item.classList.add("hidden");
+      item.classList.remove("open");
+    }
+  });
+});
+
+// INIT
+renderFAQ();
+</script>
+<script>
+const dropdown = document.querySelector(".dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+toggle.addEventListener("click", e => {
+  e.stopPropagation();
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", () => {
+  menu.style.display = "none";
+});
+</script>
+</body>
+</html>
