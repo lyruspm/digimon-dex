@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digimon Trials – Credits</title>
+
+<style>
+/* =====================
+   THEME
+===================== */
+:root {
+  --bg-main: #0f1115;
+  --bg-panel: #171a21;
+  --bg-card: #1f2430;
+  --bg-subtle: #232838;
+
+  --text-main: #f2f4f8;
+  --text-dim: #a8b0c2;
+
+  --border: rgba(255,255,255,0.08);
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  margin: 0;
+  padding: 32px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* =====================
+   HEADER / NAV
+===================== */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 26px 0 42px;
+}
+
+.nav a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.nav a:hover {
+  background: var(--bg-subtle);
+}
+
+/* =====================
+   DROPDOWN NAV
+===================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.dropdown-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-subtle);
+}
+
+
+
+/* =====================
+   CREDITS LAYOUT
+===================== */
+#credits {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.credits-section {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 24px;
+}
+
+.credits-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+
+/* =====================
+   PERSON ENTRIES
+===================== */
+.person {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.person + .person {
+  margin-top: 12px;
+}
+
+.person-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.person-alias {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.person-desc {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* =====================
+   EXTERNAL RESOURCES
+===================== */
+#resources {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.resources-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.resources-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resource-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.resource-btn:hover {
+  background: var(--bg-subtle);
+  transform: translateY(-1px);
+}
+/* =====================
+   RESOURCES DROPDOWNS
+===================== */
+.resource-dropdown {
+  position: relative;
+}
+
+.resource-toggle {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.resource-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.resource-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 60;
+}
+
+.resource-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.resource-menu a:hover {
+  background: var(--bg-subtle);
+}
+
+/* =====================
+   FOOTER / LEGAL
+===================== */
+.legal {
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <h1>CREDITS</h1>
+  <div class="subtitle">Digimon Trials – Fanmade ROM Hack</div>
+
+  <div class="nav">
+    <a href="index.html">DIGIMON</a>
+    
+    <div class="dropdown">
+    <button class="dropdown-toggle">GUIDE ▾</button>
+    <div class="dropdown-menu">
+      <a href="encounter.html">Encounters</a>      
+    </div>
+  </div>
+</div>
+
+  <div id="credits"></div>
+  <div id="resources"></div>
+
+
+  <div class="legal">
+    Digimon Trials is a non-profit, fanmade ROM hack of Pokémon Emerald.<br>
+    This project is not affiliated with or endorsed by Digimon or Pokémon.<br><br>
+    Pokémon © Nintendo, Game Freak, and The Pokémon Company.<br>
+    Digimon © Bandai Namco Entertainment.
+  </div>
+
+</div>
+
+<script>
+// =====================
+// DATA
+// =====================
+const creditsData = [
+  {
+    title: "ROM Hack Maker",
+    people: [
+      {
+        name: "Ferio Triforce",
+        alias: null,
+        desc: "Creator and lead developer of Digimon Trials.Responsible for the ROM Hack."
+      }
+    ]
+  },
+  {
+    title: "Community Contributors",
+    people: [
+      {
+        name: "papabert04",
+        alias: "aka papabert 04",
+        desc: "Documented wild fishing rod encounters and wild Digimon held items."
+      },
+      {
+        name: "vexvitality",
+        alias: "aka Vex Vitality",
+        desc: "Organizer of the Digimon Trials Discord group and coordination of community efforts."
+      },
+      {
+        name: "docbio13",
+        alias: "aka docbio13",
+        desc: "Documented tamer encounters, obtainable items, and related gameplay data."
+      },
+      {
+        name: "vicho3186",
+        alias: "aka Bug Buzz",
+        desc: "Documented tamer encounters and compiled a complete table of tamers and Digimon."
+      }
+    ]
+  }
+];
+
+// =====================
+// RENDER
+// =====================
+const creditsEl = document.getElementById("credits");
+
+function renderCredits(data) {
+  creditsEl.innerHTML = "";
+  data.forEach(section => creditsEl.appendChild(createSection(section)));
+}
+
+// =====================
+// COMPONENTS
+// =====================
+function createSection(section) {
+  const block = document.createElement("div");
+  block.className = "credits-section";
+
+  const title = document.createElement("div");
+  title.className = "credits-title";
+  title.textContent = section.title;
+
+  block.appendChild(title);
+
+  section.people.forEach(p => {
+    block.appendChild(createPerson(p));
+  });
+
+  return block;
+}
+
+function createPerson(person) {
+  const wrap = document.createElement("div");
+  wrap.className = "person";
+
+  wrap.innerHTML = `
+    <div class="person-name">${person.name}</div>
+    ${person.alias ? `<div class="person-alias">${person.alias}</div>` : ""}
+    <div class="person-desc">${person.desc}</div>
+  `;
+
+  return wrap;
+}
+
+// =====================
+// INIT
+// =====================
+renderCredits(creditsData);
+</script>
+<script>
+/* =====================
+   DROPDOWN NAV
+===================== */
+const dropdown = document.querySelector(".dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+toggle.addEventListener("click", e => {
+  e.stopPropagation();
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", () => {
+  menu.style.display = "none";
+});
+</script>
+<script>
+/* =====================
+   EXTERNAL RESOURCES (DROPDOWNS)
+===================== */
+const resourcesEl = document.getElementById("resources");
+
+const resourcesData = [
+  {
+    title: "PROJECT DOCUMENTATION",
+    links: [
+      { label: "BugBuzz's Dex", url: "https://docs.google.com/spreadsheets/d/10uruv2UNsVSOqmBHhEoWNnefbrLrDvr4dsprWjLJ1ug/edit?usp=drivesdk" }
+         ]
+  },
+  {
+    title: "OTHER DIGIMON TRIALS DEX WEBSITE",
+    links: [
+      { label: "Bitancutiee's Website", url: "https://digiguidejv.vercel.app/" },
+      { label: "Official Digimon Trials Discord", url: "https://discord.gg/Tp2NtXjmy" }
+    ]
+  }
+];
+
+function renderResourceDropdowns(data) {
+  resourcesEl.innerHTML = "";
+
+  const title = document.createElement("div");
+  title.className = "resources-title";
+  title.textContent = "EXTERNAL RESOURCES";
+
+  const wrap = document.createElement("div");
+  wrap.className = "resources-buttons";
+
+  data.forEach(section => {
+    wrap.appendChild(createResourceDropdown(section));
+  });
+
+  resourcesEl.append(title, wrap);
+}
+
+function createResourceDropdown(section) {
+  const dropdown = document.createElement("div");
+  dropdown.className = "resource-dropdown";
+
+  const toggle = document.createElement("button");
+  toggle.className = "resource-toggle";
+  toggle.textContent = section.title + " ▾";
+
+  const menu = document.createElement("div");
+  menu.className = "resource-menu";
+
+  section.links.forEach(link => {
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = link.label;
+    menu.appendChild(a);
+  });
+
+  toggle.addEventListener("click", e => {
+    e.stopPropagation();
+    closeAllResourceMenus();
+    menu.style.display = "flex";
+  });
+
+  dropdown.append(toggle, menu);
+  return dropdown;
+}
+
+function closeAllResourceMenus() {
+  document.querySelectorAll(".resource-menu").forEach(m => {
+    m.style.display = "none";
+  });
+}
+
+document.addEventListener("click", closeAllResourceMenus);    
+
+/* =====================
+   INIT
+===================== */
+renderResourceDropdowns(resourcesData);
+</script>
+</body>
+</html>
