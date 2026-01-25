@@ -85,7 +85,6 @@ margin: 24px auto 0 auto;
   align-items: flex-end;
 }
 
-
 .filter-group {
   display: flex;
   flex-direction: column;
@@ -106,15 +105,31 @@ margin: 24px auto 0 auto;
   border-radius: 8px;
   font-size: 0.85rem;
 }
+.clear-group {
+  display: flex;
+  align-items: center;  
+}
+
+/* CLEAR BUTTON — CLEAN */
 #clearFilters {
-  padding: 10px 22px;
+  height: 36px;
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: 999px;
   background: #0b0d12;
   color: #d0d4dc;
+
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+
   border: 1px solid rgba(255,255,255,0.12);
   cursor: pointer;
+
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -122,13 +137,7 @@ margin: 24px auto 0 auto;
   background: #161a22;
   color: #ffffff;
 }
-.clear-group {
-  justify-content: flex-end;
-}
 
-#clearFilters {
-  height: 36px; /* matches select height */
-}
 
 
 
@@ -344,7 +353,89 @@ margin: 24px auto 0 auto;
   font-style: italic;
 }
 
+/* =====================
+   HEADER / NAV
+===================== */
+h1 {
+  text-align: center;
+}
 
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.nav a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.nav a:hover {
+  background: var(--bg-subtle);
+}
+
+/* =====================
+   DROPDOWN NAV
+===================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.dropdown-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-subtle);
+}
 
           
 </style>
@@ -355,7 +446,22 @@ margin: 24px auto 0 auto;
 
 <div class="top-controls">
   <h1>DIGIMON TRIALS DEX</h1>
-  <div class="subtitle">Fan-made Digimon reference tool</div>
+  
+  <div class="subtitle">Digimon Trials is a fanmade Digimon ROM hack of Pokemon Emerald</div>
+  <div class="nav">
+  <a href="index.html">DIGIMON</a>
+
+  <div class="dropdown">
+    <button class="dropdown-toggle">GUIDE ▾</button>
+    <div class="dropdown-menu">
+      <a href="encounter.html">Encounters</a>
+      <a href="tamer-battles.html">Tamer Battles</a>
+      <a href="faq.html">FAQ</a>
+      <a href="credits.html">Credits</a>
+    </div>
+  </div>
+</div>
+
 
   <input id="search" class="search-box" placeholder="Search Digimon...">  
 
@@ -403,7 +509,6 @@ margin: 24px auto 0 auto;
   <label>&nbsp;</label>
   <button id="clearFilters">Clear Filters</button>
 </div>
-
 
 
 
@@ -3201,5 +3306,20 @@ clearBtn.addEventListener("click", () => {
 // INITIAL LOAD //
 render(digimonDex);
 </script>
+<script>
+const dropdown = document.querySelector(".dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+toggle.addEventListener("click", e => {
+  e.stopPropagation();
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", () => {
+  menu.style.display = "none";
+});
+</script>
+
 </body>
 </html>
