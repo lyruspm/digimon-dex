@@ -286,7 +286,7 @@ margin: 24px auto 0 auto;
   z-index: 1000;
 }
 
-.hidden { display: none; }
+.hidden { display: None; }
 
 .modal {
   width: min(720px, 92vw);
@@ -445,12 +445,2534 @@ const digimonDex = [
     type1: ["Fighting"],
     type2: ["None"],
     description: "Level 20 Digivolution of Lopmon",
+    abilities: [
+    "Tough Claw",
+    "Speed Boost"
+    ],
     digivolutions: [
       { to: "Antylamon Good", condition: "Level 35" }
     ]
-  }
-];
+    },
+{
+  name: "Wendimon",
+  level: "4 Adult",
+  type1: ["Fighting"],
+  type2: ["Dark"],
+  description: "Dark Data given to Lopmon",
+  abilities: [
+    "Berserk",
+    "Moxie"
+  ],
+  digivolutions: [
+    { to: "Antylamon Evil", condition: "Level 35" }
+  ]
+},
+{
+  name: "Antylamon Good",
+  level: "5 Perfect",
+  type1: ["Fighting"],
+  type2: ["Holy"],
+  description: "Level 35 Digivolution of Turuiemon",
+  abilities: [
+    "Tough Claw",
+    "Speed Boost"
+  ],
+  digivolutions: [
+    { to: "Cherubimon Good", condition: "Level 56" },
+    { to: "Antylamon Evil", condition: "Slide Digivolution with Dark Data" }
+  ]
+},
+{
+  name: "Antylamon Evil",
+  level: "5 Perfect",
+  type1: ["Fighting"],
+  type2: ["Dark"],
+  description: "Level 35 Digivolution of Wendimon",
+  abilities: [
+    "Berserk",
+    "Moxie"
+  ],
+  digivolutions: [
+    { to: "Cherubimon Evil", condition: "Level 56" },
+    { to: "Antylamon Good", condition: "Slide Digivolution with Light Data" }
+  ]
+},
+{
+  name: "Cherubimon Good",
+  level: "6 Mega",
+  type1: ["Fighting"],
+  type2: ["Holy"],
+  description: "Level 56 Digivolution of Antylamon Good",
+  abilities: [
+    "Tough Claw",
+    "Speed Boost"
+  ],
+  digivolutions: [
+    { to: "Cherubimon Evil", condition: "Slide Digivolution with Dark Data" }
+  ]
+},
+{
+  name: "Cherubimon Evil",
+  level: "6 Mega",
+  type1: ["Fighting"],
+  type2: ["Dark"],
+  description: "Level 56 Digivolution of Antylamon Evil",
+  abilities: [
+    "Dark Aura",
+    "Beast Boost"
+  ],
+  digivolutions: [
+    { to: "Cherubimon Good", condition: "Slide Digivolution with Light Data" }
+  ]
+},
+{
+  name: "Patamon",
+  level: "3 Child",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Starter or Spear Pillar F1",
+  abilities: [
+    "Run Away",
+    "Unburden"
+  ],
+  digivolutions: [
+    { to: "Angemon", condition: "Level 20" },
+    { to: "Pegasmon", condition: "Light Data" }
+  ]
+},
+{
+  name: "Angemon",
+  level: "4 Adult",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Level 20 Digivolution of Patamon",
+  abilities: [
+    "Justified",
+    "Purifying Salt"
+  ],
+  digivolutions: [
+    { to: "MagnaAngemon", condition: "Level 35" }
+  ]
+},
+{
+  name: "Pegasmon",
+  level: "4 Adult",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Light Data given to Patamon",
+  abilities: [
+    "Run Away",
+    "Justified"
+  ],
+  digivolutions: [
+    { to: "Magna Angemon Priest Mode", condition: "Level 35" }
+  ]
+},
+{
+  name: "MagnaAngemon",
+  level: "5 Perfect",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Level 35 Digivolution of Angemon",
+  abilities: [
+    "Justified",
+    "Purifying Salt"
+  ],
+  digivolutions: [
+    { to: "Seraphimon", condition: "Level 56" }
+  ]
+},
+{
+  name: "MagnaAngemon Priest Mode",
+  level: "5 Perfect",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Level 35 Digivolution of Pegasmon",
+  abilities: [
+    "Healer",
+    "Justified"
+  ],
+  digivolutions: [
+    { to: "Seraphimon", condition: "Level 56" }
+  ]
+},
+{
+  name: "Seraphimon",
+  level: "6 Mega",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Level 56 Digivolution of MagnaAngemon",
+  abilities: [
+    "Justified",
+    "Purifying Salt"
+  ],
+  digivolutions: [
+    { to: "Goddramon", condition: "Light Data or Level 80" }
+  ]
+},
+{
+  name: "Goddramon",
+  level: "7 Mega+",
+  type1: ["Dragon"],
+  type2: ["Holy"],
+  description: "Seraphimon given Light Data, or Level 80",
+  abilities: [
+    "Parental Bond",
+    "Justified"
+  ],
+}
+,
+{
+  name: "Salamon",
+  level: "3 Child",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Starter, or Spear Pillar F1",
+  abilities: [
+    "Cute Charm",
+    "Magic Bounce"
+  ],
+  digivolutions: [
+    { to: "Gatomon", condition: "Level 20" },
+    { to: "Nefertimon", condition: "Light Data" }
+  ]
+},
+{
+  name: "Gatomon",
+  level: "4 Adult",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Level 20 Digivolution of Salamon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Angewomon", condition: "Level 35" }
+  ]
+},
+{
+  name: "Nefertimon",
+  level: "4 Adult",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Light Data given to Salamon",
+  abilities: [
+    "Magic Bounce",
+    "Regenerator"
+  ],
+  digivolutions: [
+    { to: "Kyukimon", condition: "Level 35" }
+  ]
+},
+{
+  name: "Angewomon",
+  level: "5 Perfect",
+  type1: ["Holy"],
+  type2: ["Fairy"],
+  description: "Level 35 Digivolution of Gatomon",
+  abilities: [
+    "Hospitality",
+    "Magic Bounce"
+  ],
+  digivolutions: [
+    { to: "Ophanimon", condition: "Level 56" }
+  ]
+},
+{
+  name: "Kyukimon",
+  level: "5 Perfect",
+  type1: ["Holy"],
+  type2: ["Flying"],
+  description: "Level 35 Digivolution of Nefertimon",
+  abilities: [
+    "Magic Bounce",
+    "Regenerator"
+  ],
+  digivolutions: [
+    { to: "Holydramon", condition: "Level 80" }
+  ]
+},
+{
+  name: "Ophanimon",
+  level: "6 Mega",
+  type1: ["Holy"],
+  type2: ["Fairy"],
+  description: "Level 56 Digivolution of Angewomon",
+  abilities: [
+    "Hospitality",
+    "Magic Bounce"
+  ],
+}
+,
+{
+  name: "Holydramon",
+  level: "7 Mega+",
+  type1: ["Holy"],
+  type2: ["Dragon"],
+  description: "Level 80 Digivolution of Kyukimon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Agumon",
+  level: "3 Child",
+  type1: ["Fire"],
+  type2: ["None"],
+  description: "Route 101",
+  abilities: [
+    "Blaze",
+    "Solar Power"
+  ],
+  digivolutions: [
+    { to: "Greymon", condition: "Level 18" }
+  ]
+},
+{
+  name: "Greymon",
+  level: "4 Adult",
+  type1: ["Fire"],
+  type2: ["None"],
+  description: "Level 18 from Agumon",
+  abilities: [
+    "Blaze",
+    "Solar Power"
+  ],
+  digivolutions: [
+    { to: "MetalGreymon", condition: "Level 32" },
+    { to: "LaeusGreymon", condition: "AW Genes" }
+  ]
+},
+{
+  name: "MetalGreymon",
+  level: "5 Perfect",
+  type1: ["Fire"],
+  type2: ["Steel"],
+  description: "Level 32 from Greymon",
+  abilities: [
+    "Blaze",
+    "Solar Power"
+  ],
+  digivolutions: [
+    { to: "WarGreymon", condition: "Level 54" },
+    { to: "ShineGreymon", condition: "Auspicious Armour" },
+    { to: "BlitzGreymon", condition: "New Mauville" }
+  ]
+},
+{
+  name: "WarGreymon",
+  level: "6 Mega",
+  type1: ["Fire"],
+  type2: ["Ice"],
+  description: "Mega Stage",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Omegamon", condition: "Jogress with MetalGarurumon" }
+  ]
+},
+{
+  name: "Gabumon",
+  level: "3 Child",
+  type1: ["Fire"],
+  type2: ["Ice"],
+  description: "Route 101",
+  abilities: [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  digivolutions: [
+    { to: "Garurumon", condition: "Level 18" }
+  ]
+},
+{
+  name: "Garurumon",
+  level: "4 Adult",
+  type1: ["Fire"],
+  type2: ["Ice"],
+  description: "Level 18 Digivolution of Gabumon",
+  abilities: [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  digivolutions: [
+    { to: "WereGarurumon", condition: "Level 32" },
+    { to: "ZinoGarurumon", condition: "AW Genes" }
+  ]
+},
+{
+  name: "WereGarurumon",
+  level: "5 Perfect",
+  type1: ["Ice"],
+  type2: ["Fighting"],
+  description: "Level 32 Digivolution of Garurumon",
+  abilities: [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  digivolutions: [
+    { to: "MetalGarurumon", condition: "Level 54" },
+    { to: "CresGarurumon", condition: "Auspicious Armour" }
+  ]
+},
+{
+  name: "MetalGarurumon",
+  level: "6 Mega",
+  type1: ["Steel"],
+  type2: ["Ice"],
+  description: "Level 54 Digivolution of WereGarurumon",
+  abilities: [
+    "Clear Body",
+    "Slush Rush"
+  ],
+  digivolutions: [
+    { to: "Omegamon", condition: "Jogress with WarGreymon" }
+  ]
+},
+{
+  name: "CresGarurumon",
+  level: "6 Mega",
+  type1: ["Ice"],
+  type2: ["Fighting"],
+  description: "Auspicious Armour given to WereGarurumon",
+  abilities: [
+    "Intrepid Sword",
+    "Sharpness"
+  ],
+}
+,
+{
+  name: "ZinoGarurumon",
+  level: "6 Mega",
+  type1: ["Ice"],
+  type2: ["Electric"],
+  description: "AW Genes given to Garurumon",
+  abilities: [
+    "Motor Drive",
+    "Hadron Engine"
+  ],
+}
+,
+{
+  name: "Gomamon",
+  level: "3 Child",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "Base. Route 104",
+  abilities: [
+    "Thick Fat",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Ikkakumon", condition: "Level 18" }
+  ]
+},
+{
+  name: "Ikkakumon",
+  level: "4 Adult",
+  type1: ["Water"],
+  type2: ["Ice"],
+  description: "Level 18 Digivolution of Gomamon",
+  abilities: [
+    "Thick Fat",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Zudomon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Zudomon",
+  level: "5 Perfect",
+  type1: ["Water"],
+  type2: ["Ice"],
+  description: "Level 32 Digivolution of Ikkakumon",
+  abilities: [
+    "Galvanize",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Vikemon", condition: "Level 54" },
+    { to: "Plesiomon", condition: "King's Rock item" }
+  ]
+},
+{
+  name: "Vikemon",
+  level: "6 Mega",
+  type1: ["Water"],
+  type2: ["Ice"],
+  description: "Level 54 Digivolution of Zudomon",
+  abilities: [
+    "Snow Warning",
+    "Intimidate"
+  ],
+}
+,
+{
+  name: "Plesiomon",
+  level: "6 Mega",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "King's Rock Digivolution of Zudomon",
+  abilities: [
+    "Liquid Voice",
+    "Mold Breaker"
+  ],
+  digivolutions: [
+    { to: "AegisDramon", condition: "Jogress with MetalSeadramon" }
+  ]
+},
+{
+  name: "AegisDramon",
+  level: "7 Mega+",
+  type1: ["Steel"],
+  type2: ["Water"],
+  description: "Jogress Digivolution of Plesiomon and MetalSeadramon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Veemon",
+  level: "3 Child",
+  type1: ["Dragon"],
+  type2: ["None"],
+  description: "Route 101",
+  abilities: [
+    "Rock Head",
+    "Adaptability"
+  ],
+  digivolutions: [
+    { to: "ExVeemon", condition: "Level 18" },
+    { to: "Flamedramon", condition: "Fire Data" },
+    { to: "Raidramon", condition: "Thunder Data" },
+    { to: "Gargoylemon", condition: "Light Data" }
+  ]
+},
+{
+  name: "ExVeemon",
+  level: "4 Adult",
+  type1: ["Dragon"],
+  type2: ["Flying"],
+  description: "Level 18 Digivolution of Veemon",
+  abilities: [
+    "Justified",
+    "Adaptability"
+  ],
+  digivolutions: [
+    { to: "AeroVeedramon", condition: "Level 32" },
+    { to: "Paildramon", condition: "Level 30 with Stingmon in party" }
+  ]
+},
+{
+  name: "Flamedramon",
+  level: "4 Adult",
+  type1: ["Dragon"],
+  type2: ["Fire"],
+  description: "Fire Data given to Veemon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Magnamon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Raidramon",
+  level: "4 Adult",
+  type1: ["Dragon"],
+  type2: ["Electric"],
+  description: "Thunder Data given to Veemon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Majiramon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Gargoylemon",
+  level: "4 Adult",
+  type1: ["Dragon"],
+  type2: ["Holy"],
+  description: "Light Data given to Veemon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Manticoremon", condition: "Level 32" }
+  ]
+},
+{
+  name: "AeroVeedramon",
+  level: "5 Perfect",
+  type1: ["Dragon"],
+  type2: ["Flying"],
+  description: "Level 32 Digivolution of ExVeemon",
+  abilities: [
+    "Justified",
+    "Adaptability"
+  ],
+  digivolutions: [
+    { to: "UlforceVeedramon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Paildramon",
+  level: "5 Perfect",
+  type1: ["Dragon"],
+  type2: ["Bug"],
+  description: "Level 30 Digivolution of ExVeemon with Stingmon in party",
+  abilities: [
+    "Battle Armor",
+    "Speed Boost"
+  ],
+  digivolutions: [
+    { to: "Imperialdramon Dragon Mode", condition: "Level 54" }
+  ]
+},
+{
+  name: "Imperialdramon Dragon Mode",
+  level: "6 Mega",
+  type1: ["Dragon"],
+  type2: ["Bug"],
+  description: "Level 54 Digivolution of Paildramon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Imperialdramon Fighting Mode", condition: "Use Positron Laser at Level 62" }
+  ]
+},
+{
+  name: "Imperialdramon Fighting Mode",
+  level: "7 Mega+",
+  type1: ["Dragon"],
+  type2: ["Fighting"],
+  description: "Using Positron Laser as Imperialdramon DM",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Imperialdramon Paladin Mode", condition: "Omega Blade" }
+  ]
+},
+{
+  name: "Magnamon",
+  level: "5 Perfect",
+  type1: ["Dragon"],
+  type2: ["Steel"],
+  description: "Meteor Falls wild encounter, Level 32 Digivolution of Flamedramon",
+  abilities: [
+    "Clear Body",
+    "Adaptability"
+  ],
+  digivolutions: [
+    { to: "Magnamon X", condition: "Antibody GX" }
+  ]
+},
+{
+  name: "Majiramon",
+  level: "5 Perfect",
+  type1: ["Dragon"],
+  type2: ["Electric"],
+  description: "Level 32 Digivolution of Raidramon",
+  abilities: [
+    "Lightning Rod",
+    "Adaptability"
+  ],
+  digivolutions: [
+    { to: "Azulongmon", condition: "Level 70" }
+  ]
+},
+{
+  name: "Manticoremon",
+  level: "5 Perfect",
+  type1: ["Dragon"],
+  type2: ["Holy"],
+  description: "Level 32 Digivolution of Gargoylemon",
+  abilities: [
+    "No Guard"
+  ],
+}
+,
+{
+  name: "UlforceVeedramon",
+  level: "6 Mega",
+  type1: ["Dragon"],
+  type2: ["Flying"],
+  description: "Level 54 Digivolution of AeroVeedramon",
+  abilities: [
+    "Gale Wings",
+    "Adaptability"
+  ],
+}
+,
+{
+  name: "Azulongmon",
+  level: "7 Mega+",
+  type1: ["Dragon"],
+  type2: ["Electric"],
+  description: "Level 70 Digivolution of Majiramon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Wormmon",
+  level: "3 Child",
+  type1: ["Bug"],
+  type2: ["Poison"],
+  description: "Petalburg Forest",
+  abilities: [
+    "Run Away",
+    "Defeatist"
+  ],
+  digivolutions: [
+    { to: "Stingmon", condition: "Level 18" }
+  ]
+},
+{
+  name: "Stingmon",
+  level: "4 Adult",
+  type1: ["Bug"],
+  type2: ["Poison"],
+  description: "Level 18 Digivolution of Wormmon",
+  abilities: [
+    "Sniper",
+    "Super Luck"
+  ],
+  digivolutions: [
+    { to: "JewelBeemon", condition: "Level 32" },
+    { to: "DinoBeemon", condition: "Level 30 with ExVeemon in party" }
+  ]
+},
+{
+  name: "JewelBeemon",
+  level: "5 Perfect",
+  type1: ["Bug"],
+  type2: ["Poison"],
+  description: "Level 32 Digivolution of Stingmon",
+  abilities: [
+    "Sniper",
+    "Super Luck"
+  ],
+  digivolutions: [
+    { to: "BanchoStingmon", condition: "Gakuran" }
+  ]
+},
+{
+  name: "BanchoStingmon",
+  level: "6 Mega",
+  type1: ["Bug"],
+  type2: ["Poison"],
+  description: "Gakuran given to JewelBeemon",
+  abilities: [
+    "Sniper",
+    "Super Luck"
+  ],
+}
+,
+{
+  name: "DinoBeemon",
+  level: "5 Perfect",
+  type1: ["Bug"],
+  type2: ["Dragon"],
+  description: "Level 30 Digivolution of Stingmon with ExVeemon in party",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Imperialdramon Dragon Mode", condition: "Level 54" }
+  ]
+},
+{
+  name: "Armadillomon",
+  level: "3 Child",
+  type1: ["Ground"],
+  type2: ["None"],
+  description: "Route 103 or Petalburg Forest",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Ankylomon", condition: "Level 18" },
+    { to: "Digmon", condition: "Earth Data" },
+    { to: "Submarimon", condition: "Water Data" }
+  ]
+},
+{
+  name: "Ankylomon",
+  level: "4 Adult",
+  type1: ["Ground"],
+  type2: ["Steel"],
+  description: "Level 18 Digivolution of Armadillomon",
+  abilities: [
+    "Sturdy",
+    "Marvel Scale"
+  ],
+  digivolutions: [
+    { to: "Shakkoumon", condition: "Level 30 with Angemon or Pegasmon in party" },
+    { to: "Brachiomon", condition: "Level 32 without Angemon or Pegasmon" }
+  ]
+},
+{
+  name: "Digmon",
+  level: "4 Adult",
+  type1: ["Ground"],
+  type2: ["Bug"],
+  description: "Earth Data given to Armadillomon",
+  abilities: [
+    "Sturdy",
+    "Marvel Scale"
+  ],
+  digivolutions: [
+    { to: "SkullScorpiomon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Submarimon",
+  level: "4 Adult",
+  type1: ["Ground"],
+  type2: ["Water"],
+  description: "Water Data given to Armadillomon",
+  abilities: [
+    "Swift Swim",
+    "Marvel Scale"
+  ],
+  digivolutions: [
+    { to: "Whamon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Shakkoumon",
+  level: "5 Perfect",
+  type1: ["Steel"],
+  type2: ["Holy"],
+  description: "Level 30 Digivolution of Ankylomon with Angemon or Pegasmon in party",
+  abilities: [
+    "Levitate"
+  ],
+  digivolutions: [
+    { to: "Slash Angemon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Brachiomon",
+  level: "5 Perfect",
+  type1: ["Ground"],
+  type2: ["None"],
+  description: "Level 32 Digivolution of Ankylomon without Angemon or Pegasmon",
+  abilities: [
+    "Long Reach",
+    "Sap Sipper"
+  ],
+  digivolutions: [
+    { to: "Ultimate Brachiomon", condition: "Level 54" }
+  ]
+},
+{
+  name: "SkullScorpiomon",
+  level: "5 Perfect",
+  type1: ["Ground"],
+  type2: ["Bug"],
+  description: "Level 32 Digivolution of Digmon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Eldoradimon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Whamon",
+  level: "5 Perfect",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "Level 32 Digivolution of Submarimon",
+  abilities: [
+    "Storm Drain",
+    "Marvel Scale"
+  ],
+  digivolutions: [
+    { to: "Marin Angemon", condition: "Level 54" },
+    { to: "KingWhamon", condition: "King's Rock" }
+  ]
+},
+{
+  name: "Slash Angemon",
+  level: "6 Mega",
+  type1: ["Steel"],
+  type2: ["Holy"],
+  description: "Level 54 Digivolution of Shakkoumon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Ultimate Brachiomon",
+  level: "6 Mega",
+  type1: ["Ground"],
+  type2: ["Steel"],
+  description: "Level 54 Digivolution of Brachiomon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Eldoradimon",
+  level: "6 Mega",
+  type1: ["Ground"],
+  type2: ["Grass"],
+  description: "Level 54 Digivolution of SkullScorpiomon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Tlalocmon", condition: "Jogress with SaberLeomon" }
+  ]
+},
+{
+  name: "Marin Angemon",
+  level: "6 Mega",
+  type1: ["Water"],
+  type2: ["Holy"],
+  description: "Level 54 Digivolution of Whamon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "KingWhamon",
+  level: "6 Mega",
+  type1: ["Water"],
+  type2: ["Ground"],
+  description: "King's Rock used on Whamon",
+  abilities: [
+    "Storm Drain",
+    "Marvel Scale"
+  ],
+}
+,
+{
+  name: "Tlalocmon",
+  level: "7 Mega+",
+  type1: ["Grass"],
+  type2: ["Electric"],
+  description: "Jogress Digivolution of ElDoradimon and SaberLeomon",
+  abilities: [
+    "Primordial Sea"
+  ],
+}
+,
+{
+  name: "Hawkmon",
+  level: "3 Child",
+  type1: ["Flying"],
+  type2: ["None"],
+  description: "Route 103",
+  abilities: [
+    "Keen Eye",
+    "Infiltrator"
+  ],
+  digivolutions: [
+    { to: "Aquilamon", condition: "Level 18" },
+    { to: "Halsemon", condition: "Wind Data" },
+    { to: "Shurimon", condition: "Wood Data" }
+  ]
+},
+{
+  name: "Aquilamon",
+  level: "4 Adult",
+  type1: ["Flying"],
+  type2: ["None"],
+  description: "Level 18 Digivolution of Hawkmon",
+  abilities: [
+    "Keen Eye",
+    "Infiltrator"
+  ],
+  digivolutions: [
+    { to: "Hippogriffomon", condition: "Level 32" },
+    { to: "Silphymon", condition: "Level 30 with Gatomon in party" }
+  ]
+},
+{
+  name: "Halsemon",
+  level: "4 Adult",
+  type1: ["Flying"],
+  type2: ["Fairy"],
+  description: "Wind Data given to Hawkmon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Peacockmon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Shurimon",
+  level: "4 Adult",
+  type1: ["Flying"],
+  type2: ["Grass"],
+  description: "Wood Data given to Hawkmon",
+  abilities: [
+    "Sharpness",
+    "Infiltrator"
+  ],
+  digivolutions: [
+    { to: "Fumamon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Peacockmon",
+  level: "5 Perfect",
+  type1: ["Flying"],
+  type2: ["Steel"],
+  description: "Level 32 Digivolution of Halsemon",
+  abilities: [
+    "Gale Wings",
+    "Infiltrator"
+  ],
+  digivolutions: [
+    { to: "Valdurmon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Hippogriffomon",
+  level: "5 Perfect",
+  type1: ["Flying"],
+  type2: ["Holy"],
+  description: "Level 32 Digivolution of Aquilamon",
+  abilities: [
+    "Solar Power",
+    "Beast Boost"
+  ],
+  digivolutions: [
+    { to: "Griffomon", condition: "Level 54" },
+    { to: "Murmukusmon", condition: "Sachet item" }
+  ]
+},
+{
+  name: "Silphymon",
+  level: "5 Perfect",
+  type1: ["Flying"],
+  type2: ["Holy"],
+  description: "Level 30 Digivolution of Aquilamon with Gatomon in party",
+  abilities: [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  digivolutions: [
+    { to: "Valkyriemon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Fumamon",
+  level: "5 Perfect",
+  type1: ["Steel"],
+  type2: ["Undead"],
+  description: "Level 32 Digivolution of Shurimon",
+  abilities: [
+    "Sharpness",
+    "Infiltrator"
+  ],
+  digivolutions: [
+    { to: "Tactimon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Murmukusmon",
+  level: "6 Mega",
+  type1: ["Dark"],
+  type2: ["Flying"],
+  description: "Sachet given to Hippogriffomon",
+  abilities: [
+    "Competitive",
+    "Supreme Overlord"
+  ],
+}
+,
+{
+  name: "Griffomon",
+  level: "6 Mega",
+  type1: ["Flying"],
+  type2: ["None"],
+  description: "Level 54 Digivolution of Hippogriffomon",
+  abilities: [
+    "Aerilate",
+    "Beast Boost"
+  ],
+}
+,
+{
+  name: "Valkyriemon",
+  level: "6 Mega",
+  type1: ["Flying"],
+  type2: ["Holy"],
+  description: "Level 54 Digivolution of Silphymon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+}
+,
+{
+  name: "Tactimon",
+  level: "6 Mega",
+  type1: ["Steel"],
+  type2: ["Undead"],
+  description: "Level 54 Digivolution of Fumamon",
+  abilities: [
+    "Cursed Body",
+    "Infiltrator"
+  ],
+}
+,
+{
+  name: "Valdurmon",
+  level: "6 Mega",
+  type1: ["Flying"],
+  type2: ["Holy"],
+  description: "Level 54 Digivolution of Peacockmon",
+  abilities: [
+    "Justified",
+    "Good as Gold"
+  ],
+  digivolutions: [
+    { to: "Chaosmon Valdur Mode", condition: "Jogress with BanchoLeomon" }
+  ]
+},
+{
+  name: "Chaosmon Valdur Arm",
+  level: "7 Mega+",
+  type1: ["Mystery"],
+  type2: ["None"],
+  description: "Jogress with BanchoLeomon",
+  abilities: [
+    "Moody"
+  ],
+}
+,
+{
+  name: "Pulsemon",
+  level: "3 Child",
+  type1: ["Electric"],
+  type2: ["None"],
+  description: "Route 116",
+  abilities: [
+    "Static",
+    "Volt Absorb"
+  ],
+  digivolutions: [
+    { to: "Bulkmon", condition: "Level 18 knowing Work Up" },
+    { to: "Exermon", condition: "Level 18, no Work Up, knows Meditate" }
+  ]
+},
+{
+  name: "Bulkmon",
+  level: "4 Adult",
+  type1: ["Electric"],
+  type2: ["Fighting"],
+  description: "Level 18 Digivolution of Pulsemon (Work Up)",
+  abilities: [
+    "Simple",
+    "Static"
+  ],
+  digivolutions: [
+    { to: "Boutmon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Exermon",
+  level: "4 Adult",
+  type1: ["Bug"],
+  type2: ["Magic"],
+  description: "Level 18 Digivolution of Pulsemon (Meditate). Wild encounters in Tentomon's guardian area",
+  abilities: [
+    "Telepathy",
+    "Solar Power"
+  ],
+  digivolutions: [
+    { to: "Climbmon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Boutmon",
+  level: "5 Perfect",
+  type1: ["Electric"],
+  type2: ["Fighting"],
+  description: "Level 32 Digivolution of Bulkmon",
+  abilities: [
+    "Simple",
+    "Static"
+  ],
+  digivolutions: [
+    { to: "Kazuchimon", condition: "Level 54" },
+    { to: "Shroudmon", condition: "Malicious Armor" }
+  ]
+},
+{
+  name: "Climbmon",
+  level: "5 Perfect",
+  type1: ["Bug"],
+  type2: ["Magic"],
+  description: "Level 32 Digivolution of Exermon",
+  abilities: [
+    "Quick Draw",
+    "Sharpness"
+  ],
+  digivolutions: [
+    { to: "Shivamon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Kazuchimon",
+  level: "6 Mega",
+  type1: ["Electric"],
+  type2: ["Fighting"],
+  description: "Level 54 Digivolution of Boutmon",
+  abilities: [
+    "Simple",
+    "Static"
+  ],
+  digivolutions: [
+    { to: "Fenriloogamon Takemikazuchi", condition: "Jogress with Fenriloogamon" }
+  ]
+},
+{
+  name: "Shroudmon",
+  level: "6 Mega",
+  type1: ["Electric"],
+  type2: ["Dark"],
+  description: "Malicious Armor used on Boutmon",
+  abilities: [
+    "Iron Fist",
+    "Sheer Force"
+  ],
+},
+{
+  name: "Shivamon",
+  level: "6 Mega",
+  type1: ["Bug"],
+  type2: ["Magic"],
+  description: "Level 54 Digivolution of Climbmon",
+  abilities: [
+    "Multiscale",
+    "Own Tempo"
+  ],
+},
+{
+  name: "Fenriloogamon Takemikazuchi",
+  level: "7 Mega+",
+  type1: ["Magic"],
+  type2: ["Electric"],
+  description: "Jogress Digivolution of Kazuchimon and Fenriloogamon",
+  abilities: [
+    "Sharpness",
+    "Inner Focus"
+  ],
+},
+{
+  name: "Luxmon",
+  level: "3 Child",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Route 102",
+  abilities: [
+    "Oblivious",
+    "Justified"
+  ],
+  digivolutions: [
+    { to: "Piddmon", condition: "Level 18" }
+  ]
+},
+{
+  name: "Piddmon",
+  level: "4 Adult",
+  type1: ["Holy"],
+  type2: ["Fire"],
+  description: "Level 18 Digivolution of Luxmon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    {
+      to: "Arkhai Angemon",
+      condition: "Level 32, Summons Gargoylemon to empty party slot"
+    }
+  ]
+},
+{
+  name: "Arkhai Angemon",
+  level: "5 Perfect",
+  type1: ["Holy"],
+  type2: ["Fire"],
+  description: "Level 32 Digivolution of Piddmon, summons Gargoylemon",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "ClavisAngemon", condition: "Level 54" }
+  ]
+},
+{
+  name: "ClavisAngemon",
+  level: "6 Mega",
+  type1: ["Holy"],
+  type2: ["Fire"],
+  description: "Level 54 Digivolution of Arkhai Angemon",
+  abilities: [
+    "Blaze",
+    "Justified"
+  ],
+},
+{
+  name: "Goblinmon",
+  level: "3 Child",
+  type1: ["Dark"],
+  type2: ["Ground"],
+  description: "Route 102, Granite Cave F1",
+  abilities: [
+    "UNKNOWN",
+    "UNKNOWN"
+  ],
+  digivolutions: [
+    { to: "Ogremon", condition: "Level 18" },
+    { to: "Grottemon", condition: "Earth Data" }
+  ]
+},
+{
+  name: "Ogremon",
+  level: "4 Adult",
+  type1: ["Dark"],
+  type2: ["Ground"],
+  description: "Level 18 Digivolution of Goblinmon",
+  abilities: [
+    "Intimidate",
+    "Sheer Force"
+  ],
+  digivolutions: [
+    { to: "Rebellimon", condition: "Level 32" }
+  ]
+},
+{
+  name: "Grottemon",
+  level: "4 Adult",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Earth Data given to Goblinmon",
+  abilities: [
+    "Sand Stream",
+    "Earth Eater"
+  ],
+  digivolutions: [
+    { to: "Volcamon", condition: "Level 32" },
+    { to: "Gigasmon", condition: "Using Signature moves. Slide Digivolution" }
+  ]
+},
+{
+  name: "Rebellimon",
+  level: "5 Perfect",
+  type1: ["Dark"],
+  type2: ["Steel"],
+  description: "Level 32 Digivolution of Ogremon",
+  abilities: [
+    "Intimidate",
+    "Sheer Force"
+  ],
+  digivolutions: [
+    { to: "Titamon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Volcamon",
+  level: "5 Perfect",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Slide Digivolution of Grottemon with Gigasmon",
+  abilities: [
+    "Sand Stream",
+    "Sand Force"
+  ],
+  digivolutions: [
+    { to: "AncientVolcamon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Titamon",
+  level: "6 Mega",
+  type1: ["Dark"],
+  type2: ["Ground"],
+  description: "Level 54 Digivolution of Rebellimon",
+  abilities: [
+    "Huge Power",
+    "Huge Power"
+  ],
+},
+{
+  name: "AncientVolcamon",
+  level: "6 Mega",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Level 54 Digvolution of Volcamon"  ,
+  abilities: [
+    "Sand Stream",
+    "Sand Force"
+  ],
+},
+{
+  name: "Sunarizamon",
+  level: "Adult",
+  type1: ["Ground"],
+  type2: ["None"],
+  description: "(Base)",
+  abilities: ["Sand Veil", "Sand Force"],
+  digivolutions: [
+    { to: "Landramon", condition: "Level 18 without Withdraw" },
+    { to: "Tortamon", condition: "Level 17 learning Withdraw" },
+    { to: "Golemon", condition: "Earth Data" }
+  ]
+},
 
+{
+  name: "Landramon",
+  level: "Perfect",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Evolves from Sunarizamon at Level 18 without Withdraw",
+  abilities: ["Sand Force", "Dry Skin"],
+  digivolutions: [
+    { to: "Proganamon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Tortamon",
+  level: "Perfect",
+  type1: ["Ground"],
+  type2: ["None"],
+  description: "Evolves from Sunarizamon at Level 17 after learning Withdraw",
+  abilities: ["Shell Armor", "Sand Force"],
+  digivolutions: [
+    { to: "Jagamon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Golemon",
+  level: "Perfect",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Evolves from Sunarizamon using Earth Data",
+  abilities: ["Sturdy", "Cursed Body"],
+  digivolutions: [
+    { to: "Gogmamon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Gogmamon",
+  level: "Mega",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Evolves from Golemon at Level 32",
+  abilities: ["Earth Eater", "Magic Bounce"],
+  digivolutions: [
+    { to: "Blastmon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Blastmon",
+  level: "Mega+",
+  type1: ["Rock"],
+  type2: ["Ground"],
+  description: "Evolves from Gogmamon at Level 54",
+  abilities: ["Earth Eater", "Magic Bounce"],
+  digivolutions: []
+},
+
+{
+  name: "Jagamon",
+  level: "Mega",
+  type1: ["Grass"],
+  type2: ["Ground"],
+  description: "Evolves from Tortamon at Level 32",
+  abilities: ["Shell Armor", "Sap Sipper"],
+  digivolutions: [
+    { to: "Eldoradimon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Eldoradimon",
+  level: "Mega+",
+  type1: ["Grass"],
+  type2: ["Ground"],
+  description: "Evolves from Jagamon at Level 54",
+  abilities: ["Solid Rock", "Sap Sipper"],
+  digivolutions: [
+    { to: "Tlalocmon", condition: "Jogress with SaberLeomon" }
+  ]
+},
+
+{
+  name: "Tlalocmon",
+  level: "Mega+",
+  type1: ["Grass"],
+  type2: ["Electric"],
+  description: "Jogress evolution of Eldoradimon and SaberLeomon",
+  abilities: ["Primordial Sea", "1"],
+  digivolutions: []
+},
+
+{
+  name: "Gizamon",
+  level: "Adult",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "(Base)",
+  abilities: ["Dry Skin", "Swift Swim"],
+  digivolutions: [
+    { to: "Gesomon", condition: "Random evolution at Level 18" },
+    { to: "Dolphmon", condition: "Random evolution at Level 18" }
+  ]
+},
+
+{
+  name: "Gesomon",
+  level: "Perfect",
+  type1: ["Water"],
+  type2: ["Poison"],
+  description: "Evolves from Gizamon randomly at Level 18",
+  abilities: ["Liquid Ooze", "Toxic Debris"],
+  digivolutions: [
+    { to: "MarineDevimon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "MarineDevimon",
+  level: "Mega",
+  type1: ["Water"],
+  type2: ["Poison"],
+  description: "Evolves from Gesomon at Level 32",
+  abilities: ["Merciless", "Toxic Debris"],
+  digivolutions: [
+    { to: "Leviamon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Leviamon",
+  level: "Mega+",
+  type1: ["Water"],
+  type2: ["Dark"],
+  description: "Evolves from MarineDevimon at Level 54",
+  abilities: ["Opportunist", "Strong Jaw"],
+  digivolutions: []
+},
+
+{
+  name: "Dolphmon",
+  level: "Perfect",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "Evolves from Gizamon randomly at Level 18",
+  abilities: ["Storm Drain", "Swift Swim"],
+  digivolutions: [
+    { to: "Hangyomon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Hangyomon",
+  level: "Mega",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "Evolves from Dolphmon at Level 32",
+  abilities: ["Storm Drain", "Swift Swim"],
+  digivolutions: [
+    { to: "Neptunemon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Neptunemon",
+  level: "Mega+",
+  type1: ["Water"],
+  type2: ["None"],
+  description: "Evolves from Hangyomon at Level 54",
+  abilities: ["Drizzle", "Swift Swim"],
+  digivolutions: []
+},
+
+{
+  name: "Ghostmon",
+  level: "Adult",
+  type1: ["Undead"],
+  type2: ["None"],
+  description: "(Base)",
+  abilities: ["Levitate", "Cursed Body"],
+  digivolutions: [
+    { to: "Bakemon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Bakemon",
+  level: "Perfect",
+  type1: ["Undead"],
+  type2: ["None"],
+  description: "Evolves from Ghostmon at Level 18",
+  abilities: ["Levitate", "Cursed Body"],
+  digivolutions: [
+    { to: "Phantomon", condition: "Level 32" },
+    { to: "Pumpmon", condition: "Wood Data" },
+    { to: "Mummymon", condition: "Dark Data" }
+  ]
+},
+
+{
+  name: "Phantomon",
+  level: "Mega",
+  type1: ["Undead"],
+  type2: ["None"],
+  description: "Evolves from Bakemon at Level 32",
+  abilities: ["Levitate", "Cursed Body"],
+  digivolutions: [
+    { to: "Necromon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Necromon",
+  level: "Mega+",
+  type1: ["Undead"],
+  type2: ["Magic"],
+  description: "Evolves from Phantomon at Level 54",
+  abilities: ["Grim Neigh", "Cursed Body"],
+  digivolutions: []
+},
+
+{
+  name: "Pumpmon",
+  level: "Mega",
+  type1: ["Undead"],
+  type2: ["Grass"],
+  description: "Evolves from Bakemon using Wood Data",
+  abilities: ["Intimidate", "Shadow Tag"],
+  digivolutions: [
+    { to: "NoblePumpmon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "NoblePumpmon",
+  level: "Mega+",
+  type1: ["Undead"],
+  type2: ["Grass"],
+  description: "Evolves from Pumpmon at Level 54",
+  abilities: ["Intimidate", "Shadow Tag"],
+  digivolutions: []
+},
+
+{
+  name: "Mummymon",
+  level: "Mega",
+  type1: ["Undead"],
+  type2: ["Poison"],
+  description: "Evolves from Bakemon using Dark Data",
+  abilities: ["Mummy", "Cursed Body"],
+  digivolutions: [
+    { to: "Pharaohmon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Pharaohmon",
+  level: "Mega+",
+  type1: ["Undead"],
+  type2: ["Poison"],
+  description: "Evolves from Mummymon at Level 54",
+  abilities: ["Mummy", "Cursed Body"],
+  digivolutions: []
+},
+{
+  name: "Labramon",
+  level: "Child",
+  type1: ["Normal"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Frisbee Fetch",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Dobermon", condition: "Digivolves at Level 18 (Amped)" },
+    { to: "Siesamon", condition: "Digivolves at Level 18 (Lowkey)" }
+  ]
+},
+
+{
+  name: "Dobermon",
+  level: "Adult",
+  type1: ["Dark"],
+  type2: ["None"],
+  description: "Digivolves from Labramon at Level 18 (Amped)",
+  abilities: [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Cerberusmon", condition: "Digivolves at Level 32" }
+  ]
+},
+
+{
+  name: "Siesamon",
+  level: "Adult",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Digivolves from Labramon at Level 18 (Lowkey)",
+  abilities: [],
+  digivolutions: [
+    { to: "Caturamon", condition: "Digivolves at Level 32" }
+  ]
+},
+
+{
+  name: "Cerberusmon",
+  level: "Perfect",
+  type1: ["Dark"],
+  type2: ["Fire"],
+  description: "Digivolves from Dobermon at Level 32",
+  abilities: [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Anubismon", condition: "Digivolves at Level 54" }
+  ]
+},
+
+{
+  name: "Caturamon",
+  level: "Perfect",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Digivolves from Siesamon at Level 32",
+  abilities: [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  digivolutions: [
+    { to: "Erlangmon", condition: "Digivolves at Level 54" }
+  ]
+},
+
+{
+  name: "Anubismon",
+  level: "Mega",
+  type1: ["Undead"],
+  type2: ["Holy"],
+  description: "Digivolves from Cerberusmon at Level 54",
+  abilities: [
+    "Guard Dog",
+    "Shadow Tag"
+  ],
+  digivolutions: []
+},
+
+{
+  name: "Erlangmon",
+  level: "Mega",
+  type1: ["Holy"],
+  type2: ["None"],
+  description: "Digivolves from Caturamon at Level 54",
+  abilities: [
+    "Illusion",
+    "Super Luck"
+  ],
+  digivolutions: []
+},
+
+{
+  name: "Pomumon",
+  level: "Child",
+  type1: ["Grass"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Supersweet Syrup",
+    "Seed Sower"
+  ],
+  digivolutions: [
+    { to: "Parasaurmon", condition: "Digivolves at Level 18" },
+    { to: "Arbormon", condition: "Digivolves via Wood Data" }
+  ]
+},
+
+{
+  name: "Parasaurmon",
+  level: "Adult",
+  type1: ["Grass"],
+  type2: ["None"],
+  description: "Digivolves from Pomumon at Level 18",
+  abilities: [
+    "Supersweet Syrup",
+    "Seed Sower"
+  ],
+  digivolutions: [
+    { to: "Ajatarmon", condition: "Digivolves at Level 32 (Amped)" },
+    { to: "Tropiamon", condition: "Digivolves at Level 32 (Lowkey)" }
+  ]
+},
+
+{
+  name: "Ajatarmon",
+  level: "Perfect",
+  type1: ["Grass"],
+  type2: ["None"],
+  description: "Digivolves from Parasaurmon at Level 32 (Amped)",
+  abilities: [
+    "Iron Barbs",
+    "Seed Sower"
+  ],
+  digivolutions: [
+    { to: "Bloomlordmon", condition: "Digivolves at Level 54" }
+  ]
+},
+
+{
+  name: "Tropiamon",
+  level: "Perfect",
+  type1: ["Grass"],
+  type2: ["Poison"],
+  description: "Digivolves from Parasaurmon at Level 32 (Lowkey)",
+  abilities: [
+    "Corrosion",
+    "Seed Sower"
+  ],
+  digivolutions: [
+    { to: "Hydramon", condition: "Digivolves at Level 54" }
+  ]
+},
+
+{
+  name: "Bloomlordmon",
+  level: "Mega",
+  type1: ["Grass"],
+  type2: ["Fairy"],
+  description: "Digivolves from Ajatarmon at Level 54",
+  abilities: [
+    "Drought",
+    "Seed Sower"
+  ],
+  digivolutions: []
+},
+
+{
+  name: "Hydramon",
+  level: "Mega",
+  type1: ["Grass"],
+  type2: ["Poison"],
+  description: "Digivolves from Tropiamon at Level 54",
+  abilities: [
+    "Corrosion",
+    "Merciless"
+  ],
+  digivolutions: []
+},
+
+{
+  name: "Arbormon",
+  level: "Adult",
+  type1: ["Grass"],
+  type2: ["None"],
+  description: "Digivolves from Pomumon via Wood Data",
+  abilities: [
+    "Battle Armor",
+    "Grassy Surge"
+  ],
+  digivolutions: [
+    { to: "Petaldramon", condition: "Data Exchange" },
+    { to: "Entmon", condition: "Digivolves at Level 32 (Shared)" }
+  ]
+},
+
+{
+  name: "Petaldramon",
+  level: "Adult",
+  type1: ["Grass"],
+  type2: ["Dragon"],
+  description: "Digivolves from Arbormon via Slide Digivolution",
+  abilities: [
+    "Sap Sipper",
+    "Grass Pelt"
+  ],
+  digivolutions: [
+    { to: "Entmon", condition: "Digivolves at Level 32 (Shared)" }
+  ]
+},
+
+{
+  name: "Entmon",
+  level: "Perfect",
+  type1: ["Grass"],
+  type2: ["Bug"],
+  description: "Digivolves from Arbormon or Petaldramon at Level 32",
+  abilities: [
+    "Sap Sipper",
+    "Cursed Body"
+  ],
+  digivolutions: [
+    { to: "Ancient Trojamon", condition: "Digivolves at Level 54" }
+  ]
+},
+
+{
+  name: "Ancient Trojamon",
+  level: "Mega+",
+  type1: ["Grass"],
+  type2: ["Steel"],
+  description: "Digivolves from Entmon at Level 54",
+  abilities: [
+    "Grassy Surge",
+    "Heatproof"
+  ],
+  digivolutions: []
+},
+
+{
+  name: "Shoemon",
+  level: "Child",
+  type1: ["Fairy"],
+  type2: ["Normal"],
+  description: "Base",
+  abilities: [
+    "Suction Cups",
+    "Simple"
+  ],
+  digivolutions: [
+    { to: "Shoeshoemon", condition: "Digivolves at Level 18" }
+  ]
+},
+
+{
+  name: "Shoeshoemon",
+  level: "Adult",
+  type1: ["Fairy"],
+  type2: ["Normal"],
+  description: "Digivolves from Shoemon at Level 18",
+  abilities: [
+    "Cheek Pouch",
+    "Simple"
+  ],
+  digivolutions: [
+    { to: "Chaperomon", condition: "Digivolves at Level 32" }
+  ]
+},
+
+{
+  name: "Chaperomon",
+  level: "Perfect",
+  type1: ["Fairy"],
+  type2: ["Normal"],
+  description: "Digivolves from Shoeshoemon at Level 32",
+  abilities: [
+    "Cute Charm",
+    "Simple"
+  ],
+  digivolutions: [
+    { to: "Cendrillmon", condition: "Digivolves at Level 54" },
+    { to: "Nyabootmon", condition: "Digivolves via Gakuren" }
+  ]
+},
+
+{
+  name: "Cendrillmon",
+  level: "Mega",
+  type1: ["Fairy"],
+  type2: ["Normal"],
+  description: "Digivolves from Chaperomon at Level 54 or from Nyabootmon via Metal Data",
+  abilities: [
+    "Skill Link",
+    "Dancer"
+  ],
+  digivolutions: [
+    { to: "Nyabootmon", condition: "Digivolves via Metal Data" }
+  ]
+},
+
+{
+  name: "Nyabootmon",
+  level: "Mega",
+  type1: ["Fairy"],
+  type2: ["Normal"],
+  description: "Digivolves from Chaperomon via Gakuran or from Cendrillmon via Metal Data",
+  abilities: [
+    "Justified",
+    "Technician"
+  ],
+  digivolutions: [
+    { to: "Cendrillmon", condition: "Digivolves via Metal Data" }
+  ]
+},
+{
+  name: "Impmon",
+  level: "Child",
+  type1: ["Dark"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Prankster",
+    "Run Away"
+  ],
+  digivolutions: [
+    { to: "Wizarmon", condition: "Level 18 Amped" },
+    {to: "Sorcerimon", condition: "Level 18 Low Key"},
+    { to: "Punkmon", condition: "Dark Data" }
+  ]
+},
+
+{
+  name: "Wizarmon",
+  level: "Adult",
+  type1: ["Dark"],
+  type2: ["Magic"],
+  description: "Digivolves from Impmon at level 18",
+  abilities: [
+    "Magic Guard"
+  ],
+  digivolutions: [
+    { to: "Mistymon", condition: "Level 32 (Low Key)" },
+    { to: "Baalmon", condition: "Level 32 (Amped)" }
+  ]
+},
+{
+  name: "Sorcerimon",
+  level: "Adult",
+  type1: ["Ice"],
+  type2: ["Magic"],
+  description: "Digivolves from Impmon at level 18 (Low Key)",
+  abilities: [
+    "Magic Guard"
+  ],
+  digivolutions: [
+    { to: "Mistymon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Mistymon",
+  level: "Perfect",
+  type1: ["Magic"],
+  type2: ["Fire"],
+  description: "Digivolves from Sorcerimon at level 32",
+  abilities: [
+    "Magic Guard",
+    "Long Reach"
+  ],
+  digivolutions: [
+    { to: "Dinasmon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Baalmon",
+  level: "Perfect",
+  type1: ["Dark"],
+  type2: ["Magic"],
+  description: "Digivolves from Wizarmon at level 32",
+  abilities: [
+    "Magic Guard",
+    "Magic Bounce"
+  ],
+  digivolutions: [
+    { to: "Beelzebumon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Beelzebumon",
+  level: "Mega",
+  type1: ["Dark"],
+  type2: ["Steel"],
+  description: "Digivolves from Baalmon at level 54",
+  abilities: [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  digivolutions: [
+    { to: "Beelzebumon Blast", condition: "Holding Toy Gun" }
+  ]
+},
+
+{
+  name: "Renamon",
+  level: "Child",
+  type1: ["Fighting"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Inner Focus",
+    "Vital Spirit"
+  ],
+  digivolutions: [
+    { to: "Kyubimon", condition: "Level 18" },
+    { to: "Tenkomon", condition: "Ice Data" }
+  ]
+},
+
+{
+  name: "Kyubimon",
+  level: "Adult",
+  type1: ["Fire"],
+  type2: ["Magic"],
+  description: "Digivolves from Renamon at level 18",
+  abilities: [
+    "Inner Focus",
+    "Magic Guard"
+  ],
+  digivolutions: [
+    { to: "Taomon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Tenkomon",
+  level: "Adult",
+  type1: ["Ice"],
+  type2: ["Fairy"],
+  description: "Digivolves from Renamon via Ice Data",
+  abilities: [
+    "Snow Cloak",
+    "Slush Rush"
+  ],
+  digivolutions: [
+    { to: "Sekkamon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Taomon",
+  level: "Perfect",
+  type1: ["Fighting"],
+  type2: ["Magic"],
+  description: "Digivolves from Kyubimon at level 32",
+  abilities: [
+    "Magic Bounce",
+    "Magic Guard"
+  ],
+  digivolutions: [
+    { to: "Sakuyamon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Sekkamon",
+  level: "Perfect",
+  type1: ["Ice"],
+  type2: ["Fairy"],
+  description: "Digivolves from Tenkomon at level 32",
+  abilities: [
+    "Snow Cloak",
+    "Slush Rush"
+  ],
+  digivolutions: [
+    { to: "Yukinamon", condition: "Level 54" }
+  ]
+},
+{
+  name: "Terriermon",
+  level: "Child",
+  type1: ["Normal"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Steadfast",
+    "Cute Charm"
+  ],
+  digivolutions: [
+    { to: "Galgomon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Galgomon",
+  level: "Adult",
+  type1: ["Normal"],
+  type2: ["None"],
+  description: "Digivolves from Terriermon at level 18",
+  abilities: [
+    "",
+    ""
+  ],
+  digivolutions: [
+    { to: "Rapidmon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Rapidmon",
+  level: "Perfect",
+  type1: ["Steel"],
+  type2: ["None"],
+  description: "Digivolves from Galgomon at level 32",
+  abilities: [
+    "Speed Boost",
+    "Mega Launcher"
+  ],
+  digivolutions: [
+    { to: "SaintGalgomon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "SaintGalgomon",
+  level: "Mega",
+  type1: ["Steel"],
+  type2: ["Fighting"],
+  description: "Digivolves from Rapidmon at level 54",
+  abilities: [
+    "Speed Boost",
+    "Mega Launcher"
+  ],
+  digivolutions: [
+
+  ]
+},
+
+{
+  name: "Monodramon",
+  level: "Child",
+  type1: ["Dragon"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Berserk",
+    "Moxie"
+  ],
+  digivolutions: [
+    { to: "Strikedramon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Strikedramon",
+  level: "Adult",
+  type1: ["Dragon"],
+  type2: ["None"],
+  description: "Digivolves from Monodramon at level 18",
+  abilities: [
+    "Berserk",
+    "Moxie"
+  ],
+  digivolutions: [
+    { to: "Cyberdramon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Cyberdramon",
+  level: "Perfect",
+  type1: ["Dragon"],
+  type2: ["Steel"],
+  description: "Digivolves from Strikedramon at level 32",
+  abilities: [
+    "Berserk",
+    "Moxie"
+  ],
+  digivolutions: [
+    { to: "Justimon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Justimon",
+  level: "Mega",
+  type1: ["Steel"],
+  type2: ["Fighting"],
+  description: "Digivolves from Cyberdramon at level 54",
+  abilities: [
+    "Iron Fist",
+    "Moxie"
+  ],
+  digivolutions: [
+
+  ]
+},
+
+{
+  name: "Pteromon",
+  level: "Child",
+  type1: ["Fly"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  digivolutions: [
+    { to: "Galemon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Galemon",
+  level: "Adult",
+  type1: ["Fly"],
+  type2: ["None"],
+  description: "Digivolves from Pteromon at level 18",
+  abilities: [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  digivolutions: [
+    { to: "GrandGalemon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "GrandGalemon",
+  level: "Perfect",
+  type1: ["Fly"],
+  type2: ["Magic"],
+  description: "Digivolves from Galemon at level 32",
+  abilities: [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  digivolutions: [
+    { to: "Zephagamon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Zephagamon",
+  level: "Mega",
+  type1: ["Fly"],
+  type2: ["Magic"],
+  description: "Digivolves from GrandGalemon at level 54",
+  abilities: [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  digivolutions: [
+
+  ]
+},
+
+{
+  name: "Gaomon",
+  level: "Child",
+  type1: ["Fighting"],
+  type2: ["None"],
+  description: "Base",
+  abilities: [
+    "Justified",
+    "Iron Fist"
+  ],
+  digivolutions: [
+    { to: "Gaogamon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Gaogamon",
+  level: "Adult",
+  type1: ["Fighting"],
+  type2: ["None"],
+  description: "Digivolves from Gaomon at level 18",
+  abilities: [
+    "Justified",
+    "Iron Fist"
+  ],
+  digivolutions: [
+    { to: "MachGaogamon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "MachGaogamon",
+  level: "Perfect",
+  type1: ["Fighting"],
+  type2: ["Steel"],
+  description: "Digivolves from Gaogamon at level 32",
+  abilities: [
+    "Speed Boost",
+    "Iron Fist"
+  ],
+  digivolutions: [
+    { to: "MirageGaogamon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "MirageGaogamon",
+  level: "Mega",
+  type1: ["Fighting"],
+  type2: ["Fairy"],
+  description: "Digivolves from MachGaogamon at level 54",
+  abilities: [
+    "Speed Boost",
+    "Tough Claws"
+  ],
+  digivolutions: [
+    { to: "MirageGaogamon Burst", condition: "Holding Wolf Soul" }
+  ]
+},
+
+{
+  name: "Jellymon",
+  level: "Child",
+  type1: ["Water"],
+  type2: ["Electric"],
+  description: "Base",
+  abilities: [
+    "Static",
+    "Volt Absorb"
+  ],
+  digivolutions: [
+    { to: "TeslaJellymon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "TeslaJellymon",
+  level: "Adult",
+  type1: ["Water"],
+  type2: ["Electric"],
+  description: "Digivolves from Jellymon at level 18",
+  abilities: [
+    "Lightning Rod",
+    "Quark Drive"
+  ],
+  digivolutions: [
+    { to: "Thetismon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Thetismon",
+  level: "Perfect",
+  type1: ["Water"],
+  type2: ["Electric"],
+  description: "Digivolves from TeslaJellymon at level 32",
+  abilities: [
+    "Lightning Rod",
+    "Quark Drive"
+  ],
+  digivolutions: [
+    { to: "Amphimon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Amphimon",
+  level: "Mega",
+  type1: ["Water"],
+  type2: ["Steel"],
+  description: "Digivolves from Thetismon at level 54",
+  abilities: [
+    "Lightning Rod",
+    "Quark Drive"
+  ],
+  digivolutions: [
+
+  ]
+},
+
+{
+  name: "Ryudamon",
+  level: "Child",
+  type1: ["Fighting"],
+  type2: ["Dragon"],
+  description: "Base",
+  abilities: [
+    "Sharpness",
+    "Inner Focus"
+  ],
+  digivolutions: [
+    { to: "Ginryumon", condition: "Level 18" }
+  ]
+},
+
+{
+  name: "Ginryumon",
+  level: "Adult",
+  type1: ["Fighting"],
+  type2: ["Dragon"],
+  description: "Digivolves from Ryudamon at level 18",
+  abilities: [
+    "Sharpness",
+    "Inner Focus"
+  ],
+  digivolutions: [
+    { to: "Hisyaryumon", condition: "Level 32" }
+  ]
+},
+
+{
+  name: "Hisyaryumon",
+  level: "Perfect",
+  type1: ["Fighting"],
+  type2: ["Dragon"],
+  description: "Digivolves from Ginryumon at level 32",
+  abilities: [
+    "Sharpness",
+    "Inner Focus"
+  ],
+  digivolutions: [
+    { to: "Ouryumon", condition: "Level 54" }
+  ]
+},
+
+{
+  name: "Ouryumon",
+  level: "Mega",
+  type1: ["Fighting"],
+  type2: ["Dragon"],
+  description: "Digivolves from Hisyaryumon at level 54",
+  abilities: [
+    "Sharpness",
+    "Inner Focus"
+  ],
+  digivolutions: [
+    { to: "Alphamon Ouryuken", condition: "Jogress with Alphamon" }
+  ]
+},
+
+
+];
 
 
 const stageFilter = document.getElementById("stageFilter");
@@ -492,9 +3014,13 @@ function createCard(d) {
     <div class="evo-strip">
       <strong>DIGIVOLVES</strong>
       <ul>
-        ${d.digivolutions.map(e => `<li>${e.to} (${e.condition})</li>`).join("")}
-      </ul>
-    </div>
+  ${
+    d.digivolutions && d.digivolutions.length
+      ? d.digivolutions.map(e => `<li>${e.to} (${e.condition})</li>`).join("")
+      : "<li>—</li>"
+  }
+</ul>
+
   `;
 
   card.onclick = () => openModal(d);
