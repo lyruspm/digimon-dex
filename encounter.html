@@ -2,176 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Digimon Trials — Area Scan (D-Ark)</title>
+<title>Digimon Trials — Area Encounters</title>
 
 <style>
+/* =====================
+   THEME (MATCH INDEX)
+===================== */
+:root {
+  --bg-main: #0f1115;
+  --bg-panel: #171a21;
+  --bg-card: #1f2430;
+  --bg-subtle: #232838;
+
+  --text-main: #f2f4f8;
+  --text-dim: #a8b0c2;
+
+  --border: rgba(255,255,255,0.08);
+}
+
 /* =====================
    BASE
 ===================== */
 body {
   margin: 0;
-  padding: 30px;
-  font-family: "Courier New", monospace;
-  background: radial-gradient(circle at top, #0a1412, #020504 70%);
-  color: #dfffe9;
-  overflow-x: hidden;
+  padding: 32px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* =====================
-   D-ARK SHELL
-===================== */
-.d-ark {
+.app {
   max-width: 1400px;
   margin: auto;
-  padding: 18px;
-  border-radius: 26px;
-  background: linear-gradient(180deg, #1b1b1b, #050505);
-  box-shadow:
-    0 0 0 3px #2b2b2b,
-    0 25px 80px rgba(0,0,0,0.9);
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #7dffcf;
-  opacity: 0.85;
-  padding: 6px 12px;
-}
-
-.led {
-  width: 9px;
-  height: 9px;
-  background: #7dffcf;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #7dffcf;
 }
 
 /* =====================
-   SCREEN
-===================== */
-.screen {
-  margin-top: 14px;
-  padding: 22px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2)),
-    #0b2a24;
-  border-radius: 18px;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.9);
-  position: relative;
-  overflow: hidden;
-}
-
-.screen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events: none;
-}
-
-/* =====================
-   TITLE / NAV
+   HEADER / NAV
 ===================== */
 h1 {
   text-align: center;
-  letter-spacing: 0.25em;
-  margin-bottom: 8px;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 0.75rem;
-  opacity: 0.75;
-  margin-bottom: 20px;
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
 }
 
 .nav {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 26px;
+  gap: 14px;
+  margin: 24px 0;
 }
 
 .nav a {
   padding: 8px 18px;
   border-radius: 999px;
+  border: 1px solid var(--border);
   text-decoration: none;
-  color: #7dffcf;
-  border: 1px solid #3e8f78;
+  color: var(--text-main);
+  font-size: 0.8rem;
 }
 
 .nav a:hover {
-  background: #7dffcf;
-  color: #003328;
+  background: var(--bg-subtle);
 }
 
 /* =====================
    SEARCH
 ===================== */
-.search {
-  display: block;
-  margin: 0 auto 28px;
-  max-width: 520px;
+/* =====================
+   SEARCH
+===================== */
+.search-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  padding: 6px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border-radius: 18px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.search-box {
   width: 100%;
-  padding: 14px;
-  background: #031c17;
-  color: #dfffe9;
-  border-radius: 12px;
-  border: 1px solid #3e8f78;
+  height: 48px;
+  padding: 0 42px 0 16px;
+
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  line-height: 48px; /* ← THIS FIXES IT */
+
+  background: transparent;
+  color: var(--text-main);
+
+  border: none;
+  border-radius: 0;
+}
+
+.search-box::placeholder {
+  color: var(--text-dim);
+}
+
+.search-box:focus {
+  outline: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: none;
+}
+
+.search-clear:hover {
+  color: var(--text-main);
 }
 
 /* =====================
-   SCAN SECTIONS
+   SECTIONS
 ===================== */
-.scan-section {
-  margin: 22px 0;
-  border: 1px solid #245f4f;
+.section {
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
   border-radius: 16px;
-  background: linear-gradient(180deg, #0c2a23, #071f1a);
+  background: var(--bg-panel);
   overflow: hidden;
 }
 
-.scan-header {
-  width: 100%;
+.section-header {
   padding: 14px 18px;
-  border: none;
-  background: linear-gradient(
-    to right,
-    rgba(125,255,207,0.18),
-    transparent
-  );
-  color: #7dffcf;
-  letter-spacing: 0.22em;
+  cursor: pointer;
   font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  align-items: center;
 }
 
-.scan-header.water {
-  color: #5ecbff;
-  background: linear-gradient(
-    to right,
-    rgba(94,203,255,0.18),
-    transparent
-  );
-}
-
-.scan-content {
+.section-content {
   display: none;
-  padding: 14px;
+  padding: 16px;
 }
 
-.scan-section.open .scan-content {
+.section.open .section-content {
   display: block;
 }
 
@@ -179,24 +171,21 @@ h1 {
    ROUTES
 ===================== */
 .route {
-  margin-bottom: 18px;
-  border: 1px solid #245f4f;
+  border: 1px solid var(--border);
   border-radius: 14px;
-  background: linear-gradient(180deg, #0f332a, #071f1a);
+  margin-bottom: 14px;
+  background: var(--bg-card);
   overflow: hidden;
 }
 
 .route-header {
-position: relative;
-  width: 100%;
   padding: 12px 16px;
-  background: none;
-  border: none;
-  color: #7dffcf;
-  letter-spacing: 0.14em;
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 .route-content {
@@ -209,366 +198,131 @@ position: relative;
 }
 
 /* =====================
+   SUB-FOLDERS (WATER)
+===================== */
+.sub-folder {
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  background: var(--bg-subtle);
+}
+
+.sub-folder-header {
+  padding: 12px 16px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-folder-content {
+  display: none;
+  padding: 14px;
+}
+
+.sub-folder.open .sub-folder-content {
+  display: block;
+}
+
+/* =====================
    ENCOUNTER GRID
 ===================== */
 .encounter-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr 1fr;
+  grid-template-columns: 1.6fr 0.7fr 1fr;
   gap: 8px;
-  padding: 6px 0;
   font-size: 0.75rem;
-  border-bottom: 1px dashed rgba(125,255,207,0.25);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
 }
 
 .encounter-grid.header {
   font-size: 0.65rem;
-  opacity: 0.7;
-  letter-spacing: 0.12em;
-  border-bottom: 1px solid rgba(125,255,207,0.4);
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
 }
-
 
 /* =====================
    FOOTER
 ===================== */
 .footer {
+  margin-top: 26px;
   text-align: center;
-  font-size: 0.6rem;
-  opacity: 0.6;
-  margin-top: 24px;
-}
-/* =====================
-   WATER SUB-FOLDERS
-===================== */
-.sub-folder {
-  margin: 16px 0;
-  border: 1px dashed rgba(94,203,255,0.45);
-  border-radius: 14px;
-  background: linear-gradient(180deg, #08222e, #061a22);
+  font-size: 0.65rem;
+  color: var(--text-dim);
 }
 
-.sub-folder-header {
-  width: 100%;
-  padding: 12px 16px;
-  background: none;
-  border: none;
-  color: #5ecbff;
-  font-family: inherit;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.sub-folder .chevron {
-  transition: transform 0.25s ease;
-}
-
-.sub-folder.open .chevron {
-  transform: rotate(180deg);
-}
-
-.sub-folder-content {
-  padding: 12px;
-  display: none;
-}
-
-.sub-folder.open .sub-folder-content {
-  display: block;
-}
-
-/* =====================
-   WATER SUB-FOLDERS
-===================== */
-.sub-folder {
-  margin: 16px 0;
-  border: 1px dashed rgba(94,203,255,0.45);
-  border-radius: 14px;
-  background: linear-gradient(180deg, #08222e, #061a22);
-}
-
-.sub-folder-header {
-  width: 100%;
-  padding: 12px 16px;
-  background: none;
-  border: none;
-  color: #5ecbff;
-  font-family: inherit;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.sub-folder .chevron {
-  transition: transform 0.25s ease;
-}
-
-.sub-folder.open .chevron {
-  transform: rotate(180deg);
-}
-
-.sub-folder-content {
-  padding: 12px;
-  display: none;
-}
-
-.sub-folder.open .sub-folder-content {
-  display: block;
-}
-/* =========================
-   SUB-FOLDER SYSTEM (WATER)
-========================= */
-
-.sub-folder {
-  margin: 18px 0;
-  border: 1px dashed rgba(94,203,255,0.45);
-  border-radius: 14px;
-  background: linear-gradient(180deg, #071f1a, #041412);
-}
-
-/* Header */
-.sub-folder-header {
-  width: 100%;
-  padding: 12px 16px;
-  background: linear-gradient(
-    to right,
-    rgba(94,203,255,0.18),
-    transparent
-  );
-  border: none;
-  color: #5ecbff;
-  font-family: inherit;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Chevron animation */
-.sub-folder .chevron {
-  transition: transform 0.25s ease;
-}
-
-.sub-folder.open .chevron {
-  transform: rotate(180deg);
-}
-
-/* Content wrapper */
-.sub-folder-content {
-  padding: 14px;
-  display: none;
-}
-
-/* Open state */
-.sub-folder.open .sub-folder-content {
-  display: block;
-}
-
-/* Route spacing inside folders */
-.sub-folder .route {
-  margin: 14px 0;
-}
-
-/* Prevent routes from visually merging */
-.sub-folder .route-header {
-  background: linear-gradient(
-    180deg,
-    #0f332a,
-    #071f1a
-  );
-}
-
-//clear button// 
-.search-wrap {
-  position: relative;
-  max-width: 520px;
-  margin: 0 auto 32px;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* Input */
-.search {
-  width: 100%;
-  padding: 14px 46px 14px 14px;
-  background: #031c17;
-  color: #dfffe9;
-  border-radius: 14px;
-  border: 1px solid #3e8f78;
-  outline: none;
-  box-sizing: border-box;
-}
-
-/* Clear button */
-.search-clear {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  background: none;
-  border: none;
-  color: #7dffcf;
-  font-size: 1.1rem;
-  cursor: pointer;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
-}
-
-/* Show only when typing */
-.search-wrap.has-value .search-clear {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 
 </style>
 </head>
 
 <body>
-<div class="d-ark">
-  <div class="header">
-    <div><span class="led"></span> D-ARK SYSTEM</div>
-    <div>AREA SCAN MODE</div>
+<div class="app">
+
+  <h1>AREA ENCOUNTERS</h1>
+  <div class="subtitle">Wild Digimon Encounters</div>
+
+  <div class="nav">
+    <a href="index.html">DIGIMON</a>
+    <a href="encounter.html">ENCOUNTERS</a>
+    <a href="credits.html">CREDITS</a>
   </div>
 
-  <div class="screen">
-      
-    <h1>AREA SCAN</h1>
-    <div class="subtitle">SCANNING WILD DIGIMON DATA…
-    
-    
-    </div>
-
-    <div class="nav">
-      <a href="index.html">DIGIMON</a>
-      <a href="encounter.html">AREA SCAN</a>
-      <a href="credits.html">CREDITS</a>
-    </div>
-
-<div class="search-wrap">
-  <input
-    type="text"
-    class="search"
-    placeholder="SEARCH ROUTE, DIGIMON, ITEM…"
-  />
-  <button class="search-clear" aria-label="Clear search">✕</button>
+<div class="search-wrapper">
+  <textarea
+    class="search-box"
+    rows="2"
+    placeholder="Search route, Digimon, item, route number...">
+  </textarea>
+  <button class="search-clear" title="Clear search">×</button>
 </div>
 
-    
 
-    <!-- Land -->
-    <div class="scan-section open">
-      <button class="scan-header">EARTH ENCOUNTERS ▾</button>
-      <div class="scan-content">
+  <!-- EARTH -->
+  <div class="section open">
+    <div class="section-header">EARTH / LAND ▾</div>
+    <div class="section-content">
 
-        <div class="route">
-          <button class="route-header">ROUTE 101 ▾</button>
-          <div class="route-content">
-            <div class="encounter-grid header">
-              <span>DIGIMON</span><span>LV</span><span>ITEM</span>
-            </div>
-            <div class="encounter-grid"><span>Gazimon</span><span>5</span><span>—</span></div>
-            <div class="encounter-grid"><span>Agumon</span><span>5</span><span>—</span></div>
-            <div class="encounter-grid"><span>Veemon</span><span>5</span><span>Fire Data</span></div>
+      <div class="route">
+        <div class="route-header">ROUTE 101 ▾</div>
+        <div class="route-content">
+          <div class="encounter-grid header">
+            <span>DIGIMON</span><span>LV</span><span>ITEM</span>
           </div>
+          <div class="encounter-grid"><span>Gazimon</span><span>5</span><span>—</span></div>
+          <div class="encounter-grid"><span>Agumon</span><span>5</span><span>—</span></div>
+          <div class="encounter-grid"><span>Veemon</span><span>5</span><span>Fire Data</span></div>
         </div>
-
       </div>
+
     </div>
+  </div>
 
+  <!-- WATER -->
+  <div class="section">
+    <div class="section-header">WATER ▾</div>
+    <div class="section-content">
 
-
-<!-- WATER SCAN -->
-<div class="scan-section">
-  <button class="scan-header water">
-    <span>WATER ENCOUNTERS</span>
-    <span class="chevron">▾</span>
-  </button>
-
-  <div class="scan-content">
-               <section><div><!-- SURFING ENCOUNTERS -->
-    <div class="sub-folder open">
-      <button class="sub-folder-header">
-        SURFING ENCOUNTERS
-        <span class="chevron">▾</span>
-      </button>
-
-      <div class="sub-folder-content">
-      
-      <p>TO BE ADDED</p>
-      
+      <!-- SURF -->
+      <div class="sub-folder open">
+        <div class="sub-folder-header">SURFING ▾</div>
+        <div class="sub-folder-content">
+          <p style="font-size:0.8rem;color:var(--text-dim)">To be added</p>
+        </div>
       </div>
-      </section>
-      
-      
-      
- <!-- SURFING SECTION ENDS -->
- 
-          <!-- ROD ENCOUNTERS -->
-    <div class="sub-folder open">
-      <button class="sub-folder-header">
-        ROD ENCOUNTERS
-        <span class="chevron">▾</span>
-      </button>
 
-      <div class="sub-folder-content">
-      
-      
-<!-- ROD -->
-         
+      <!-- ROD -->
+      <div class="sub-folder open">
+        <div class="sub-folder-header">FISHING ROD ▾</div>
+        <div class="sub-folder-content">
+
 <!-- ROUTE 118 -->
 <div class="route">
-  <button class="route-header">
- ROUTE 118
-    <span class="chevron">▾</span>
-  </button>
-
-  <div class="route-content">
-<div class="encounter-grid"></div>
-         
-                    
-    <div class="encounter-grid header">
-      <span>OLD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
-    </div>
-    <div class="encounter-grid"><span>Sangomon</span><span>10</span><span>Water Data</span></div>
-    <div class="encounter-grid"><span>Numemon</span><span>18</span><span>—</span></div>
-
-    <div class="encounter-grid header">
-      <span>GOOD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
-    </div>
-    <div class="encounter-grid"><span>Dolphmon</span><span>20–30</span><span>—</span></div>
-    <div class="encounter-grid"><span>Numemon</span><span>20–30</span><span>—</span></div>
-    <div class="encounter-grid"><span>Tobiumon</span><span>20–30</span><span>—</span></div>
-
-    <div class="encounter-grid header">
-      <span>SUPER ROD</span><span>LEVEL</span><span>HELD ITEM</span>
-    </div>
-    <div class="encounter-grid"><span>Seadramon</span><span>30–31</span><span>—</span></div>
-    <div class="encounter-grid"><span>Tylomon</span><span>30–31</span><span>—</span></div>
-    <div class="encounter-grid"><span>Gesomon</span><span>31</span><span>—</span></div>
-    <div class="encounter-grid"><span>Huankumon</span><span>40</span><span>Water Data</span></div>
-    <div class="encounter-grid"><span>Piranimon</span><span>40–45</span><span>—</span></div>
-
-  </div>
-</div>
-    <!-- ROUTE 119 -->
-    <div class="route">
-  <button class="route-header">
-   ROUTE 119
-    <span class="chevron">▾</span>
-  </button>
-
+  <div class="route-header">ROUTE 118 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -595,13 +349,40 @@ position: relative;
 
   </div>
 </div>
-    <!-- ROUTE 120 -->
-    <div class="route">
-  <button class="route-header">
-   ROUTE 120
-    <span class="chevron">▾</span>
-  </button>
 
+<!-- ROUTE 119 -->
+<div class="route">
+  <div class="route-header">ROUTE 119 ▾</div>
+  <div class="route-content">
+
+    <div class="encounter-grid header">
+      <span>OLD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
+    </div>
+    <div class="encounter-grid"><span>Sangomon</span><span>10</span><span>Water Data</span></div>
+    <div class="encounter-grid"><span>Numemon</span><span>18</span><span>—</span></div>
+
+    <div class="encounter-grid header">
+      <span>GOOD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
+    </div>
+    <div class="encounter-grid"><span>Dolphmon</span><span>20–30</span><span>—</span></div>
+    <div class="encounter-grid"><span>Numemon</span><span>20–30</span><span>—</span></div>
+    <div class="encounter-grid"><span>Tobiumon</span><span>20–30</span><span>—</span></div>
+
+    <div class="encounter-grid header">
+      <span>SUPER ROD</span><span>LEVEL</span><span>HELD ITEM</span>
+    </div>
+    <div class="encounter-grid"><span>Seadramon</span><span>30–31</span><span>—</span></div>
+    <div class="encounter-grid"><span>Tylomon</span><span>30–31</span><span>—</span></div>
+    <div class="encounter-grid"><span>Gesomon</span><span>31</span><span>—</span></div>
+    <div class="encounter-grid"><span>Huankumon</span><span>40</span><span>Water Data</span></div>
+    <div class="encounter-grid"><span>Piranimon</span><span>40–45</span><span>—</span></div>
+
+  </div>
+</div>
+
+<!-- ROUTE 120 -->
+<div class="route">
+  <div class="route-header">ROUTE 120 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -627,14 +408,11 @@ position: relative;
     <div class="encounter-grid"><span>Piranimon</span><span>40–45</span><span>—</span></div>
 
   </div>
-  </div>
-  <!-- 121 122 123 -->
-    <div class="route">
-  <button class="route-header">
-   ROUTE 121, 122, 123
-    <span class="chevron">▾</span>
-  </button>
+</div>
 
+<!-- ROUTES 121–123 -->
+<div class="route">
+  <div class="route-header">ROUTES 121, 122, 123 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -661,13 +439,9 @@ position: relative;
   </div>
 </div>
 
-<!-- SAFARI ZONE SECTION 1 -->
+<!-- SAFARI ZONE — SECTION 1 -->
 <div class="route">
-  <button class="route-header">
-    SAFARI ZONE — SECTION 1
-    <span class="chevron">▾</span>
-  </button>
-
+  <div class="route-header">SAFARI ZONE — SECTION 1 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -694,13 +468,9 @@ position: relative;
   </div>
 </div>
 
-<!-- SAFARI ZONE SECTION 2 -->
+<!-- SAFARI ZONE — SECTION 2 -->
 <div class="route">
-  <button class="route-header">
-    SAFARI ZONE — SECTION 2
-    <span class="chevron">▾</span>
-  </button>
-
+  <div class="route-header">SAFARI ZONE — SECTION 2 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -727,13 +497,9 @@ position: relative;
   </div>
 </div>
 
-<!-- SAFARI ZONE SECTION 5 -->
+<!-- SAFARI ZONE — SECTION 5 -->
 <div class="route">
-  <button class="route-header">
-    SAFARI ZONE — SECTION 5
-    <span class="chevron">▾</span>
-  </button>
-
+  <div class="route-header">SAFARI ZONE — SECTION 5 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -756,31 +522,26 @@ position: relative;
 
   </div>
 </div>
-<!-- LILYCOVE CITY ETC -->
-<div class="route">
-  <button class="route-header">
-    LILYCOVE CITY, MOSDEEP CITY, SHOAL CAVE |
-    ROUTES: 124, 125, 126, 127
-    <span class="chevron">▾</span>
-  </button>
 
+<!-- LILYCOVE / MOSDEEP / SHOAL CAVE / ROUTES 124–127 -->
+<div class="route">
+  <div class="route-header">
+    LILYCOVE CITY, MOSDEEP CITY, SHOAL CAVE — ROUTES 124–127 ▾
+  </div>
   <div class="route-content">
 
-    <!-- OLD ROD -->
     <div class="encounter-grid header">
       <span>OLD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
     </div>
     <div class="encounter-grid"><span>Crabmon</span><span>15</span><span>—</span></div>
     <div class="encounter-grid"><span>Gizamon</span><span>15</span><span>Water Data</span></div>
 
-    <!-- GOOD ROD -->
     <div class="encounter-grid header">
       <span>GOOD ROD</span><span>LEVEL</span><span>HELD ITEM</span>
     </div>
     <div class="encounter-grid"><span>Ebidramon</span><span>20–30</span><span>—</span></div>
     <div class="encounter-grid"><span>Gesomon</span><span>20–30</span><span>—</span></div>
 
-    <!-- SUPER ROD -->
     <div class="encounter-grid header">
       <span>SUPER ROD</span><span>LEVEL</span><span>HELD ITEM</span>
     </div>
@@ -791,14 +552,12 @@ position: relative;
 
   </div>
 </div>
-<!-- PACIFIDLOG TOWN, ETC -->
-<div class="route">
-  <button class="route-header">
-    PACIFIDLOG TOWN, EVER GARDE CITY |
-    ROUTES: 128, 129, 130, 131, 132, 133, 134
-    <span class="chevron">▾</span>
-  </button>
 
+<!-- PACIFIDLOG / EVER GRANDE / ROUTES 128–134 -->
+<div class="route">
+  <div class="route-header">
+    PACIFIDLOG TOWN, EVER GRANDE CITY — ROUTES 128–134 ▾
+  </div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -824,13 +583,10 @@ position: relative;
 
   </div>
 </div>
+
 <!-- VICTORY ROAD BF2 -->
 <div class="route">
-  <button class="route-header">
-    VICTORY ROAD BF2
-    <span class="chevron">▾</span>
-  </button>
-
+  <div class="route-header">VICTORY ROAD BF2 ▾</div>
   <div class="route-content">
 
     <div class="encounter-grid header">
@@ -849,99 +605,152 @@ position: relative;
     </div>
     <div class="encounter-grid"><span>Numemon</span><span>45–50</span><span>—</span></div>
 
-  </div>  
-    
-<!-- JAVASCRIPT -->
+  </div>
+</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Digimon Trials — Fan Project</div>
+
+</div>
 <script>
-document.querySelectorAll(".route-header").forEach(b =>
-  b.onclick = () => b.parentElement.classList.toggle("open")
+/* =========================
+   TOGGLES
+========================= */
+document.querySelectorAll(".section-header").forEach(h =>
+  h.addEventListener("click", () =>
+    h.parentElement.classList.toggle("open")
+  )
 );
-document.querySelectorAll(".scan-header").forEach(b =>
-  b.onclick = () => b.parentElement.classList.toggle("open")
+
+document.querySelectorAll(".sub-folder-header").forEach(h =>
+  h.addEventListener("click", () =>
+    h.parentElement.classList.toggle("open")
+  )
 );
-</script>
-<!-- SEARCH INPUT -->
-<script>
-const searchInput = document.querySelector(".search");
 
-const scanSections = document.querySelectorAll(".scan-section");
-const routes = document.querySelectorAll(".route");
+document.querySelectorAll(".route-header").forEach(h =>
+  h.addEventListener("click", () =>
+    h.parentElement.classList.toggle("open")
+  )
+);
 
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase().trim();
+/* =========================
+   SEARCH CORE
+========================= */
+const searchInput = document.querySelector(".search-box");
+const clearBtn = document.querySelector(".search-clear");
+const routes = [...document.querySelectorAll(".route")];
+const sections = [...document.querySelectorAll(".section")];
+const subFolders = [...document.querySelectorAll(".sub-folder")];
 
-  // ===== RESET MODE =====
-  if (query === "") {
-    scanSections.forEach(section => {
-      section.classList.remove("open"); // collapse earth/water
-    });
+function normalize(str) {
+  return str.toLowerCase().replace(/[^\w\s\-–]/g, "").trim();
+}
 
-    routes.forEach(route => {
-      route.style.display = "block";
-      route.classList.remove("open");
+function extractNumbers(str) {
+  return str.match(/\d+/g)?.map(Number) || [];
+}
 
-      route.querySelectorAll(".encounter-grid").forEach(row => {
-        row.style.display = "grid";
-      });
-    });
-
-    return;
+function extractRanges(str) {
+  const ranges = [];
+  const regex = /(\d+)\s*[–-]\s*(\d+)/g;
+  let m;
+  while ((m = regex.exec(str))) {
+    ranges.push([+m[1], +m[2]]);
   }
+  return ranges;
+}
 
-  // ===== SEARCH MODE =====
-  scanSections.forEach(section => {
-    let sectionHasMatch = false;
+function inRange(n, r) {
+  return n >= r[0] && n <= r[1];
+}
 
-    const sectionTitle =
-      section.querySelector(".scan-header")?.innerText.toLowerCase() || "";
+/* Build index once */
+routes.forEach(route => {
+  const text =
+    route.querySelector(".route-header")?.innerText + " " +
+    route.querySelector(".route-content")?.innerText;
 
-    const sectionMatches = sectionTitle.includes(query);
+  const norm = normalize(text);
+  route.dataset.search = norm;
+  route.dataset.numbers = extractNumbers(norm).join(",");
+  route.dataset.ranges = JSON.stringify(extractRanges(norm));
+});
 
-    section.querySelectorAll(".route").forEach(route => {
-      const routeHeader = route.querySelector(".route-header");
-      const routeName = routeHeader.innerText.toLowerCase();
+let debounce;
+searchInput.addEventListener("input", () => {
+  clearTimeout(debounce);
+  debounce = setTimeout(runSearch, 120);
+  clearBtn.style.display = searchInput.value ? "block" : "none";
+});
 
-      let routeHasMatch = routeName.includes(query);
-      let rowMatchFound = false;
+function runSearch() {
+  const q = normalize(searchInput.value);
+  const nums = extractNumbers(q);
+  const ranges = extractRanges(q);
+  const active = q.length > 0;
 
-      route.querySelectorAll(".encounter-grid").forEach(row => {
-        if (row.classList.contains("header")) return;
+  /* Collapse everything first */
+  sections.forEach(s => s.classList.remove("open"));
+  subFolders.forEach(sf => sf.classList.remove("open"));
 
-        const rowText = row.innerText.toLowerCase();
-        const match =
-          rowText.includes(query) ||
-          routeName.includes(query) ||
-          sectionTitle.includes(query);
+  routes.forEach(route => {
+    if (!active) {
+      route.style.display = "";
+      route.classList.remove("open");
+      return;
+    }
 
-        row.style.display = match ? "grid" : "none";
-        if (match) rowMatchFound = true;
-      });
+    let match = route.dataset.search.includes(q);
 
-      if (routeHasMatch || rowMatchFound || sectionMatches) {
-        route.style.display = "block";
-        route.classList.add("open");
-        sectionHasMatch = true;
-      } else {
-        route.style.display = "none";
-        route.classList.remove("open");
-      }
+    const rNums = route.dataset.numbers.split(",").map(Number);
+    const rRanges = JSON.parse(route.dataset.ranges || "[]");
+
+    nums.forEach(n => {
+      if (rNums.includes(n)) match = true;
+      rRanges.forEach(r => inRange(n, r) && (match = true));
     });
-    if (sectionHasMatch || sectionMatches) {
-      section.classList.add("open");
-    } else {
-      section.classList.remove("open");
+
+    ranges.forEach(r => {
+      rNums.forEach(n => inRange(n, r) && (match = true));
+      rRanges.forEach(rr =>
+        (inRange(rr[0], r) || inRange(rr[1], r)) && (match = true)
+      );
+    });
+
+    route.style.display = match ? "" : "none";
+    route.classList.toggle("open", match);
+
+    if (match) {
+      route.closest(".sub-folder")?.classList.add("open");
+      route.closest(".section")?.classList.add("open");
     }
   });
-});
-</script>
+}
 
-<!-- WATER ENCOUNTERS DIVIDE -->
-<script>
-document.querySelectorAll(".sub-folder-header").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.classList.toggle("open");
+/* =========================
+   CLEAR / RESET
+========================= */
+function resetView() {
+  searchInput.value = "";
+  clearBtn.style.display = "none";
+
+  routes.forEach(r => {
+    r.style.display = "";
+    r.classList.remove("open");
   });
-});
+
+  sections.forEach(s => s.classList.remove("open"));
+  subFolders.forEach(sf => sf.classList.remove("open"));
+}
+
+clearBtn.addEventListener("click", resetView);
+document.addEventListener("keydown", e => e.key === "Escape" && resetView());
 </script>
 </body>
 </html>
