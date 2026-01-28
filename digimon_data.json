@@ -3862,8 +3862,8 @@
     ],
     "description": "Level 18 Digivolution of Tentomon High Key",
     "abilities": [
-      "sturdy",
-      "huge Power"
+      "Sturdy",
+      "Huge Power"
     ],
     "image": "",
     "evolves_to": [
@@ -3873,4 +3873,3 @@
       }
     ]
   }
-]
