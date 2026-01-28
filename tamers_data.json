@@ -3,28 +3,7 @@
     "version": "1.0.0",
     "description": "Tamer battle encounter data for Digimon Trials"
   },
-  "types": {
-    "Normal": "#cfd8dc",
-    "Fire": "#ff8a65",
-    "Water": "#64b5f6",
-    "Ice": "#4dd0e1",
-    "Electric": "#ffee58",
-    "Grass": "#81c784",
-    "Bug": "#aed581",
-    "Fighting": "#ef5350",
-    "Flying": "#90caf9",
-    "Dark": "#9575cd",
-    "Holy": "#fff59d",
-    "Dragon": "#7986cb",
-    "Steel": "#b0bec5",
-    "Poison": "#ba68c8",
-    "Ground": "#bc8f6a",
-    "Fairy": "#f48fb1",
-    "Magic": "#ec407a",
-    "Undead": "#7e57c2",
-    "Mystery": "#26c6da",
-    "Rock": "#91543c"
-  },
+
   "routes": [
     {
       "id": "route_101",
@@ -33,7 +12,7 @@
         {
           "name": "Digimon Tamer Kai",
           "class": "Tamer",
-          "image": "images/tamers/kai.png",
+          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
           "party": [
             {
               "species": "Agumon",
@@ -46,6 +25,7 @@
         }
       ]
     },
+
     {
       "id": "route_103",
       "name": "Route 103",
@@ -53,7 +33,7 @@
         {
           "name": "Digimon Tamer Sapphire",
           "class": "Rival",
-          "image": "images/tamers/spr_e_may.png",
+          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
           "party": [
             {
               "species": "Lopmon",
