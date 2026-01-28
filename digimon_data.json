@@ -4071,8 +4071,6 @@
               "name": "Bastemon",
               "condition": "Level 32 (Amped)"
             }
-          ]
-        },
         {
           "name": "LadyDevimon",
           "condition": "Level 32 (Low Key)"
@@ -4122,7 +4120,7 @@
           "condition": "Lunar Scale"
         }
       ]
-    },
+    }
     {
       "name": "Lilithmon",
       "stage": "mega",
