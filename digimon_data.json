@@ -440,7 +440,7 @@
         "image": "ophanimon.png",
         "evolves_to": [
             "name": "Ophanimon Falldown Mode",
-            "condition": "Dark Data",
+            "condition": "Dark Data"
         ]
       },
       {
