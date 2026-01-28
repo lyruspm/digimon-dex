@@ -33,22 +33,41 @@
       "name": "Route 101",
       "tamers": [
         {
-{
-  route: "Route 103",
-  tamers: [
+          "name": "Digimon Tamer Kai",
+          "class": "Tamer",
+          "image": "images/tamers/kai.png",
+          "party": [
+            {
+              "species": "Agumon",
+              "level": 7,
+              "ability": "Blaze",
+              "item": "Oran Berry",
+              "moves": ["Pepper Breath", "Scratch", "Growl", "Ember"]
+            }
+          ]
+        }
+      ]
+    },
+
     {
-      name: "Digimon Tamer Saphire",
-      class: "Rival",
-      image: "images/tamers/https://m.archives.bulbagarden.net/wiki/Category:Generation_III_Trainer_sprites#/media/File%3ASpr_E_May.png",
-      party: [
+      "id": "route_103",
+      "name": "Route 103",
+      "tamers": [
         {
-          species: "Lopmon",
-          level: 5,
-          ability: "Ability",
-          item: null,
-          moves: ["Pound", "Leer", "Rapid Spin"]
+          "name": "Digimon Tamer Sapphire",
+          "class": "Rival",
+          "image": "images/tamers/sapphire.png",
+          "party": [
+            {
+              "species": "Lopmon",
+              "level": 5,
+              "ability": "Ability",
+              "item": null,
+              "moves": ["Pound", "Leer", "Rapid Spin"]
+            }
+          ]
         }
       ]
     }
   ]
-},
+}
