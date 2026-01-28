@@ -4023,6 +4023,133 @@
       ],
       "image": "dianamon.png",
       "evolves_to": []
+    },
+    {
+      "name": "Tinkermon",
+      "stage": "child",
+      "types": [
+        "flying",
+        "fairy"
+      ],
+      "description": "Base form",
+      "abilities": [
+        "Cute Charm",
+        "Prankster"
+      ],
+      "image": "tinkermon.png",
+      "evolves_to": [
+        {
+          "name": "Darcmon",
+          "condition": "Level 18"
+        },
+        {
+          "name": "Fairymon",
+          "condition": "Wind Data"
+        }
+      ]
+    },
+    {
+      "name": "Darcmon",
+      "stage": "adult",
+      "types": [
+        "holy",
+        "flying"
+      ],
+      "description": "Level 18 Digivolution of Tinkermon",
+      "abilities": [
+        "Sharpness",
+        "Justified"
+      ],
+      "image": "darcmon.png",
+      "evolves_to": [
+        {
+          "name": "Hippogriffmon",
+          "condition": "Level 32"
+        }
+      ]
+    },
+    {
+      "name": "Fairymon",
+      "stage": "adult",
+      "types": [
+        "flying",
+        "fairy"
+      ],
+      "description": "Wind Data given to Tinkermon",
+      "abilities": [
+        "Cute Charm",
+        "Pixilate"
+      ],
+      "image": "fairymon.png",
+      "evolves_to": [
+        {
+          "name": "Shutumon",
+          "condition": "Slide Digivolution"
+        },
+        {
+          "name": "JetSilphymon",
+          "condition": "Level 32"
+        }
+      ]
+    },
+    {
+      "name": "Shutumon",
+      "stage": "adult",
+      "types": [
+        "flying",
+        "normal"
+      ],
+      "description": "Slide Digivolution with Fairymon",
+      "abilities": [
+        "Wind Rider",
+        "Sharpness"
+      ],
+      "image": "shutumon.png",
+      "evolves_to": [
+        {
+          "name": "Fairymon",
+          "condition": "Slide Digivolution"
+        },
+        {
+          "name": "JetSilphymon",
+          "condition": "Level 32"
+        }
+      ]
+    },
+    {
+      "name": "JetSilphymon",
+      "stage": "perfect",
+      "types": [
+        "flying",
+        "fairy"
+      ],
+      "description": "Level 32 Digivolution of Fairymon or Shutumon",
+      "abilities": [
+        "Wind Rider",
+        "Pixilate"
+      ],
+      "image": "jetsilphymon.png",
+      "evolves_to": [
+        {
+          "name": "Ancient Irismon",
+          "condition": "Level 54"
+        }
+      ]
+    },
+    {
+      "name": "Ancient Irismon",
+      "stage": "mega",
+      "types": [
+        "flying",
+        "fairy"
+      ],
+      "description": "Level 54 Digivolution of JetSilphymon",
+      "abilities": [
+        "Delta Stream",
+        "Pixilate"
+      ],
+      "image": "ancient_irismon.png",
+      "evolves_to": []
     }
   ]
 }
