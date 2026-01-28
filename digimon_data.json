@@ -4139,20 +4139,21 @@
       "evolves_to": []
     },
     {
-      "name": "Dianamon",
-      "stage": "mega",
-      "types": [
-        "dark",
-        "ice"
-      ],
-      "description": "Evolves from LadyDevimon using Lunar Scale",
-      "abilities": [
-        "Snow Cloak",
-        "Shadow Yield"
-      ],
-      "image": "dianamon.png",
-      "evolves_to": []
-    }
-      ]
-    }
-  ]
+      {
+        "name": "Dianamon",
+        "stage": "mega",
+        "types": [
+          "dark",
+          "ice"
+        ],
+        "description": "Evolves from LadyDevimon using Lunar Scale",
+        "abilities": [
+          "Snow Cloak",
+          "Shadow Yield"
+        ],
+        "image": "dianamon.png",
+        "evolves_to": []
+      }
+    ]
+  }
+]
