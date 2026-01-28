@@ -1,42 +1,38 @@
 {
-  "meta": {
-    "stages": {
-      "child": 3,
-      "adult": 4,
-      "perfect": 5,
-      "mega": 6,
-      "ultra": 7
-    },
-    "types": {
-      "normal": "#cfd8dc",
-      "fire": "#ff8a65",
-      "water": "#64b5f6",
-      "ice": "#4dd0e1",
-      "electric": "#ffee58",
-      "grass": "#81c784",
-      "bug": "#aed581",
-      "fighting": "#ef5350",
-      "flying": "#90caf9",
-      "dark": "#9575cd",
-      "holy": "#fff59d",
-      "dragon": "#7986cb",
-      "steel": "#b0bec5",
-      "poison": "#ba68c8",
-      "ground": "#bc8f6a",
-      "fairy": "#f48fb1",
-      "magic": "#ec407a",
-      "undead": "#7e57c2",
-      "mystery": "#26c6da",
-      "rock": "#91543c"
-    }
+  "stages": {
+    "Child": 3,
+    "Adult": 4,
+    "Perfect": 5,
+    "Mega": 6,
+    "Ultra": 7
   },
-
+  "types": {
+    "Normal": "#cfd8dc",
+    "Fire": "#ff8a65",
+    "Water": "#64b5f6",
+    "Ice": "#4dd0e1",
+    "Electric": "#ffee58",
+    "Grass": "#81c784",
+    "Bug": "#aed581",
+    "Fighting": "#ef5350",
+    "Flying": "#90caf9",
+    "Dark": "#9575cd",
+    "Holy": "#fff59d",
+    "Dragon": "#7986cb",
+    "Steel": "#b0bec5",
+    "Poison": "#ba68c8",
+    "Ground": "#bc8f6a",
+    "Fairy": "#f48fb1",
+    "Magic": "#ec407a",
+    "Undead": "#7e57c2",
+    "Mystery": "#26c6da",
+    "Rock": "#91543c"
+  },
   "digimon": [
     {
-      "id": "lopmon",
       "name": "Lopmon",
       "stage": "child",
-      "types": ["normal"],
+      "types": ["normal", null],
       "description": "Starter, or Spear Pillar F1",
       "abilities": ["Inner Focus", "Speed Boost"],
       "image": "lopmon.png",
@@ -45,12 +41,10 @@
         { "name": "Wendimon", "condition": "Dark Data" }
       ]
     },
-
     {
-      "id": "turuiemon",
       "name": "Turuiemon",
       "stage": "adult",
-      "types": ["fighting"],
+      "types": ["fighting", null],
       "description": "Level 20 Digivolution of Lopmon",
       "abilities": ["Tough Claw", "Speed Boost"],
       "image": "turuiemon.png",
@@ -58,9 +52,7 @@
         { "name": "Antylamon Good", "condition": "Level 35" }
       ]
     },
-
     {
-      "id": "wendimon",
       "name": "Wendimon",
       "stage": "adult",
       "types": ["fighting", "dark"],
@@ -70,6 +62,128 @@
       "evolves_to": [
         { "name": "Antylamon Evil", "condition": "Level 35" }
       ]
+    },
+    {
+      "name": "Antylamon Good",
+      "stage": "perfect",
+      "types": ["fighting", "holy"],
+      "description": "Level 35 Digivolution of Turuiemon",
+      "abilities": ["Tough Claw", "Speed Boost"],
+      "image": "antylamon_good.png",
+      "evolves_to": [
+        { "name": "Cherubimon Good", "condition": "Level 56" },
+        { "name": "Antylamon Evil", "condition": "Slide Digivolution with Dark Data" }
+      ]
+    },
+    {
+      "name": "Antylamon Evil",
+      "stage": "perfect",
+      "types": ["fighting", "dark"],
+      "description": "Level 35 Digivolution of Wendimon",
+      "abilities": ["Berserk", "Moxie"],
+      "image": "antylamon_evil.png",
+      "evolves_to": [
+        { "name": "Cherubimon Evil", "condition": "Level 56" },
+        { "name": "Antylamon Good", "condition": "Slide Digivolution with Light Data" }
+      ]
+    },
+    {
+      "name": "Cherubimon Good",
+      "stage": "mega",
+      "types": ["fighting", "holy"],
+      "description": "Level 56 Digivolution of Antylamon Good",
+      "abilities": ["Tough Claw", "Speed Boost"],
+      "image": "cherubimon_good.png",
+      "evolves_to": [
+        { "name": "Cherubimon Evil", "condition": "Slide Digivolution with Dark Data" }
+      ]
+    },
+    {
+      "name": "Cherubimon Evil",
+      "stage": "mega",
+      "types": ["fighting", "dark"],
+      "description": "Level 56 Digivolution of Antylamon Evil",
+      "abilities": ["Dark Aura", "Beast Boost"],
+      "image": "cherubimon_evil.png",
+      "evolves_to": [
+        { "name": "Cherubimon Good", "condition": "Slide Digivolution with Light Data" }
+      ]
+    },
+    {
+      "name": "Patamon",
+      "stage": "child",
+      "types": ["holy", null],
+      "description": "Starter or Spear Pillar F1",
+      "abilities": ["Run Away", "Unburden"],
+      "image": "patamon.png",
+      "evolves_to": [
+        { "name": "Angemon", "condition": "Level 20" },
+        { "name": "Pegasmon", "condition": "Light Data" }
+      ]
+    },
+    {
+      "name": "Angemon",
+      "stage": "adult",
+      "types": ["holy", "flying"],
+      "description": "Level 20 Digivolution of Patamon",
+      "abilities": ["Justified", "Purifying Salt"],
+      "image": "angemon.png",
+      "evolves_to": [
+        { "name": "MagnaAngemon", "condition": "Level 35" }
+      ]
+    },
+    {
+      "name": "Pegasmon",
+      "stage": "adult",
+      "types": ["holy", "flying"],
+      "description": "Light Data given to Patamon",
+      "abilities": ["Run Away", "Justified"],
+      "image": "pegasmon.png",
+      "evolves_to": [
+        { "name": "MagnaAngemon Priest Mode", "condition": "Level 35" }
+      ]
+    },
+    {
+      "name": "MagnaAngemon",
+      "stage": "perfect",
+      "types": ["holy", "flying"],
+      "description": "Level 35 Digivolution of Angemon",
+      "abilities": ["Justified", "Purifying Salt"],
+      "image": "magnaangemon.png",
+      "evolves_to": [
+        { "name": "Seraphimon", "condition": "Level 56" }
+      ]
+    },
+    {
+      "name": "MagnaAngemon Priest Mode",
+      "stage": "perfect",
+      "types": ["holy", "flying"],
+      "description": "Level 35 Digivolution of Pegasmon",
+      "abilities": ["Healer", "Justified"],
+      "image": "magnaangemon_priest_mode.png",
+      "evolves_to": [
+        { "name": "Seraphimon", "condition": "Level 56" }
+      ]
+    },
+    {
+      "name": "Seraphimon",
+      "stage": "mega",
+      "types": ["holy", "flying"],
+      "description": "Level 56 Digivolution of MagnaAngemon",
+      "abilities": ["Justified", "Purifying Salt"],
+      "image": "seraphimon.png",
+      "evolves_to": [
+        { "name": "Goddramon", "condition": "Light Data or Level 80" }
+      ]
+    },
+    {
+      "name": "Goddramon",
+      "stage": "ultra",
+      "types": ["dragon", "holy"],
+      "description": "Seraphimon given Light Data, or Level 80",
+      "abilities": ["Parental Bond", "Justified"],
+      "image": "goddramon.png",
+      "evolves_to": []
     }
   ]
 }
