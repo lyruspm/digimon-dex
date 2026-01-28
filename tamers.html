@@ -231,7 +231,11 @@ h1 {
 .dark{color:#9575cd}.holy{color:#fff59d}.dragon{color:#7986cb}
 .steel{color:#b0bec5}.poison{color:#ba68c8}.ground{color:#bc8f6a}
 .fairy{color:#f48fb1}.magic{color:#ec407a}.undead{color:#7e57c2}
-.rock{color:#91543c}
+.rock{color:#91543c}.none {
+  color: #eeeeee;
+}
+
+
 
 /* =====================
    META
@@ -389,33 +393,34 @@ h1 {
 </head>
 
 <body>
-<div class="app">
+<body>
+  <div class="app">
 
-<h1>TAMER ENCOUNTERS</h1>
-  <div class="nav">
-    <a href="index.html">DIGIMON</a>
-    <a href="credits.html">CREDITS</a>
-    
-    <div class="dropdown">
-    <button class="dropdown-toggle">GUIDE ▾</button>
-    <div class="dropdown-menu">
-      <a href="encounter.html">Encounters</a>      
-      <a href="faq.html">FAQ</a>
+    <h1>TAMER ENCOUNTERS</h1>
+
+    <div class="nav">
+      <a href="index.html">DIGIMON</a>
+      <a href="credits.html">CREDITS</a>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle">GUIDE ▾</button>
+        <div class="dropdown-menu">
+          <a href="encounter.html">Encounters</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
     </div>
+
+    <input
+      id="search"
+      class="search-box"
+      placeholder="Search routes or tamers..."
+    >
+
+    <div id="routes"></div>
+
   </div>
-</div>
-
-<input
-  id="search"
-  class="search-box"
-  placeholder="Search routes or tamers..."
->
-
-
-<div id="routes"></div>
-
-
-</div>
+</body>
 
 <script>
 fetch("https://raw.githubusercontent.com/lyruspm/digimon-dex/main/tamers_data.json")
@@ -443,9 +448,11 @@ function renderRoutes(routes) {
       tamerEl.innerHTML = `
         <div class="toggle tamer-toggle">
           <div class="tamer-header">
-            <img src="${tamer.sprite}"
-                 alt="${tamer.name}"
-                 onerror="this.src='https://via.placeholder.com/64'">
+         <img src="${tamer.sprite}"
+     alt="${tamer.name}"
+     referrerpolicy="no-referrer"
+     onerror="this.src='https://via.placeholder.com/64'">
+
             <div>
               ${tamer.name}<br>
               <small>${tamer.class}</small>
@@ -544,7 +551,7 @@ searchInput.addEventListener("input", () => {
     const showRoute = !q || routeMatch || anyTamerMatch;
     route.style.display = showRoute ? "" : "none";
 
-    
+    // Auto-expand matching routes
     if (routeContent) {
       routeContent.classList.toggle("hidden", !showRoute);
     }
