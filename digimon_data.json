@@ -3866,7 +3866,7 @@
   },
   {
     "name": "Okuwamon",
-    "stage": "adult",
+    "stage": "perfect",
     "types": [
       "bug",
       "fighting"
@@ -3899,4 +3899,9 @@
     "image": "grankuwagamon.png",
     "evolves_to": []
   }
+
+
+
+
+
   ]
