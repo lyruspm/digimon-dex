@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tamer battle encounter data for Digimon Trials"
   },
 
@@ -17,9 +17,15 @@
             {
               "species": "Agumon",
               "level": 7,
+              "types": ["Fire"],
               "ability": "Blaze",
               "item": "Oran Berry",
-              "moves": ["Pepper Breath", "Scratch", "Growl", "Ember"]
+              "moves": [
+                "Pepper Breath",
+                "Scratch",
+                "Growl",
+                "Ember"
+              ]
             }
           ]
         }
@@ -38,9 +44,14 @@
             {
               "species": "Lopmon",
               "level": 5,
+              "types": ["Holy"],
               "ability": "Ability",
               "item": null,
-              "moves": ["Pound", "Leer", "Rapid Spin"]
+              "moves": [
+                "Pound",
+                "Leer",
+                "Rapid Spin"
+              ]
             }
           ]
         }
