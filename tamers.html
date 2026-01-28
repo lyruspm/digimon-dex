@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digimon Trials — Tamer Encounters</title>
+
+<style>
+/* =====================
+   THEME
+===================== */
+:root {
+  --bg-main: #0f1115;
+  --bg-panel: #151821;
+  --bg-card: #1b1f2b;
+  --bg-subtle: #232838;
+
+  --text-main: #f2f4f8;
+  --text-dim: #a8b0c2;
+
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  margin: 0;
+  padding: 32px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, sans-serif;
+}
+
+.app {
+  max-width: 1400px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+/* =====================
+   ROUTES
+===================== */
+.route {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.route > .toggle {
+  padding: 16px 20px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.route > .toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.route > .content {
+  padding: 18px;
+}
+
+/* =====================
+   TAMERS
+===================== */
+.tamer {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.tamer > .toggle {
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.tamer > .toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.tamer-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tamer-header img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: #000;
+  image-rendering: pixelated;
+  border: 1px solid var(--border-strong);
+}
+
+.tamer-header small {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.tamer > .content {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* =====================
+   PARTY GRID
+===================== */
+.party {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+/* =====================
+   DIGIMON CARD
+===================== */
+.digimon {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.digimon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.digimon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.digimon-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.digimon-name span {
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+
+/* =====================
+   META
+===================== */
+.meta {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* =====================
+   MOVES
+===================== */
+.moves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.move {
+  padding: 4px 8px;
+  font-size: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+  white-space: nowrap;
+}
+
+/* =====================
+   UTIL
+===================== */
+.hidden {
+  display: none;
+}
+
+
+/* =====================
+   TYPES
+===================== */
+.types {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.type {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border: 1.5px solid currentColor;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Dex-consistent type colors */
+.normal{color:#cfd8dc}.fire{color:#ff8a65}.water{color:#64b5f6}
+.ice{color:#4dd0e1}.electric{color:#ffee58}.grass{color:#81c784}
+.bug{color:#aed581}.fighting{color:#ef5350}.flying{color:#90caf9}
+.dark{color:#9575cd}.holy{color:#fff59d}.dragon{color:#7986cb}
+.steel{color:#b0bec5}.poison{color:#ba68c8}.ground{color:#bc8f6a}
+.fairy{color:#f48fb1}.magic{color:#ec407a}.undead{color:#7e57c2}
+.rock{color:#91543c}
+
+/* =====================
+   META
+===================== */
+.meta {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+/* =====================
+   MOVES
+===================== */
+.moves {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.move {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.6rem;
+  white-space: nowrap;
+}
+
+       
+/* =====================
+   SEARCH
+===================== */
+/* =====================
+   SEARCH
+===================== */
+.search-box {
+  display: block;
+  margin: 0 auto 32px;
+  width: 100%;
+  max-width: 760px;
+
+  padding: 16px 18px;
+  font-size: 1rem;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-main);
+
+  letter-spacing: 0.04em;
+  outline: none;
+
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-box::placeholder {
+  color: var(--text-dim);
+}
+
+.search-box:focus {
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 0 0 3px rgba(120,140,255,0.08);
+}
+
+/* =====================
+   HEADER / NAV
+===================== */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 26px 0 42px;
+}
+
+.nav a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.nav a:hover {
+  background: var(--bg-subtle);
+}
+
+/* =====================
+   DROPDOWN NAV
+===================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  background: var(--bg-subtle);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.dropdown-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-subtle);
+}
+
+
+
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<h1>TAMER ENCOUNTERS</h1>
+  <div class="nav">
+    <a href="index.html">DIGIMON</a>
+    <a href="credits.html">CREDITS</a>
+    
+    <div class="dropdown">
+    <button class="dropdown-toggle">GUIDE ▾</button>
+    <div class="dropdown-menu">
+      <a href="encounter.html">Encounters</a>      
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</div>
+
+<input
+  id="search"
+  class="search-box"
+  placeholder="Search routes or tamers..."
+>
+
+
+<div id="routes"></div>
+
+
+</div>
+
+<script>
+fetch("https://raw.githubusercontent.com/lyruspm/digimon-dex/main/tamers_data.json")
+  .then(r => r.json())
+  .then(data => renderRoutes(data.routes));
+
+function renderRoutes(routes) {
+  const root = document.getElementById("routes");
+
+  routes.forEach(route => {
+    const routeEl = document.createElement("div");
+    routeEl.className = "route";
+
+    routeEl.innerHTML = `
+      <div class="toggle">${route.name}</div>
+      <div class="content hidden"></div>
+    `;
+
+    const routeContent = routeEl.querySelector(".content");
+
+    route.tamers.forEach(tamer => {
+      const tamerEl = document.createElement("div");
+      tamerEl.className = "tamer";
+
+      tamerEl.innerHTML = `
+        <div class="toggle tamer-toggle">
+          <div class="tamer-header">
+            <img src="${tamer.sprite}"
+                 alt="${tamer.name}"
+                 onerror="this.src='https://via.placeholder.com/64'">
+            <div>
+              ${tamer.name}<br>
+              <small>${tamer.class}</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="content hidden">
+          <div class="party">
+            ${tamer.party.map(d => `
+        <div class="digimon">
+  <div class="digimon-header">
+    <div class="digimon-name">
+      ${d.species} <span style="opacity:.6">Lv.${d.level}</span>
+    </div>
+
+    <div class="types">
+      ${d.types.map(t => `
+        <span class="type ${t.toLowerCase()}">${t}</span>
+      `).join("")}
+    </div>
+  </div>
+
+  <div class="meta">
+    Ability: ${d.ability}<br>
+    Item: ${d.item ?? "—"}
+  </div>
+
+  <div class="moves">
+    ${d.moves.map(m => `<span class="move">${m}</span>`).join("")}
+  </div>
+</div>
+
+            `).join("")}
+          </div>
+        </div>
+      `;
+
+      routeContent.appendChild(tamerEl);
+    });
+
+    root.appendChild(routeEl);
+  });
+
+  makeCollapsible();
+}
+
+/* =====================
+   COLLAPSE LOGIC
+===================== */
+function makeCollapsible() {
+  document.querySelectorAll(".toggle").forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const content = toggle.nextElementSibling;
+      if (!content) return;
+      content.classList.toggle("hidden");
+    });
+  });
+}
+</script>
+<script>
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.toLowerCase().trim();
+
+  document.querySelectorAll(".route").forEach(route => {
+    const routeName =
+      route.querySelector(":scope > .toggle")
+        .textContent
+        .toLowerCase();
+
+    let routeMatch = routeName.includes(q);
+    let anyTamerMatch = false;
+
+    const routeContent = route.querySelector(":scope > .content");
+
+    route.querySelectorAll(".tamer").forEach(tamer => {
+      const tamerName =
+        tamer.querySelector(".tamer-header")
+          .textContent
+          .toLowerCase();
+
+      const match = !q || tamerName.includes(q) || routeMatch;
+
+      tamer.style.display = match ? "" : "none";
+      if (match) anyTamerMatch = true;
+
+      // Auto-expand matching tamers
+      const content = tamer.querySelector(":scope > .content");
+      if (content) {
+        content.classList.toggle("hidden", !match);
+      }
+    });
+
+    const showRoute = !q || routeMatch || anyTamerMatch;
+    route.style.display = showRoute ? "" : "none";
+
+    
+    if (routeContent) {
+      routeContent.classList.toggle("hidden", !showRoute);
+    }
+  });
+});
+
+
+</script>
+<script>
+/* =====================
+   DROPDOWN NAV
+===================== */
+const dropdown = document.querySelector(".dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+
+toggle.addEventListener("click", e => {
+  e.stopPropagation();
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", () => {
+  menu.style.display = "none";
+});
+</script>
+</body>
+</html>
