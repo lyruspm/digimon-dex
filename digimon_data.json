@@ -4138,7 +4138,6 @@
       "image": "lilithmon.png",
       "evolves_to": []
     },
-    {
       {
         "name": "Dianamon",
         "stage": "mega",
@@ -4155,5 +4154,4 @@
         "evolves_to": []
       }
     ]
-  }
 ]
