@@ -439,12 +439,8 @@
         ],
         "image": "ophanimon.png",
         "evolves_to": [
-          "name",
-          ":",
-          "Ophanimon Falldown Mode",
-          "condition",
-          ":",
-          "Dark Data"
+            "name": "Ophanimon Falldown Mode",
+            "condition": "Dark Data",
         ]
       },
       {
@@ -3905,8 +3901,6 @@
         ],
         "image": "grankuwagamon.png",
         "evolves_to": []
-      }
-    ]
   },
   {
     "name": "Labramon",
