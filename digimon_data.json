@@ -4071,87 +4071,87 @@
               "name": "Bastemon",
               "condition": "Level 32 (Amped)"
             },
+            {
+              "name": "LadyDevimon",
+              "condition": "Level 32 (Low Key)"
+            }
+          ]
+        },
+        {
+          "name": "Bastemon",
+          "stage": "perfect",
+          "types": [
+            "dark",
+            "fairy"
+          ],
+          "description": "Evolves from Witchmon at Level 32 (Amped)",
+          "abilities": [
+            "Cute Charm",
+            "Prankster"
+          ],
+          "image": "bastemon.png",
+          "evolves_to": [
+            {
+              "name": "Lilithmon",
+              "condition": "Level 54"
+            }
+          ]
+        },
         {
           "name": "LadyDevimon",
-          "condition": "Level 32 (Low Key)"
-        }
-      ]
-    },
-    {
-      "name": "Bastemon",
-      "stage": "perfect",
-      "types": [
-        "dark",
-        "fairy"
-      ],
-      "description": "Evolves from Witchmon at Level 32 (Amped)",
-      "abilities": [
-        "Cute Charm",
-        "Prankster"
-      ],
-      "image": "bastemon.png",
-      "evolves_to": [
+          "stage": "perfect",
+          "types": [
+            "dark",
+            "poison"
+          ],
+          "description": "Evolves from Witchmon at Level 32 (Low Key)",
+          "abilities": [
+            "Mold Breaker",
+            "Prankster"
+          ],
+          "image": "ladydevimon.png",
+          "evolves_to": [
+            {
+              "name": "Lilithmon",
+              "condition": "Level 54"
+            },
+            {
+              "name": "Dianamon",
+              "condition": "Lunar Scale"
+            }
+          ]
+        },
         {
           "name": "Lilithmon",
-          "condition": "Level 54"
-        }
-      ]
-    },
-    {
-      "name": "LadyDevimon",
-      "stage": "perfect",
-      "types": [
-        "dark",
-        "poison"
-      ],
-      "description": "Evolves from Witchmon at Level 32 (Low Key)",
-      "abilities": [
-        "Mold Breaker",
-        "Prankster"
-      ],
-      "image": "ladydevimon.png",
-      "evolves_to": [
-        {
-          "name": "Lilithmon",
-          "condition": "Level 54"
+          "stage": "mega",
+          "types": [
+            "dark",
+            "poison"
+          ],
+          "description": "Evolves from Bastemon or LadyDevimon at Level 54",
+          "abilities": [
+            "Mold Breaker",
+            "Prankster"
+          ],
+          "image": "lilithmon.png",
+          "evolves_to": []
         },
         {
           "name": "Dianamon",
-          "condition": "Lunar Scale"
+          "stage": "mega",
+          "types": [
+            "dark",
+            "ice"
+          ],
+          "description": "Evolves from LadyDevimon using Lunar Scale",
+          "abilities": [
+            "Snow Cloak",
+            "Shadow Yield"
+          ],
+          "image": "dianamon.png",
+          "evolves_to": []
         }
       ]
     }
-    {
-      "name": "Lilithmon",
-      "stage": "mega",
-      "types": [
-        "dark",
-        "poison"
-      ],
-      "description": "Evolves from Bastemon or LadyDevimon at Level 54",
-      "abilities": [
-        "Mold Breaker",
-        "Prankster"
-      ],
-      "image": "lilithmon.png",
-      "evolves_to": []
-    },
-      {
-        "name": "Dianamon",
-        "stage": "mega",
-        "types": [
-          "dark",
-          "ice"
-        ],
-        "description": "Evolves from LadyDevimon using Lunar Scale",
-        "abilities": [
-          "Snow Cloak",
-          "Shadow Yield"
-        ],
-        "image": "dianamon.png",
-        "evolves_to": []
-              }
-      ]
+  ]
 ]
-
-
