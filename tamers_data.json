@@ -63,7 +63,7 @@
               "species": "Lopmon",
               "level": 5,
               "types": ["Holy", "None"],
-              "ability": "null",
+              "ability": "None",
               "item": null,
               "moves": ["Pound", "Leer", "Rapid Spin"]
             }
