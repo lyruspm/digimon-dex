@@ -3838,8 +3838,8 @@
     ],
     "description": "Alternate Digivolution from AtlurKabuterimon using a Sachet",
     "abilities": [
-      "Electromorphosis",
-      "Quark Drive"
+      "Beast Boost",
+      "Intimidate"
     ],
     "image": "tyrantkabuterimon.png",
     "evolves_to": []
