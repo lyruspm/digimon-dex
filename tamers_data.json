@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "Tamer battle encounter data for Digimon Trials"
+  },
+
+  "types": {
+    "Normal": "#cfd8dc",
+    "Fire": "#ff8a65",
+    "Water": "#64b5f6",
+    "Ice": "#4dd0e1",
+    "Electric": "#ffee58",
+    "Grass": "#81c784",
+    "Bug": "#aed581",
+    "Fighting": "#ef5350",
+    "Flying": "#90caf9",
+    "Dark": "#9575cd",
+    "Holy": "#fff59d",
+    "Dragon": "#7986cb",
+    "Steel": "#b0bec5",
+    "Poison": "#ba68c8",
+    "Ground": "#bc8f6a",
+    "Fairy": "#f48fb1",
+    "Magic": "#ec407a",
+    "Undead": "#7e57c2",
+    "Mystery": "#26c6da",
+    "Rock": "#91543c"
+  },
+
+  "routes": [
+    {
+      "id": "route_101",
+      "name": "Route 101",
+      "tamers": [
+        {
+{
+  route: "Route 103",
+  tamers: [
+    {
+      name: "Digimon Tamer Saphire",
+      class: "Rival",
+      image: "images/tamers/https://m.archives.bulbagarden.net/wiki/Category:Generation_III_Trainer_sprites#/media/File%3ASpr_E_May.png",
+      party: [
+        {
+          species: "Lopmon",
+          level: 5,
+          ability: "Ability",
+          item: null,
+          moves: ["Pound", "Leer", "Rapid Spin"]
+        }
+      ]
+    }
+  ]
+},
