@@ -79,44 +79,43 @@
       ]
     },
     {
-      "id": "route_103",
-      "name": "Route 103",
-      "tamers": [
+    {
+  "id": "route_103",
+  "name": "Route 103",
+  "tamers": [
+    {
+      "name": "Rick",
+      "class": "Bug Catcher",
+      "sprite": "https://m.archives.bulbagarden.net/media/upload/7/7f/Spr_RS_Bug_Catcher.png",
+      "party": [
         {
-          "name": "Rick",
-          "class": "Bug Catcher",
-          "sprite": "https://m.archives.bulbagarden.net/media/upload/7/7f/Spr_RS_Bug_Catcher.png",
-          "party": [
-            {
-              "species": "Wormmon",
-              "level": 7,
-              "types": ["Bug", "Poison"],
-              "ability": "Defeatist or Run Away",
-              "item": null,
-              "moves": [
-                "Silk Thread",
-                "Poison Sting",
-                "Defense Curl",
-                "Rollout"
-              ]
-            },
-            {
-              "species": "Tentomon",
-              "level": 8,
-              "types": ["Bug", "Electric"],
-              "ability": "Shell Armor or Huge Power",
-              "item": null,
-              "moves": [
-                "Fury Cutter",
-                "Growl",
-                "Electro Shock",
-                "Fury Swipe"
-              ]
-            }
+          "species": "Wormmon",
+          "level": 7,
+          "types": ["Bug", "Poison"],
+          "ability": "Defeatist or Run Away",
+          "item": null,
+          "moves": [
+            "Silk Thread",
+            "Poison Sting",
+            "Defense Curl",
+            "Rollout"
           ]
         },
-       {
-  "tamers": [
+        {
+          "species": "Tentomon",
+          "level": 8,
+          "types": ["Bug", "Electric"],
+          "ability": "Shell Armor or Huge Power",
+          "item": null,
+          "moves": [
+            "Fury Cutter",
+            "Growl",
+            "Electro Shock",
+            "Fury Swipe"
+          ]
+        }
+      ]
+    },
     {
       "name": "Allen",
       "class": "Youngster",
@@ -125,9 +124,7 @@
         {
           "species": "Agumon",
           "level": 7,
-          "types": [
-            "Fire"
-          ],
+          "types": ["Fire"],
           "ability": "Blaze",
           "item": "None",
           "moves": [
@@ -140,10 +137,7 @@
         {
           "species": "Gabumon",
           "level": 7,
-          "types": [
-            "Fire",
-            "Ice"
-          ],
+          "types": ["Fire", "Ice"],
           "ability": "Fur Coat or Snow Cloak",
           "item": "None",
           "moves": [
