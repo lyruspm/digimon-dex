@@ -4003,7 +4003,7 @@
         "condition": "Level 54"
       }
     ]
-  }
+  },
   {
     "name": "Anubismon",
     "stage": "mega",
@@ -4149,5 +4149,5 @@
     ],
     "image": "dianamon.png",
     "evolves_to": []
-  }
+  },
 ]
