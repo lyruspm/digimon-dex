@@ -53,7 +53,7 @@
         {
           "name": "Digimon Tamer Sapphire",
           "class": "Rival",
-          "image": "images/tamers/sapphire.png",
+          "image": "https://archives.bulbagarden.net/media/upload/Spr_E_May.png",
           "party": [
             {
               "species": "Lopmon",
