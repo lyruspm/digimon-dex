@@ -1,75 +1,131 @@
-{
-  "meta": {
-    "version": "1.0.1",
-    "description": "Tamer battle encounter data for Digimon Trials"
-  },
-
-  "types": {
-    "Normal": "#cfd8dc",
-    "Fire": "#ff8a65",
-    "Water": "#64b5f6",
-    "Ice": "#4dd0e1",
-    "Electric": "#ffee58",
-    "Grass": "#81c784",
-    "Bug": "#aed581",
-    "Fighting": "#ef5350",
-    "Flying": "#90caf9",
-    "Dark": "#9575cd",
-    "Holy": "#fff59d",
-    "Dragon": "#7986cb",
-    "Steel": "#b0bec5",
-    "Poison": "#ba68c8",
-    "Ground": "#bc8f6a",
-    "Fairy": "#f48fb1",
-    "Magic": "#ec407a",
-    "Undead": "#7e57c2",
-    "Mystery": "#26c6da",
-    "Rock": "#91543c"
-  },
-
-  "routes": [
-    {
-      "id": "route_101",
-      "name": "Route 101",
-      "tamers": [
-        {
-          "name": "Digimon Tamer Kai",
-          "class": "Tamer",
-          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
-          "party": [
-            {
-              "species": "Agumon",
-              "level": 7,
-              "types": ["Fire"],
-              "ability": "Blaze",
-              "item": "Oran Berry",
-              "moves": ["Pepper Breath", "Scratch", "Growl", "Ember"]
-            }
-          ]
-        }
-      ]
+[
+  {
+    "meta": {
+      "version": "1.0.1",
+      "description": "Tamer battle encounter data for Digimon Trials"
     },
-
-    {
-      "id": "route_103",
-      "name": "Route 103",
-      "tamers": [
-        {
-          "name": "Digimon Tamer Sapphire",
-          "class": "Rival",
-          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
-          "party": [
-            {
-              "species": "Lopmon",
-              "level": 5,
-              "types": ["Holy", "None"],
-              "ability": "None",
-              "item": null,
-              "moves": ["Pound", "Leer", "Rapid Spin"]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+    "types": {
+      "Normal": "#cfd8dc",
+      "Fire": "#ff8a65",
+      "Water": "#64b5f6",
+      "Ice": "#4dd0e1",
+      "Electric": "#ffee58",
+      "Grass": "#81c784",
+      "Bug": "#aed581",
+      "Fighting": "#ef5350",
+      "Flying": "#90caf9",
+      "Dark": "#9575cd",
+      "Holy": "#fff59d",
+      "Dragon": "#7986cb",
+      "Steel": "#b0bec5",
+      "Poison": "#ba68c8",
+      "Ground": "#bc8f6a",
+      "Fairy": "#f48fb1",
+      "Magic": "#ec407a",
+      "Undead": "#7e57c2",
+      "Mystery": "#26c6da",
+      "Rock": "#91543c"
+    },
+    "routes": [
+      {
+        "id": "route_test",
+        "name": "Route Test",
+        "tamers": [
+          {
+            "name": "Digimon Tamer Kai",
+            "class": "Tamer",
+            "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
+            "party": [
+              {
+                "species": "Agumon",
+                "level": 7,
+                "types": [
+                  "Fire"
+                ],
+                "ability": "Blaze",
+                "item": "Oran Berry",
+                "moves": [
+                  "Pepper Breath",
+                  "Scratch",
+                  "Growl",
+                  "Ember"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "route_103",
+        "name": "Route 103",
+        "tamers": [
+          {
+            "name": "Digimon Tamer Sapphire",
+            "class": "Rival",
+            "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
+            "party": [
+              {
+                "species": "Lopmon",
+                "level": 5,
+                "types": [
+                  "Holy",
+                  "None"
+                ],
+                "ability": "Ability",
+                "item": null,
+                "moves": [
+                  "Pound",
+                  "Leer",
+                  "Rapid Spin"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tamers": [
+      {
+        "name": "Rick",
+        "class": "Bug Catcher",
+        "sprite": "https://m.archives.bulbagarden.net/media/upload/7/7f/Spr_RS_Bug_Catcher.png",
+        "party": [
+          {
+            "species": "Wormmon",
+            "level": 7,
+            "types": [
+              "Bug",
+              "Poison"
+            ],
+            "ability": "Defeatist or Run Away",
+            "item": "None",
+            "moves": [
+              "Silk Thread",
+              "Poison Sting",
+              "Defense Curl",
+              "Rollout"
+            ]
+          },
+          {
+            "species": "Tentomon",
+            "level": 8,
+            "types": [
+              "Bug",
+              "Electric"
+            ],
+            "ability": "Shell Armor or Huge Power",
+            "item": "None",
+            "moves": [
+              "Fury Cutter",
+              "Growl",
+              "Electro Shock",
+              "Fury Swipe"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
