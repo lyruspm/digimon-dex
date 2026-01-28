@@ -3749,8 +3749,8 @@
     "name": "Tentomon",
     "stage": "child",
     "types": [
-      "Bug",
-      "Electric"
+      "bug",
+      "electric"
     ],
     "description": "Base, Petalburg Forest",
     "abilities": [
@@ -3773,8 +3773,8 @@
     "name": "Kabuterimon",
     "stage": "adult",
     "types": [
-      "Bug",
-      "Electric"
+      "bug",
+      "electric"
     ],
     "description": "Level 18 Digivolution of Tentomon Low Key",
     "abilities": [
@@ -3793,8 +3793,8 @@
     "name": "Kuwagamon",
     "stage": "adult",
     "types": [
-      "Bug",
-      "Fighting"
+      "bug",
+      "fighting"
     ],
     "description": "Level 18 Digivolution of Tentomon High Key",
     "abilities": [
@@ -3813,8 +3813,8 @@
     "name": "Tentomon",
     "stage": "child",
     "types": [
-      "Bug",
-      "Electric"
+      "bug",
+      "electric"
     ],
     "description": "Base, Petalburg Forest",
     "abilities": [
@@ -3837,13 +3837,13 @@
     "name": "Kabuterimon",
     "stage": "adult",
     "types": [
-      "Bug",
-      "Electric"
+      "bug",
+      "electric"
     ],
     "description": "Level 18 Digivolution of Tentomon Low Key",
     "abilities": [
-      "Shell Armor",
-      "Huge Power"
+      "shell Armor",
+      "huge Power"
     ],
     "image": "",
     "evolves_to": [
@@ -3857,13 +3857,13 @@
     "name": "Kuwagamon",
     "stage": "adult",
     "types": [
-      "Bug",
-      "Fighting"
+      "bug",
+      "fighting"
     ],
     "description": "Level 18 Digivolution of Tentomon High Key",
     "abilities": [
-      "Sturdy",
-      "Huge Power"
+      "sturdy",
+      "huge Power"
     ],
     "image": "",
     "evolves_to": [
