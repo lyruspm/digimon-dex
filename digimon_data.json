@@ -3746,4 +3746,67 @@
       ]
     }
   ]
-}
+    {
+    "name": "Tentomon",
+    "stage": "child",
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "description": "Base, Petalburg Forest",
+    "abilities": [
+      "Shell Armor",
+      "Huge Power"
+    ],
+    "image": "",
+    "evolves_to": [
+      {
+        "name": "Kabuterimon",
+        "condition": "Level 18 Low Key"
+      },
+      {
+        "name": "Kuwagamon",
+        "condition": "Level 18 High Key"
+      }
+    ]
+  },
+  {
+    "name": "Kabuterimon",
+    "stage": "adult",
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "description": "Level 18 Digivolution of Tentomon Low Key",
+    "abilities": [
+      "Shell Armor",
+      "Huge Power"
+    ],
+    "image": "",
+    "evolves_to": [
+      {
+        "name": "AtlurKabuterimon",
+        "condition": "Level 32"
+      }
+    ]
+  },
+  {
+    "name": "Kuwagamon",
+    "stage": "adult",
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "description": "Level 18 Digivolution of Tentomon High Key",
+    "abilities": [
+      "Sturdy",
+      "Huge Power"
+    ],
+    "image": "",
+    "evolves_to": [
+      {
+        "name": "Okuwamon",
+        "condition": "Level 32"
+      }
+    ]
+  }
