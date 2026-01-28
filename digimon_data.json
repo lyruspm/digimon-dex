@@ -3926,7 +3926,7 @@
   },
   {
     "name": "Dobermon",
-    "stage": "champion",
+    "stage": "adult",
     "types": [
       "dark"
     ],
@@ -3945,7 +3945,7 @@
   },
   {
     "name": "Siesamon",
-    "stage": "champion",
+    "stage": "adult",
     "types": [
       "holy"
     ],
@@ -4146,5 +4146,5 @@
     ],
     "image": "dianamon.png",
     "evolves_to": []
-  },
+  }
 ]
