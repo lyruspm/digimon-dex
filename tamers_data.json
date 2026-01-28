@@ -26,128 +26,128 @@
     "Rock": "#91543c",
     "None": "#eeeeee"
   },
-  "routes": [
-    {
-      "id": "route_test",
-      "name": "Route Test",
-      "tamers": [
-        {
-          "name": "Digimon Tamer Kai",
-          "class": "Tamer",
-          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
-          "party": [
-            {
-              "species": "Agumon",
-              "level": 7,
-              "types": ["Fire"],
-              "ability": "Blaze",
-              "item": "Oran Berry",
-              "moves": [
-                "Pepper Breath",
-                "Scratch",
-                "Growl",
-                "Ember"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "route_102",
-      "name": "Route 102",
-      "tamers": [
-        {
-          "name": "Digimon Tamer Sapphire",
-          "class": "Rival",
-          "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
-          "party": [
-            {
-              "species": "Lopmon",
-              "level": 5,
-              "types": ["Holy", "None"],
-              "ability": "Ability",
-              "item": null,
-              "moves": [
-                "Pound",
-                "Leer",
-                "Rapid Spin"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-    {
-  "id": "route_103",
-  "name": "Route 103",
-  "tamers": [
-    {
-      "name": "Rick",
-      "class": "Bug Catcher",
-      "sprite": "https://m.archives.bulbagarden.net/media/upload/7/7f/Spr_RS_Bug_Catcher.png",
-      "party": [
-        {
-          "species": "Wormmon",
-          "level": 7,
-          "types": ["Bug", "Poison"],
-          "ability": "Defeatist or Run Away",
-          "item": null,
-          "moves": [
-            "Silk Thread",
-            "Poison Sting",
-            "Defense Curl",
-            "Rollout"
-          ]
-        },
-        {
-          "species": "Tentomon",
-          "level": 8,
-          "types": ["Bug", "Electric"],
-          "ability": "Shell Armor or Huge Power",
-          "item": null,
-          "moves": [
-            "Fury Cutter",
-            "Growl",
-            "Electro Shock",
-            "Fury Swipe"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Allen",
-      "class": "Youngster",
-      "sprite": "https://m.archives.bulbagarden.net/media/upload/c/c5/Spr_RS_Youngster.png",
-      "party": [
-        {
-          "species": "Agumon",
-          "level": 7,
-          "types": ["Fire"],
-          "ability": "Blaze",
-          "item": "None",
-          "moves": [
-            "Scratch",
-            "Growl",
-            "Petit Flame",
-            "Bite"
-          ]
-        },
-        {
-          "species": "Gabumon",
-          "level": 7,
-          "types": ["Fire", "Ice"],
-          "ability": "Fur Coat or Snow Cloak",
-          "item": "None",
-          "moves": [
-            "Scratch",
-            "Growl",
-            "Petit Flame",
-            "Horn Attack"
-          ]
-        }
-      ]
-    }
-  ]
-}
+ "routes": [
+  {
+    "id": "route_test",
+    "name": "Route Test",
+    "tamers": [
+      {
+        "name": "Digimon Tamer Kai",
+        "class": "Tamer",
+        "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
+        "party": [
+          {
+            "species": "Agumon",
+            "level": 7,
+            "types": ["Fire"],
+            "ability": "Blaze",
+            "item": "Oran Berry",
+            "moves": [
+              "Pepper Breath",
+              "Scratch",
+              "Growl",
+              "Ember"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "route_102",
+    "name": "Route 102",
+    "tamers": [
+      {
+        "name": "Digimon Tamer Sapphire",
+        "class": "Rival",
+        "sprite": "https://m.archives.bulbagarden.net/media/upload/a/a4/Spr_E_May.png",
+        "party": [
+          {
+            "species": "Lopmon",
+            "level": 5,
+            "types": ["Holy", "None"],
+            "ability": "Ability",
+            "item": null,
+            "moves": [
+              "Pound",
+              "Leer",
+              "Rapid Spin"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "route_103",
+    "name": "Route 103",
+    "tamers": [
+      {
+        "name": "Rick",
+        "class": "Bug Catcher",
+        "sprite": "https://m.archives.bulbagarden.net/media/upload/7/7f/Spr_RS_Bug_Catcher.png",
+        "party": [
+          {
+            "species": "Wormmon",
+            "level": 7,
+            "types": ["Bug", "Poison"],
+            "ability": "Defeatist or Run Away",
+            "item": null,
+            "moves": [
+              "Silk Thread",
+              "Poison Sting",
+              "Defense Curl",
+              "Rollout"
+            ]
+          },
+          {
+            "species": "Tentomon",
+            "level": 8,
+            "types": ["Bug", "Electric"],
+            "ability": "Shell Armor or Huge Power",
+            "item": null,
+            "moves": [
+              "Fury Cutter",
+              "Growl",
+              "Electro Shock",
+              "Fury Swipe"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Allen",
+        "class": "Youngster",
+        "sprite": "https://m.archives.bulbagarden.net/media/upload/c/c5/Spr_RS_Youngster.png",
+        "party": [
+          {
+            "species": "Agumon",
+            "level": 7,
+            "types": ["Fire"],
+            "ability": "Blaze",
+            "item": "None",
+            "moves": [
+              "Scratch",
+              "Growl",
+              "Petit Flame",
+              "Bite"
+            ]
+          },
+          {
+            "species": "Gabumon",
+            "level": 7,
+            "types": ["Fire", "Ice"],
+            "ability": "Fur Coat or Snow Cloak",
+            "item": "None",
+            "moves": [
+              "Scratch",
+              "Growl",
+              "Petit Flame",
+              "Horn Attack"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
