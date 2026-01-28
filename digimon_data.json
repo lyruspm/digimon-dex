@@ -1,5 +1,5 @@
 [
-  [
+  
     {
       "stages": {
         "Child": 3,
@@ -29,7 +29,8 @@
         "Undead": "#7e57c2",
         "Mystery": "#26c6da",
         "Rock": "#91543c"
-      },
+      }
+      ]
       "digimon": [
         {
           "name": "Lopmon",
@@ -3837,7 +3838,7 @@
         },
         {
           "name": "TyrantKabuterimon",
-          "stage": "adult",
+          "stage": "mega",
           "types": [
             "bug",
             "dark"
