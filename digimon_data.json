@@ -3745,7 +3745,6 @@
         }
       ]
     },
-    [
   {
     "name": "Tentomon",
     "stage": "child",
@@ -3810,7 +3809,6 @@
       }
     ]
   },
-  [
   {
     "name": "Tentomon",
     "stage": "child",
