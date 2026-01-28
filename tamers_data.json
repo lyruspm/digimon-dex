@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Tamer battle encounter data for Digimon Trials"
   },
-
   "types": {
     "Normal": "#cfd8dc",
     "Fire": "#ff8a65",
@@ -26,7 +25,6 @@
     "Mystery": "#26c6da",
     "Rock": "#91543c"
   },
-
   "routes": [
     {
       "id": "route_101",
@@ -48,7 +46,6 @@
         }
       ]
     },
-
     {
       "id": "route_103",
       "name": "Route 103",
