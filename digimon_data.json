@@ -4152,4 +4152,24 @@
       "evolves_to": []
     }
   ]
-}
+},
+{
+      "name": "Pteromon",
+      "stage": "child",
+      "types": [
+        "flying",
+        "null"
+      ],
+      "description": "Base, Route 103",
+      "abilities": [
+        "null",
+        "null"
+      ],
+      "image": "pteromon.png",
+      "evolves_to": [
+        {
+          "name": "Galemon",
+          "condition": "Level 18"
+        }
+      ]
+    }
