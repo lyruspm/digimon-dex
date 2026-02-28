@@ -436,7 +436,7 @@ function normalizeDex(raw) {
       stage: normalizeStage(d.stage),
       types: normalizeTypes(d.types),
       description: d.description || "(no description)",
-      image: d.image || null,
+      image: d.image ? `image/${d.image}` : null,
       abilities: Array.isArray(d.abilities) ? d.abilities : [],
       evolves_to: Array.isArray(d.evolves_to) ? d.evolves_to : []
     });
