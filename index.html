@@ -352,9 +352,10 @@ h1 {
 
 <script>
 /* =====================
-   STATE
+   STATE + DOM
 ===================== */
 let DATA = [];
+
 const dexEl = document.getElementById("dex");
 const overlay = document.getElementById("overlay");
 const searchInput = document.getElementById("search");
@@ -363,18 +364,35 @@ const typeFilter = document.getElementById("typeFilter");
 const clearBtn = document.getElementById("clearFilters");
 
 /* =====================
-   LOAD DATA (Backend API)
+   LOAD FROM digidata/
 ===================== */
 async function loadDex() {
   try {
-    const res = await fetch("/api/dex");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const res = await fetch("digidata/index.json");
+    if (!res.ok) throw new Error("Failed to load index.json");
 
-    DATA = normalizeDex(data);
+    const { entries } = await res.json();
+    if (!Array.isArray(entries)) throw new Error("Invalid index format");
+
+    const loaded = [];
+
+    for (const slug of entries) {
+      try {
+        const r = await fetch(`digidata/${slug}.json`);
+        if (!r.ok) throw new Error();
+
+        const data = await r.json();
+        loaded.push(data);
+      } catch {
+        console.warn("Skipped broken entry:", slug);
+      }
+    }
+
+    DATA = normalizeDex(loaded);
     render(DATA);
+
   } catch (err) {
-    showError("Failed to load Dex:\n\n" + err.message);
+    showError("DEX LOAD FAILED:\n\n" + err.message);
   }
 }
 
@@ -386,14 +404,13 @@ loadDex();
 function showError(msg) {
   const div = document.createElement("div");
   div.style.cssText = `
-    background: #4a0000;
-    color: #ffcccc;
-    padding: 16px;
-    margin: 20px auto;
-    max-width: 720px;
-    border-radius: 10px;
-    white-space: pre-wrap;
-    font-family: Consolas, monospace;
+    background:#4a0000;
+    color:#ffcccc;
+    padding:16px;
+    margin:20px auto;
+    max-width:720px;
+    border-radius:10px;
+    white-space:pre-wrap;
   `;
   div.textContent = msg;
   document.querySelector(".app").prepend(div);
@@ -419,6 +436,7 @@ function normalizeDex(raw) {
       stage: normalizeStage(d.stage),
       types: normalizeTypes(d.types),
       description: d.description || "(no description)",
+      image: d.image || null,
       abilities: Array.isArray(d.abilities) ? d.abilities : [],
       evolves_to: Array.isArray(d.evolves_to) ? d.evolves_to : []
     });
@@ -466,6 +484,13 @@ function render(list) {
         <div class="entry-title">${d.name}</div>
         <div class="stage">${capitalize(d.stage) || "—"}</div>
       </div>
+
+      ${d.image ? `
+        <div style="text-align:center; margin:10px 0;">
+          <img src="${d.image}"
+               style="max-height:110px; max-width:100%; object-fit:contain;">
+        </div>
+      ` : ""}
 
       <div class="types">
         ${
@@ -577,6 +602,5 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 </script>
-
 </body>
 </html>
