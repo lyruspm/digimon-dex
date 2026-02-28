@@ -1,0 +1,20 @@
+{
+  "name": "Raidramon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Electric"
+  ],
+  "description": "Thunder Data given to Veemon",
+  "image": "raidramon.png",
+  "abilities": [
+    "Lighting Rod",
+    "Adaptability"
+  ],
+  "evolves_to": [
+    {
+      "name": "Majiramon",
+      "condition": "Level 32"
+    }
+  ]
+}
