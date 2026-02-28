@@ -1,0 +1,15 @@
+{
+  "name": "Holydramon",
+  "stage": "mega",
+  "types": [
+    "Holy",
+    "Dragon"
+  ],
+  "description": "Level 80 Digivolution of Kyukimon",
+  "image": "holydramon.png",
+  "abilities": [
+    "Magic Bounce",
+    "Regenerator"
+  ],
+  "evolves_to": []
+}
