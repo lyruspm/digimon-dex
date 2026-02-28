@@ -364,11 +364,11 @@ const typeFilter = document.getElementById("typeFilter");
 const clearBtn = document.getElementById("clearFilters");
 
 /* =====================
-   LOAD FROM digidata/
+   LOAD FROM digidex/
 ===================== */
 async function loadDex() {
   try {
-    const res = await fetch("digidata/index.json");
+    const res = await fetch("digidex/index.json");
     if (!res.ok) throw new Error("Failed to load index.json");
 
     const { entries } = await res.json();
@@ -378,7 +378,7 @@ async function loadDex() {
 
     for (const slug of entries) {
       try {
-        const r = await fetch(`digidata/${slug}.json`);
+        const r = await fetch(`digidex/${slug}.json`);
         if (!r.ok) throw new Error();
 
         const data = await r.json();
