@@ -1,0 +1,19 @@
+{
+  "name": "Manticoremon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Holy"
+  ],
+  "description": "Level 32 Digivolution of Gargoylemon",
+  "image": "manticoremon.png",
+  "abilities": [
+    "No Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "Bagramon Archangel",
+      "condition": "Level 54"
+    }
+  ]
+}
