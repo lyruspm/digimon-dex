@@ -24,7 +24,7 @@
 ===================== */
 body {
   margin: 0;
-  padding: 24px 16px;
+  padding: 20px 12px;
   background: var(--bg-main);
   color: var(--text-main);
   font-family: system-ui, -apple-system, sans-serif;
@@ -39,22 +39,22 @@ body {
 h1 {
   text-align: center;
   margin: 0 0 8px;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 .subtitle {
   text-align: center;
   color: var(--text-dim);
-  font-size: 1.05rem;
-  margin: 0 0 32px;
+  font-size: 1rem;
+  margin: 0 0 28px;
 }
 
-/* Search + Filters (kept mostly same, just minor tweaks) */
+/* Search + Filters */
 .search-box {
   display: block;
-  margin: 24px auto;
+  margin: 20px auto;
   width: 100%;
-  max-width: 700px;
+  max-width: 680px;
   padding: 14px 16px;
   font-size: 1rem;
   border-radius: 12px;
@@ -64,10 +64,10 @@ h1 {
 }
 
 .filters {
-  margin: 20px auto;
+  margin: 16px auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
   align-items: flex-end;
 }
@@ -75,27 +75,26 @@ h1 {
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .filter-group label {
   font-size: 0.75rem;
   color: var(--text-dim);
-  letter-spacing: 0.5px;
 }
 
 .filter-group select {
   background: var(--bg-panel);
   border: 1px solid var(--border);
   color: white;
-  padding: 10px 12px;
-  border-radius: 10px;
-  min-width: 140px;
+  padding: 9px 11px;
+  border-radius: 9px;
+  min-width: 130px;
 }
 
 #clearFilters {
-  height: 38px;
-  padding: 0 24px;
+  height: 36px;
+  padding: 0 20px;
   border-radius: 999px;
   background: #0b0d12;
   color: #d0d4dc;
@@ -103,23 +102,23 @@ h1 {
   cursor: pointer;
 }
 
-/* Nav kept simple */
+/* Nav */
 .nav {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin: 24px 0 32px;
+  gap: 14px;
+  margin: 20px 0 28px;
+  flex-wrap: wrap;
 }
 
 .nav a, .dropdown-toggle {
-  padding: 10px 20px;
+  padding: 9px 18px;
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--text-main);
   text-decoration: none;
   font-size: 0.9rem;
   background: transparent;
-  cursor: pointer;
 }
 
 .nav a:hover, .dropdown-toggle:hover {
@@ -127,76 +126,72 @@ h1 {
 }
 
 /* =====================
-   GRID + CARDS
+   GRID + CARDS — main fixes here
 ===================== */
 .dex-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin: 32px auto;
-  max-width: 1280px;
-  padding: 0 8px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin: 28px auto;
+  max-width: 1240px;
+  padding: 0 4px;
 }
 
 .entry {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
+  border-radius: 14px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-height: 380px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  min-height: 360px;           /* gives more consistent starting height */
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
 }
 
 .entry:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.42);
 }
 
-.card-image-container {
-  height: 160px;
-  background: #0b0d12;
-  display: flex;
+/* Target the inline image wrapper directly */
+.entry > div[style*="text-align:center; margin:10px 0;"] {
+  height: 140px;                      /* controlled image area */
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  background: #0b0d12;
+  margin: 8px 0 12px !important;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 8px;
   box-sizing: border-box;
 }
 
-.card-image-container img {
-  max-width: 100%;
-  max-height: 100%;
+.entry img {
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: contain;
   image-rendering: crisp-edges;
 }
 
-.entry-content {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 10px;
-}
-
+/* Header (name + stage) */
 .entry-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 12px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .entry-title {
-  font-size: 1.35rem;
+  font-size: 1.28rem;
   font-weight: 800;
-  margin: 0;
 }
 
 .stage {
-  font-size: 0.8rem;
-  padding: 5px 12px;
+  font-size: 0.78rem;
+  padding: 4px 10px;
   border-radius: 999px;
   background: var(--bg-subtle);
   color: var(--text-dim);
@@ -204,47 +199,28 @@ h1 {
   white-space: nowrap;
 }
 
+/* Types */
 .types {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 4px 0 8px;
+  gap: 6px;
+  margin: 6px 0 10px;
 }
 
 .type {
-  padding: 5px 11px;
-  font-size: 0.72rem;
+  padding: 4px 10px;
+  font-size: 0.7rem;
   font-weight: 700;
   border-radius: 999px;
   border: 1.5px solid currentColor;
 }
 
-
-.normal{color:#cfd8dc}
-.fire{color:#ff8a65}
-.water{color:#64b5f6}
-.ice{color:#4dd0e1}
-.electric{color:#ffee58}
-.grass{color:#81c784}
-.bug{color:#aed581}
-.fighting{color:#ef5350}
-.flying{color:#90caf9}
-.dark{color:#9575cd}
-.holy{color:#fff59d}
-.dragon{color:#7986cb}
-.steel{color:#b0bec5}
-.poison{color:#ba68c8}
-.ground{color:#bc8f6a}
-.fairy{color:#f48fb1}
-.magic{color:#ec407a}
-.undead{color:#7e57c2}
-.mystery{color:#26c6da}
-.rock{color:#91543c}
-
+/* Description */
 .entry-desc {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--text-dim);
-  line-height: 1.38;
+  line-height: 1.35;
+  margin: 6px 0 12px;
   flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
@@ -252,11 +228,12 @@ h1 {
   -webkit-box-orient: vertical;
 }
 
+/* Evo strip — push to bottom-ish */
 .evo-strip {
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 10px;
   border-top: 1px solid var(--border);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
 }
 
@@ -264,17 +241,17 @@ h1 {
   color: #ccd1db;
   font-weight: 600;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .evo-strip ul {
-  margin: 0 0 0 18px;
+  margin: 4px 0 0 16px;
   padding: 0;
   list-style: disc;
 }
 
 .evo-strip li {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 /* Modal */
@@ -289,26 +266,25 @@ h1 {
 }
 
 .modal {
-  width: min(90vw, 780px);
-  max-height: 90vh;
+  width: min(90vw, 760px);
+  max-height: 88vh;
   overflow-y: auto;
   background: var(--bg-panel);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border-radius: 18px;
+  padding: 24px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 560px) {
+/* Mobile */
+@media (max-width: 540px) {
   .dex-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .entry {
-    min-height: 400px;
+    min-height: 380px;
   }
-  .card-image-container {
-    height: 170px;
+  .entry > div[style*="text-align:center; margin:10px 0;"] {
+    height: 150px;
   }
 }
 </style>
