@@ -1,0 +1,20 @@
+{
+  "name": "Pegasmon",
+  "stage": "adult",
+  "types": [
+    "Holy",
+    "Flying"
+  ],
+  "description": "Light Data given to Patamon. Route 117",
+  "image": "pegasmon.png",
+  "abilities": [
+    "Run Away",
+    "Justified"
+  ],
+  "evolves_to": [
+    {
+      "name": "Magna Angemon (Priest Mode)",
+      "condition": "Level 35"
+    }
+  ]
+}
