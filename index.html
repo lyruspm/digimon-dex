@@ -357,40 +357,15 @@ h1 {
 let DATA = [];
 
 /* =====================
-   LOAD & PARSE JSON
+   LOAD & PARSE
 ===================== */
-fetch("https://raw.githubusercontent.com/lyruspm/digimon-dex/main/digimon_data.json")
-  .then(r => {
-    if (!r.ok) {
-      throw new Error(`HTTP ${r.status} – ${r.statusText}`);
-    }
-    return r.text();   
+fetch("/api/dex")
+  .then(r => r.json())
+  .then(data => {
+    DATA = normalizeDex(data);
+    render(DATA);
   })
-  .then(text => {
-    try {
-      const json = JSON.parse(text);
-      const { meta, digimon } = json;
-
-      DATA = normalizeDex(digimon || []);
-      render(DATA);
-    } catch (parseErr) {
-      console.error("JSON parse failed:", parseErr);
-      showError(`Invalid JSON format\n\n${parseErr.message}\n\nCheck your digimon_data.json file for:\n• trailing commas\n• missing quotes\n• unbalanced brackets\n• invalid escape sequences`);
-      
-      // Attempt very basic recovery — show partial data //
-      const fallback = attemptRelaxedParse(text);
-      if (fallback && fallback.length > 0) {
-        DATA = normalizeDex(fallback);
-        render(DATA);
-        showError("Partial data loaded — some entries may be missing or broken. Fix JSON recommended.");
-      }
-    }
-  })
-  .catch(err => {
-    console.error("Fetch / load failed:", err);
-    showError(`Could not load digimon_data.json\n\n${err.message}\n\nPossible causes:\n• File moved / renamed\n• GitHub raw link broken\n• Network issue\n• CORS (unlikely with raw.githubusercontent.com)`);
-  });
-
+  .catch(err => showError(err.message));
 // Simple error display (you can style it nicer)
 function showError(msg) {
   const div = document.createElement("div");
