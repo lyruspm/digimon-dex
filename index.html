@@ -355,18 +355,34 @@ h1 {
    STATE
 ===================== */
 let DATA = [];
+const dexEl = document.getElementById("dex");
+const overlay = document.getElementById("overlay");
+const searchInput = document.getElementById("search");
+const stageFilter = document.getElementById("stageFilter");
+const typeFilter = document.getElementById("typeFilter");
+const clearBtn = document.getElementById("clearFilters");
 
 /* =====================
-   LOAD & PARSE
+   LOAD DATA (Backend API)
 ===================== */
-fetch("/api/dex")
-  .then(r => r.json())
-  .then(data => {
+async function loadDex() {
+  try {
+    const res = await fetch("/api/dex");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
     DATA = normalizeDex(data);
     render(DATA);
-  })
-  .catch(err => showError(err.message));
-// Simple error display (you can style it nicer)
+  } catch (err) {
+    showError("Failed to load Dex:\n\n" + err.message);
+  }
+}
+
+loadDex();
+
+/* =====================
+   ERROR DISPLAY
+===================== */
 function showError(msg) {
   const div = document.createElement("div");
   div.style.cssText = `
@@ -378,26 +394,9 @@ function showError(msg) {
     border-radius: 10px;
     white-space: pre-wrap;
     font-family: Consolas, monospace;
-    line-height: 1.4;
   `;
   div.textContent = msg;
   document.querySelector(".app").prepend(div);
-}
-
-// Very forgiving fallback parse (only used when strict parse fails)
-function attemptRelaxedParse(rawText) {
-  try {
-    // Remove trailing commas before ] or }
-    let cleaned = rawText
-      .replace(/,\s*([\]}])/g, '$1')
-      // Try to quote unquoted keys (very naive)
-      .replace(/([{\[,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:/g, '$1"$2":');
-
-    return JSON.parse(cleaned);
-  } catch (e) {
-    console.warn("Relaxed parse also failed", e);
-    return [];
-  }
 }
 
 /* =====================
@@ -406,51 +405,33 @@ function attemptRelaxedParse(rawText) {
 function normalizeDex(raw) {
   if (!Array.isArray(raw)) return [];
 
-  const map = new Map();
+  const seen = new Set();
+  const clean = [];
 
-  raw.forEach((d, index) => {
-    if (!d || typeof d !== "object") {
-      console.warn(`Skipping invalid entry at index ${index}`);
-      return;
-    }
+  for (const d of raw) {
+    if (!d || typeof d !== "object") continue;
+    if (!d.name || seen.has(d.name)) continue;
 
-    const name = (
-      d.name ||
-      d.Name ||
-      d.Digimon ||
-      d.Species ||
-      `Unnamed #${index + 1}`
-    ).trim();
+    seen.add(d.name);
 
-    if (!name || name === "Unnamed") return;
+    clean.push({
+      name: String(d.name),
+      stage: normalizeStage(d.stage),
+      types: normalizeTypes(d.types),
+      description: d.description || "(no description)",
+      abilities: Array.isArray(d.abilities) ? d.abilities : [],
+      evolves_to: Array.isArray(d.evolves_to) ? d.evolves_to : []
+    });
+  }
 
-    if (!map.has(name)) {
-      map.set(name, normalizeDigimon(d, name));
-    } else {
-      console.warn(`Duplicate name ignored: ${name}`);
-    }
-  });
-
-  return [...map.values()];
-}
-
-function normalizeDigimon(d, fallbackName) {
-  return {
-    name:        fallbackName || "???",
-    stage:       normalizeStage(d.stage || d.Stage || d.level || ""),
-    types:       normalizeTypes(d.types || d.Type || []),
-    description: String(d.description || d.Description || d.desc || "").trim() || "(no description)",
-    abilities:   normalizeArray(d.abilities || d.Abilities || []),
-    evolves_to:  normalizeEvos(d.evolves_to || d.Evolves_To || d.EvolvesTo || d.evolution || [])
-  };
+  return clean.sort((a,b)=>a.name.localeCompare(b.name));
 }
 
 function normalizeStage(s) {
   if (!s) return "";
-  const str = String(s).toLowerCase().trim();
-  // Map common variations if you want
+  const str = String(s).toLowerCase();
   if (str.includes("child") || str.includes("rookie")) return "child";
-  if (str.includes("adult")  || str.includes("champion")) return "adult";
+  if (str.includes("adult") || str.includes("champion")) return "adult";
   if (str.includes("perfect") || str.includes("ultimate")) return "perfect";
   if (str.includes("mega")) return "mega";
   if (str.includes("ultra")) return "ultra";
@@ -458,86 +439,55 @@ function normalizeStage(s) {
 }
 
 function normalizeTypes(types) {
-  if (!Array.isArray(types)) {
-    if (typeof types === "string") {
-      return types.split(/[,/|]/).map(t => t.trim().toLowerCase()).filter(Boolean);
-    }
-    return [];
-  }
-  return types
-    .map(t => String(t || "").trim().toLowerCase())
-    .filter(t => t && t !== "none" && t !== "null" && t !== "");
-}
-
-function normalizeArray(arr) {
-  if (!Array.isArray(arr)) return [];
-  return [...new Set(
-    arr
-      .map(item => String(item || "").trim())
-      .filter(Boolean)
-  )];
-}
-
-function normalizeEvos(evos) {
-  if (!Array.isArray(evos)) return [];
-  return evos.map(e => {
-    if (typeof e === "string") {
-      return { name: e.trim(), condition: "" };
-    }
-    if (typeof e === "object" && e !== null) {
-      return {
-        name: (e.name || e.Name || "Unknown").trim(),
-        condition: (e.condition || e.method || e.how || "").trim()
-      };
-    }
-    return { name: "?", condition: "" };
-  }).filter(e => e.name !== "?");
+  if (!Array.isArray(types)) return [];
+  return types.map(t => String(t).toLowerCase().trim()).filter(Boolean);
 }
 
 /* =====================
-   RENDER (unchanged – already quite good)
+   RENDER
 ===================== */
 function render(list) {
-  dex.innerHTML = "";
+  dexEl.innerHTML = "";
 
-  if (list.length === 0) {
-    dex.innerHTML = `<div style="text-align:center; padding:60px; color:var(--text-dim);">
-      No Digimon match the current filters / search
-    </div>`;
+  if (!list.length) {
+    dexEl.innerHTML = `
+      <div style="text-align:center; padding:60px; color:var(--text-dim);">
+        No Digimon match your filters
+      </div>`;
     return;
   }
 
-  list.forEach(d => {
-    const el = document.createElement("div");
-    el.className = "entry";
+  for (const d of list) {
+    const card = document.createElement("div");
+    card.className = "entry";
 
-    el.innerHTML = `
+    card.innerHTML = `
       <div class="entry-header">
         <div class="entry-title">${d.name}</div>
-        <div class="stage">
-          ${d.stage ? d.stage.charAt(0).toUpperCase() + d.stage.slice(1) : "—"}
-        </div>
+        <div class="stage">${capitalize(d.stage) || "—"}</div>
       </div>
 
       <div class="types">
-        ${d.types.length 
-          ? d.types.map(t => `
-              <span class="type ${t}">
-                ${t.charAt(0).toUpperCase() + t.slice(1)}
-              </span>
-            `).join("")
-          : '<span style="opacity:0.5">—</span>'}
+        ${
+          d.types.length
+            ? d.types.map(t => `
+                <span class="type ${t}">
+                  ${capitalize(t)}
+                </span>
+              `).join("")
+            : '<span style="opacity:.5">—</span>'
+        }
       </div>
 
-      <div class="entry-desc">${d.description || "—"}</div>
+      <div class="entry-desc">${d.description}</div>
 
       <div class="evo-strip">
         <strong>Digivolves To</strong>
         ${
           d.evolves_to.length
-            ? `<ul style="margin:4px 0 0 16px; padding-left:0; list-style:disc;">
+            ? `<ul style="margin:4px 0 0 16px;">
                 ${d.evolves_to.map(e =>
-                  `<li>${e.name}${e.condition ? ` — ${e.condition}` : ""}</li>`
+                  `<li>${e.name}${e.condition ? " — " + e.condition : ""}</li>`
                 ).join("")}
               </ul>`
             : " —"
@@ -545,80 +495,88 @@ function render(list) {
       </div>
     `;
 
-    el.onclick = () => openModal(d);
-    dex.appendChild(el);
-  });
+    card.addEventListener("click", () => openModal(d));
+    dexEl.appendChild(card);
+  }
 }
 
 /* =====================
-   MODAL (minor improvement)
+   MODAL
 ===================== */
 function openModal(d) {
   document.getElementById("modal-title").textContent = d.name;
 
-  let content = `<p style="margin:0 0 16px;">${d.description || "(no description available)"}</p>`;
+  let html = `<p>${d.description}</p>`;
 
-  if (d.abilities?.length) {
-    content += `
-      <h3 style="margin:16px 0 8px; font-size:1.1rem;">Abilities</h3>
-      <ul style="margin:0; padding-left:20px;">
+  if (d.abilities.length) {
+    html += `
+      <h3>Abilities</h3>
+      <ul>
         ${d.abilities.map(a => `<li>${a}</li>`).join("")}
       </ul>`;
   }
 
-  if (d.evolves_to?.length) {
-    content += `
-      <h3 style="margin:20px 0 8px; font-size:1.1rem;">Evolution Path</h3>
-      <ul style="margin:0; padding-left:20px;">
-        ${d.evolves_to.map(e => `<li>${e.name}${e.condition ? ` — ${e.condition}` : ""}</li>`).join("")}
+  if (d.evolves_to.length) {
+    html += `
+      <h3>Evolution Path</h3>
+      <ul>
+        ${d.evolves_to.map(e =>
+          `<li>${e.name}${e.condition ? " — " + e.condition : ""}</li>`
+        ).join("")}
       </ul>`;
   }
 
-  document.getElementById("modal-body").innerHTML = content;
+  document.getElementById("modal-body").innerHTML = html;
   overlay.classList.remove("hidden");
 }
 
-overlay.onclick = e => {
+overlay.addEventListener("click", e => {
   if (e.target === overlay) overlay.classList.add("hidden");
-};
+});
 
 /* =====================
-   FILTERING (unchanged)
+   FILTERING
 ===================== */
 function applyFilters() {
-  const q = search.value.toLowerCase().trim();
+  const q = searchInput.value.toLowerCase().trim();
 
-  render(DATA.filter(d => {
-    const blob = [
-      d.name,
-      d.description,
-      ...d.abilities,
-      ...d.evolves_to.flatMap(e => [e.name, e.condition])
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
+  const filtered = DATA.filter(d => {
+    const textBlob = (
+      d.name +
+      d.description +
+      d.abilities.join("") +
+      d.evolves_to.map(e => e.name + (e.condition || "")).join("")
+    ).toLowerCase();
 
-    const matchesSearch = !q || blob.includes(q);
+    const matchesSearch = !q || textBlob.includes(q);
     const matchesStage = !stageFilter.value || d.stage === stageFilter.value;
-    const matchesType  = !typeFilter.value  || d.types.includes(typeFilter.value);
+    const matchesType = !typeFilter.value || d.types.includes(typeFilter.value);
 
     return matchesSearch && matchesStage && matchesType;
-  }));
+  });
+
+  render(filtered);
 }
 
-search.addEventListener("input", applyFilters);
+searchInput.addEventListener("input", applyFilters);
 stageFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
 
-document.getElementById("clearFilters").onclick = () => {
-  search.value = "";
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
   stageFilter.value = "";
   typeFilter.value = "";
   render(DATA);
-};
-</script>
+});
 
+/* =====================
+   UTIL
+===================== */
+function capitalize(str) {
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+</script>
 
 </body>
 </html>
