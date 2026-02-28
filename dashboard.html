@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dex Admin</title>
+</head>
+<body>
+
+<h1>Create Digimon Entry</h1>
+
+<form id="form">
+  <input placeholder="Name" id="name" required><br><br>
+  <input placeholder="Stage" id="stage"><br><br>
+  <input placeholder="Types (comma separated)" id="types"><br><br>
+  <input placeholder="Prior" id="prior"><br><br>
+  <input placeholder="Next (comma separated)" id="next"><br><br>
+  <input placeholder="Abilities (comma separated)" id="abilities"><br><br>
+
+  <button type="submit">Create</button>
+</form>
+
+<script>
+document.getElementById("form").onsubmit = async e => {
+  e.preventDefault();
+
+  const body = {
+    name: name.value,
+    stage: stage.value,
+    types: types.value.split(",").map(s => s.trim()).filter(Boolean),
+    prior: prior.value || null,
+    next: next.value.split(",").map(s => s.trim()).filter(Boolean),
+    abilities: abilities.value.split(",").map(s => s.trim()).filter(Boolean)
+  };
+
+  const res = await fetch("/api/admin/create", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+
+  const data = await res.json();
+  alert(JSON.stringify(data, null, 2));
+};
+
+app.post("/api/admin/create", (req, res, next) => {
+  if (req.headers.authorization !== "Bearer YOUR_SECRET")
+    return res.status(403).send("Forbidden");
+  next();
+});
+
+</script>
+
+</body>
+</html>
