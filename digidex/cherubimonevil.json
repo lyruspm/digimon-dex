@@ -1,0 +1,20 @@
+{
+  "name": "Cherubimon Evil",
+  "stage": "mega",
+  "types": [
+    "Fighting",
+    "Dark"
+  ],
+  "description": "Level 56 Digivolution of Antylamon Evil",
+  "image": "cherubimonevil.png",
+  "abilities": [
+    "Dark Aura",
+    "Beast Boost"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cherubimon Good",
+      "condition": "Slide Digivolution with Light Data"
+    }
+  ]
+}
