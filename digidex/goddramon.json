@@ -1,0 +1,15 @@
+{
+  "name": "Goddramon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Holy"
+  ],
+  "description": "Seraphimon given Light Data, or Level 80",
+  "image": "goddramon.png",
+  "abilities": [
+    "Parental Bond",
+    "Justified"
+  ],
+  "evolves_to": []
+}
