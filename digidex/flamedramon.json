@@ -1,0 +1,20 @@
+{
+  "name": "Flamedramon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Fire"
+  ],
+  "description": "Fire Data given to veemon",
+  "image": "flamedramon.png",
+  "abilities": [
+    "Blaze",
+    "Adaptibility"
+  ],
+  "evolves_to": [
+    {
+      "name": "Magnamon",
+      "condition": "Level 32"
+    }
+  ]
+}
