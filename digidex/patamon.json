@@ -1,0 +1,24 @@
+{
+  "name": "Patamon",
+  "stage": "child",
+  "types": [
+    "Holy",
+    "Null"
+  ],
+  "description": "Starter, or Spear Pillar F1",
+  "image": "patamon.png",
+  "abilities": [
+    "Run Away",
+    "Unburden"
+  ],
+  "evolves_to": [
+    {
+      "name": "Angemon",
+      "condition": "Level 20"
+    },
+    {
+      "name": "Pegasmon",
+      "condition": "Light Dara"
+    }
+  ]
+}
