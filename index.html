@@ -442,6 +442,29 @@ h1 {
     height: 170px;
   }
 }
+
+/* =====================
+   LOADER
+===================== */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255,255,255,0.08);
+  border-top: 5px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 </style>
 </head>
 
@@ -505,6 +528,10 @@ h1 {
   <button id="clearFilters">Clear Filters</button>
 </div>
 
+<div id="loader" class="loader">
+  <div class="spinner"></div>
+</div>
+
 <div id="dex"></div>
 </div>
 
@@ -527,6 +554,7 @@ const searchInput = document.getElementById("search");
 const stageFilter = document.getElementById("stageFilter");
 const typeFilter = document.getElementById("typeFilter");
 const clearBtn = document.getElementById("clearFilters");
+const loader = document.getElementById("loader");
 
 /* =====================
    LOAD FROM digidex/
@@ -553,11 +581,18 @@ async function loadDex() {
       }
     }
 
-    DATA = normalizeDex(loaded);
-    render(DATA);
+DATA = normalizeDex(loaded);
+
+// Default to Child view immediately
+stageFilter.value = "child";
+applyFilters();
+
+// Hide loader after rendering
+loader.style.display = "none";
 
   } catch (err) {
     showError("DEX LOAD FAILED:\n\n" + err.message);
+    loader.style.display = "none";
   }
 }
 
