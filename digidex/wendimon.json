@@ -1,0 +1,20 @@
+{
+  "name": "Wendimon",
+  "stage": "adult",
+  "types": [
+    "Fighting",
+    "Dark"
+  ],
+  "description": "Digivolution of Lopmon when given Dark Data. Route 117",
+  "image": "wendimon.png",
+  "abilities": [
+    "Berserk",
+    "Moxie"
+  ],
+  "evolves_to": [
+    {
+      "name": "Antylamon Evil",
+      "condition": "Level 35"
+    }
+  ]
+}
