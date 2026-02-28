@@ -1,0 +1,20 @@
+{
+  "name": "Ophanimon",
+  "stage": "mega",
+  "types": [
+    "Holy",
+    "Fairy"
+  ],
+  "description": "Level 56 Digivolution of Angewomon",
+  "image": "ophanimon.png",
+  "abilities": [
+    "Hospitality",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Ophanimon Falldown Mode",
+      "condition": "Dark Data"
+    }
+  ]
+}
