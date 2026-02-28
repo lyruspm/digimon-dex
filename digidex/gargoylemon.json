@@ -1,0 +1,19 @@
+{
+  "name": "Gargoylemmon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Holy"
+  ],
+  "description": "Light Data given to Veemon",
+  "image": "gargoylemon.png",
+  "abilities": [
+    "Sturdy"
+  ],
+  "evolves_to": [
+    {
+      "name": "Manticoremon",
+      "condition": "Level 32"
+    }
+  ]
+}
