@@ -533,7 +533,7 @@ const clearBtn = document.getElementById("clearFilters");
 ===================== */
 async function loadDex() {
   try {
-    const res = await fetch("11AA_digidex/index.json");
+    const res = await fetch("digidex/11AA_index.json");
     if (!res.ok) throw new Error("Failed to load 11AA_index.json");
 
     const { entries } = await res.json();
@@ -543,7 +543,7 @@ async function loadDex() {
 
     for (const slug of entries) {
       try {
-        const r = await fetch(`11AA_digidex/${slug}.json`);
+        const r = await fetch(`digidex/${slug}.json`);
         if (!r.ok) throw new Error();
 
         const data = await r.json();
