@@ -1,0 +1,24 @@
+{
+  "name": "Lopmon",
+  "stage": "child",
+  "types": [
+    "Normal",
+    "Null"
+  ],
+  "description": "Base Digimon. Starter or Spear Pillar F1",
+  "image": "lopmon.png",
+  "abilities": [
+    "Inner Focus",
+    "Speed Boost"
+  ],
+  "evolves_to": [
+    {
+      "name": "Wendimon",
+      "condition": "Dark Data"
+    },
+    {
+      "name": "Turuiemon",
+      "condition": "Level 20"
+    }
+  ]
+}
