@@ -293,7 +293,6 @@ h1 {
     <div class="dropdown-menu">
       <a href="encounter.html">Encounters</a>
       <a href="faq.html">FAQ</a>
-       <a href="tamers.html">TAMERS</a>
     </div>
   </div>
 </div>
@@ -352,116 +351,286 @@ h1 {
 </div>
 
 <script>
+/* =====================
+   STATE
+===================== */
 let DATA = [];
 
-fetch("digimon_data.json")
-  .then(r => r.text())
-  .then(t => {
-    const clean = t.slice(0, t.lastIndexOf("}") + 1);
-    return JSON.parse(clean);
+/* =====================
+   LOAD & PARSE JSON
+===================== */
+fetch("https://raw.githubusercontent.com/lyruspm/digimon-dex/main/digimon_data.json")
+  .then(r => {
+    if (!r.ok) {
+      throw new Error(`HTTP ${r.status} – ${r.statusText}`);
+    }
+    return r.text();   
   })
-  .then(j => {
-    DATA = j.digimon;
-    render(DATA);
+  .then(text => {
+    try {
+      const json = JSON.parse(text);
+      const { meta, digimon } = json;
+
+      DATA = normalizeDex(digimon || []);
+      render(DATA);
+    } catch (parseErr) {
+      console.error("JSON parse failed:", parseErr);
+      showError(`Invalid JSON format\n\n${parseErr.message}\n\nCheck your digimon_data.json file for:\n• trailing commas\n• missing quotes\n• unbalanced brackets\n• invalid escape sequences`);
+      
+      // Attempt very basic recovery — show partial data //
+      const fallback = attemptRelaxedParse(text);
+      if (fallback && fallback.length > 0) {
+        DATA = normalizeDex(fallback);
+        render(DATA);
+        showError("Partial data loaded — some entries may be missing or broken. Fix JSON recommended.");
+      }
+    }
+  })
+  .catch(err => {
+    console.error("Fetch / load failed:", err);
+    showError(`Could not load digimon_data.json\n\n${err.message}\n\nPossible causes:\n• File moved / renamed\n• GitHub raw link broken\n• Network issue\n• CORS (unlikely with raw.githubusercontent.com)`);
   });
 
-const dex = document.getElementById("dex");
-const search = document.getElementById("search");
-const stageFilter = document.getElementById("stageFilter");
-const typeFilter = document.getElementById("typeFilter");
+// Simple error display (you can style it nicer)
+function showError(msg) {
+  const div = document.createElement("div");
+  div.style.cssText = `
+    background: #4a0000;
+    color: #ffcccc;
+    padding: 16px;
+    margin: 20px auto;
+    max-width: 720px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    line-height: 1.4;
+  `;
+  div.textContent = msg;
+  document.querySelector(".app").prepend(div);
+}
 
+// Very forgiving fallback parse (only used when strict parse fails)
+function attemptRelaxedParse(rawText) {
+  try {
+    // Remove trailing commas before ] or }
+    let cleaned = rawText
+      .replace(/,\s*([\]}])/g, '$1')
+      // Try to quote unquoted keys (very naive)
+      .replace(/([{\[,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:/g, '$1"$2":');
+
+    return JSON.parse(cleaned);
+  } catch (e) {
+    console.warn("Relaxed parse also failed", e);
+    return [];
+  }
+}
+
+/* =====================
+   NORMALIZATION
+===================== */
+function normalizeDex(raw) {
+  if (!Array.isArray(raw)) return [];
+
+  const map = new Map();
+
+  raw.forEach((d, index) => {
+    if (!d || typeof d !== "object") {
+      console.warn(`Skipping invalid entry at index ${index}`);
+      return;
+    }
+
+    const name = (
+      d.name ||
+      d.Name ||
+      d.Digimon ||
+      d.Species ||
+      `Unnamed #${index + 1}`
+    ).trim();
+
+    if (!name || name === "Unnamed") return;
+
+    if (!map.has(name)) {
+      map.set(name, normalizeDigimon(d, name));
+    } else {
+      console.warn(`Duplicate name ignored: ${name}`);
+    }
+  });
+
+  return [...map.values()];
+}
+
+function normalizeDigimon(d, fallbackName) {
+  return {
+    name:        fallbackName || "???",
+    stage:       normalizeStage(d.stage || d.Stage || d.level || ""),
+    types:       normalizeTypes(d.types || d.Type || []),
+    description: String(d.description || d.Description || d.desc || "").trim() || "(no description)",
+    abilities:   normalizeArray(d.abilities || d.Abilities || []),
+    evolves_to:  normalizeEvos(d.evolves_to || d.Evolves_To || d.EvolvesTo || d.evolution || [])
+  };
+}
+
+function normalizeStage(s) {
+  if (!s) return "";
+  const str = String(s).toLowerCase().trim();
+  // Map common variations if you want
+  if (str.includes("child") || str.includes("rookie")) return "child";
+  if (str.includes("adult")  || str.includes("champion")) return "adult";
+  if (str.includes("perfect") || str.includes("ultimate")) return "perfect";
+  if (str.includes("mega")) return "mega";
+  if (str.includes("ultra")) return "ultra";
+  return str;
+}
+
+function normalizeTypes(types) {
+  if (!Array.isArray(types)) {
+    if (typeof types === "string") {
+      return types.split(/[,/|]/).map(t => t.trim().toLowerCase()).filter(Boolean);
+    }
+    return [];
+  }
+  return types
+    .map(t => String(t || "").trim().toLowerCase())
+    .filter(t => t && t !== "none" && t !== "null" && t !== "");
+}
+
+function normalizeArray(arr) {
+  if (!Array.isArray(arr)) return [];
+  return [...new Set(
+    arr
+      .map(item => String(item || "").trim())
+      .filter(Boolean)
+  )];
+}
+
+function normalizeEvos(evos) {
+  if (!Array.isArray(evos)) return [];
+  return evos.map(e => {
+    if (typeof e === "string") {
+      return { name: e.trim(), condition: "" };
+    }
+    if (typeof e === "object" && e !== null) {
+      return {
+        name: (e.name || e.Name || "Unknown").trim(),
+        condition: (e.condition || e.method || e.how || "").trim()
+      };
+    }
+    return { name: "?", condition: "" };
+  }).filter(e => e.name !== "?");
+}
+
+/* =====================
+   RENDER (unchanged – already quite good)
+===================== */
 function render(list) {
   dex.innerHTML = "";
+
+  if (list.length === 0) {
+    dex.innerHTML = `<div style="text-align:center; padding:60px; color:var(--text-dim);">
+      No Digimon match the current filters / search
+    </div>`;
+    return;
+  }
+
   list.forEach(d => {
     const el = document.createElement("div");
     el.className = "entry";
+
     el.innerHTML = `
       <div class="entry-header">
         <div class="entry-title">${d.name}</div>
         <div class="stage">
-  ${d.stage.charAt(0).toUpperCase() + d.stage.slice(1)}
-</div>
+          ${d.stage ? d.stage.charAt(0).toUpperCase() + d.stage.slice(1) : "—"}
+        </div>
       </div>
+
       <div class="types">
-  ${(d.types || [])
-    .filter(t => t && t !== "null" && t !== "none")
-    .map(t => `
-      <span class="type ${t}">
-        ${t.charAt(0).toUpperCase() + t.slice(1)}
-      </span>
-    `)
-    .join("")}
-</div>
+        ${d.types.length 
+          ? d.types.map(t => `
+              <span class="type ${t}">
+                ${t.charAt(0).toUpperCase() + t.slice(1)}
+              </span>
+            `).join("")
+          : '<span style="opacity:0.5">—</span>'}
+      </div>
 
-      <div class="entry-desc">${d.description || ""}</div>
+      <div class="entry-desc">${d.description || "—"}</div>
+
       <div class="evo-strip">
-  <strong>Digivolves To</strong>
-  ${
-    d.evolves_to && d.evolves_to.length
-      ? `<ul>
-          ${d.evolves_to.map(e =>
-            `<li>${e.name}${e.condition ? ` — ${e.condition}` : ""}</li>`
-          ).join("")}
-        </ul>`
-      : "—"
-  }
-</div>
-
+        <strong>Digivolves To</strong>
+        ${
+          d.evolves_to.length
+            ? `<ul style="margin:4px 0 0 16px; padding-left:0; list-style:disc;">
+                ${d.evolves_to.map(e =>
+                  `<li>${e.name}${e.condition ? ` — ${e.condition}` : ""}</li>`
+                ).join("")}
+              </ul>`
+            : " —"
+        }
+      </div>
     `;
-    el.onclick = ()=>openModal(d);
+
+    el.onclick = () => openModal(d);
     dex.appendChild(el);
   });
 }
 
+/* =====================
+   MODAL (minor improvement)
+===================== */
 function openModal(d) {
   document.getElementById("modal-title").textContent = d.name;
-  document.getElementById("modal-body").innerHTML = `
-    <p>${d.description}</p>
-    <ul>${(d.abilities||[]).map(a=>`<li>${a}</li>`).join("")}</ul>
-  `;
-  document.getElementById("overlay").classList.remove("hidden");
+
+  let content = `<p style="margin:0 0 16px;">${d.description || "(no description available)"}</p>`;
+
+  if (d.abilities?.length) {
+    content += `
+      <h3 style="margin:16px 0 8px; font-size:1.1rem;">Abilities</h3>
+      <ul style="margin:0; padding-left:20px;">
+        ${d.abilities.map(a => `<li>${a}</li>`).join("")}
+      </ul>`;
+  }
+
+  if (d.evolves_to?.length) {
+    content += `
+      <h3 style="margin:20px 0 8px; font-size:1.1rem;">Evolution Path</h3>
+      <ul style="margin:0; padding-left:20px;">
+        ${d.evolves_to.map(e => `<li>${e.name}${e.condition ? ` — ${e.condition}` : ""}</li>`).join("")}
+      </ul>`;
+  }
+
+  document.getElementById("modal-body").innerHTML = content;
+  overlay.classList.remove("hidden");
 }
 
-document.getElementById("overlay").onclick =
-e=>e.target.id==="overlay"&&e.target.classList.add("hidden");
+overlay.onclick = e => {
+  if (e.target === overlay) overlay.classList.add("hidden");
+};
 
+/* =====================
+   FILTERING (unchanged)
+===================== */
 function applyFilters() {
   const q = search.value.toLowerCase().trim();
 
   render(DATA.filter(d => {
-    // SEARCH BLOB (safe + extensible)
     const blob = [
       d.name,
       d.description,
-      ...(d.abilities || []),
-      ...(d.evolves_to || []).flatMap(e => [e.name, e.condition])
+      ...d.abilities,
+      ...d.evolves_to.flatMap(e => [e.name, e.condition])
     ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
 
     const matchesSearch = !q || blob.includes(q);
-    const matchesStage  = !stageFilter.value || d.stage === stageFilter.value;
-    const matchesType   =
-      !typeFilter.value ||
-      (Array.isArray(d.types) && d.types.includes(typeFilter.value));
+    const matchesStage = !stageFilter.value || d.stage === stageFilter.value;
+    const matchesType  = !typeFilter.value  || d.types.includes(typeFilter.value);
 
     return matchesSearch && matchesStage && matchesType;
   }));
 }
-
-</script>
-<script>
-const dropdown = document.querySelector(".dropdown");
-const toggle = dropdown.querySelector(".dropdown-toggle");
-const menu = dropdown.querySelector(".dropdown-menu");
-
-toggle.onclick = e => {
-  e.stopPropagation();
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-};
-
-document.onclick = ()=>menu.style.display="none";
 
 search.addEventListener("input", applyFilters);
 stageFilter.addEventListener("change", applyFilters);
@@ -473,8 +642,8 @@ document.getElementById("clearFilters").onclick = () => {
   typeFilter.value = "";
   render(DATA);
 };
-
 </script>
+
 
 </body>
 </html>
