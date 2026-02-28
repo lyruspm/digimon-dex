@@ -1,0 +1,24 @@
+{
+  "name": "ExVeemon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Flying"
+  ],
+  "description": "Level 18 Digivolution of Veemon",
+  "image": "exveemon.png",
+  "abilities": [
+    "Justified",
+    "Adaptibility"
+  ],
+  "evolves_to": [
+    {
+      "name": "AeroVeedramon",
+      "condition": "Level 32"
+    },
+    {
+      "name": "Paildramon",
+      "condition": "Level 30 with Stingmon in party. No Jogress Chip"
+    }
+  ]
+}
