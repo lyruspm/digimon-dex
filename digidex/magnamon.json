@@ -1,0 +1,20 @@
+{
+  "name": "Magnamon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Level 32 Digivolution of Flamedramon",
+  "image": "magnamon.png",
+  "abilities": [
+    "Clear Body",
+    "Adaptability"
+  ],
+  "evolves_to": [
+    {
+      "name": "Magnamon X",
+      "condition": "Digivice IC + Antibody GX (Mega Evolution)"
+    }
+  ]
+}
