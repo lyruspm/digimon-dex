@@ -1,0 +1,32 @@
+{
+  "name": "Veemon",
+  "stage": "child",
+  "types": [
+    "Dragon",
+    "Null"
+  ],
+  "description": "Base. Route 101",
+  "image": "veemon.png",
+  "abilities": [
+    "Rock Head",
+    "Adaptability"
+  ],
+  "evolves_to": [
+    {
+      "name": "Flamedramon",
+      "condition": "Fire Data"
+    },
+    {
+      "name": "Raidramon",
+      "condition": "Thunder Data"
+    },
+    {
+      "name": "Gargoylemon",
+      "condition": "Light Data"
+    },
+    {
+      "name": "ExVeemon",
+      "condition": "Level 18"
+    }
+  ]
+}
