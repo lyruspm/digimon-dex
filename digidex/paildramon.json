@@ -1,0 +1,20 @@
+{
+  "name": "Paildramon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Bug"
+  ],
+  "description": "Level 30 Digivolution of ExVeemon with Stingmon in party",
+  "image": "paildramon.png",
+  "abilities": [
+    "Battle Armor",
+    "Speed Boost"
+  ],
+  "evolves_to": [
+    {
+      "name": "Imperialdramon Dragon Mode",
+      "condition": "Level 54"
+    }
+  ]
+}
