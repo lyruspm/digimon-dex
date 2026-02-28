@@ -1,0 +1,20 @@
+{
+  "name": "Angemon",
+  "stage": "adult",
+  "types": [
+    "Holy",
+    "Flying"
+  ],
+  "description": "Level 20 Digivolution of Patamon",
+  "image": "angemon.png",
+  "abilities": [
+    "Justified",
+    "Purifying Salt"
+  ],
+  "evolves_to": [
+    {
+      "name": "Magna Angemon",
+      "condition": "Level 35"
+    }
+  ]
+}
