@@ -1,0 +1,20 @@
+{
+  "name": "Magna Angemon",
+  "stage": "perfect",
+  "types": [
+    "Holy",
+    "Flying"
+  ],
+  "description": "Level 35 Digivolution of Angemon",
+  "image": "magnaangemon.png",
+  "abilities": [
+    "Justified",
+    "Purifying Salt"
+  ],
+  "evolves_to": [
+    {
+      "name": "Seraphimon",
+      "condition": "Level 56"
+    }
+  ]
+}
