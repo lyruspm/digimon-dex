@@ -1,0 +1,20 @@
+{
+  "name": "Kyukimon",
+  "stage": "perfect",
+  "types": [
+    "Holy",
+    "Flying"
+  ],
+  "description": "Level 35 Digivolution of Nefertimmon",
+  "image": "kyukimon.png",
+  "abilities": [
+    "Magic Bounce",
+    "Regenerator"
+  ],
+  "evolves_to": [
+    {
+      "name": "Holydramon",
+      "condition": "Level 80"
+    }
+  ]
+}
