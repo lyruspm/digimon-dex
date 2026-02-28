@@ -320,8 +320,6 @@ h1 {
   color: #9e9e9e;
   border-style: dashed;
   opacity: 0.75;
-}
-
 
 /* Description */
 .entry-desc {
@@ -659,15 +657,25 @@ function render(list) {
       ` : ""}
 
       <div class="types">
-        ${
-          d.types.length
-            ? d.types.map(t => `
-                <span class="type ${t}">
-                  ${capitalize(t)}
-                </span>
-              `).join("")
-            : '<span style="opacity:.5">—</span>'
-        }
+${(() => {
+  if (!d.types.length) {
+    return '<span style="opacity:.5">—</span>';
+  }
+
+  // Clone to avoid mutating original
+  const types = [...d.types];
+
+  // If there are 2 types and second is null → remove it
+  if (types.length > 1 && types[1] === "null") {
+    types.splice(1, 1);
+  }
+
+  return types.map(t => `
+    <span class="type ${t}">
+      ${capitalize(t)}
+    </span>
+  `).join("");
+})()}
       </div>
 
       <div class="entry-desc">${d.description}</div>
