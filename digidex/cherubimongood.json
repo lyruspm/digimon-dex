@@ -1,0 +1,20 @@
+{
+  "name": "Cherubimon Good",
+  "stage": "mega",
+  "types": [
+    "Fighting",
+    "Holy"
+  ],
+  "description": "Leve 56 Digivolution of Antylamon Good",
+  "image": "cherubimongood.png",
+  "abilities": [
+    "Tough Claw",
+    "Speed Boost"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cherubimon Evil",
+      "condition": "Slide Digivolution with Dark Data"
+    }
+  ]
+}
