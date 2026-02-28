@@ -1,0 +1,15 @@
+{
+  "name": "UlforceVeedramon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Flying"
+  ],
+  "description": "Level 54 Digivolution of AeroVeedramon",
+  "image": "ulforceveedramon.png",
+  "abilities": [
+    "Gale Wings",
+    "Adaptability"
+  ],
+  "evolves_to": []
+}

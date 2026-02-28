@@ -1,0 +1,15 @@
+{
+  "name": "Bagramon",
+  "stage": "ultra",
+  "types": [
+    "Holy",
+    "Undead"
+  ],
+  "description": "Necromicon given to Bagramon",
+  "image": "bagramon.png",
+  "abilities": [
+    "Vessel of Ruin",
+    "Competitive"
+  ],
+  "evolves_to": []
+}

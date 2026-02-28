@@ -1,0 +1,20 @@
+{
+  "name": "Imperialdramon Dragon Mode",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Bug"
+  ],
+  "description": "Level 54 Digivolution of Paildramon",
+  "image": "imperialdramondm.png",
+  "abilities": [
+    "Mega Launcher",
+    "Tough Claws"
+  ],
+  "evolves_to": [
+    {
+      "name": "Imperialdramon Fighter Mode",
+      "condition": "Using Positron Laser at Level 62 (Mode Change)"
+    }
+  ]
+}

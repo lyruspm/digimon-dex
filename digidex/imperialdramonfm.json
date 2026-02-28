@@ -1,0 +1,20 @@
+{
+  "name": "Imperialdramon Fighter Mode",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Fighting"
+  ],
+  "description": "Imperialdramon Dragon Mode after using Positron Laser",
+  "image": "imperialdramonfm.png",
+  "abilities": [
+    "Tough Claws",
+    "Mega Launcher"
+  ],
+  "evolves_to": [
+    {
+      "name": "Imperialdramon Paladin Mode",
+      "condition": "Digivice IC + Omega Blade (Mega Evolution)"
+    }
+  ]
+}

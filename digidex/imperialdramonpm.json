@@ -1,0 +1,14 @@
+{
+  "name": "Imperialdramon Paladin Mode",
+  "stage": "ultra",
+  "types": [
+    "Dragon",
+    "Holy"
+  ],
+  "description": "Mega Evolution of Imperialdramon Fighter Mode",
+  "image": "imperialdramonpm.png",
+  "abilities": [
+    "Justified"
+  ],
+  "evolves_to": []
+}

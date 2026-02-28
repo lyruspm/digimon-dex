@@ -1,0 +1,14 @@
+{
+  "name": "Magnamon X",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Mega Evolution of Magnamon",
+  "image": "magnamonx.png",
+  "abilities": [
+    "Multiscale"
+  ],
+  "evolves_to": []
+}

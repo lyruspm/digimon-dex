@@ -1,0 +1,20 @@
+{
+  "name": "Majiramon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Electric"
+  ],
+  "description": "Level 32 Digivolution of Raidramon",
+  "image": "majiramon.png",
+  "abilities": [
+    "Lightning Rod",
+    "Adaptability"
+  ],
+  "evolves_to": [
+    {
+      "name": "Azulongmon",
+      "condition": "Level 70"
+    }
+  ]
+}

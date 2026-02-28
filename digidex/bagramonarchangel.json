@@ -1,0 +1,20 @@
+{
+  "name": "Bagramon Archangel",
+  "stage": "mega",
+  "types": [
+    "Holy",
+    "Dark"
+  ],
+  "description": "(Art credit goes to @otro_jorch) Level 54 Digivolution of Manticoremon",
+  "image": "bagramonarchangel.png",
+  "abilities": [
+    "Anticipation",
+    "Competitive"
+  ],
+  "evolves_to": [
+    {
+      "name": "Bagramon",
+      "condition": "Necromicon"
+    }
+  ]
+}
