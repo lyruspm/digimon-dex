@@ -1,0 +1,24 @@
+{
+  "name": "Antylamon Evil",
+  "stage": "perfect",
+  "types": [
+    "Fighting",
+    "Dark"
+  ],
+  "description": "Level 35 Digivolution of Wendimon",
+  "image": "antylamonevil.png",
+  "abilities": [
+    "Berserk",
+    "Moxie"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cherubimon Evil",
+      "condition": "Level 56"
+    },
+    {
+      "name": "Antylamon Good",
+      "condition": "Light Data"
+    }
+  ]
+}
