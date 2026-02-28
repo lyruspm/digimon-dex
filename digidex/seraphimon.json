@@ -1,0 +1,20 @@
+{
+  "name": "Seraphimon",
+  "stage": "mega",
+  "types": [
+    "Holy",
+    "Flying"
+  ],
+  "description": "Level 56 Digivolution of Magna Angemon",
+  "image": "seraphimon.png",
+  "abilities": [
+    "Justified",
+    "Purifying Salt"
+  ],
+  "evolves_to": [
+    {
+      "name": "Goddramon",
+      "condition": "Light Data or Level 80"
+    }
+  ]
+}
