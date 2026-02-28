@@ -1,0 +1,20 @@
+{
+  "name": "Gatomon",
+  "stage": "adult",
+  "types": [
+    "Holy",
+    "Null"
+  ],
+  "description": "Level 20 Digivolution of Salamon",
+  "image": "gatomon.png",
+  "abilities": [
+    "Cute Charm",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Angewomon",
+      "condition": "Level 35"
+    }
+  ]
+}
