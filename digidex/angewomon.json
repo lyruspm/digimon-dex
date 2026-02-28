@@ -1,0 +1,20 @@
+{
+  "name": "Angewomon",
+  "stage": "perfect",
+  "types": [
+    "Holy",
+    "Fairy"
+  ],
+  "description": "Level 35 Digivolution of Gatomon",
+  "image": "angewomon.png",
+  "abilities": [
+    "Hospitality",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Ophanimon",
+      "condition": "Level 56"
+    }
+  ]
+}
