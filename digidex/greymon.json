@@ -1,0 +1,20 @@
+{
+  "name": "Greymon",
+  "stage": "adult",
+  "types": [
+    "Fire",
+    "None"
+  ],
+  "description": "Level 18 Digivolution of Agumon",
+  "image": "greymon.png",
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "evolves_to": [
+    {
+      "name": "Metal Greymon",
+      "condition": "Level 32"
+    }
+  ]
+}
