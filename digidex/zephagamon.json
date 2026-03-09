@@ -1,12 +1,12 @@
 {
-  "name": "Zephegamon",
+  "name": "Zephagamon",
   "stage": "mega",
   "types": [
     "Flying",
     "Magic"
   ],
   "description": "Level 54 Digivolution of GrandGalemon",
-  "image": "zephegamon.png",
+  "image": "zephagamon.png",
   "abilities": [
     "Gale Wings",
     "Wind rider"
