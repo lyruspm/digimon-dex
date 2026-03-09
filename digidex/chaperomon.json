@@ -1,0 +1,24 @@
+{
+  "name": "Chaperomon",
+  "stage": "perfect",
+  "types": [
+    "Fairy",
+    "None"
+  ],
+  "description": "Level 32 Digivolution of Shoeshoemon",
+  "image": "aeroveedramon.png",
+  "abilities": [
+    "Cute Charm",
+    "Simple"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cendrillmon",
+      "condition": "Level 54"
+    },
+    {
+      "name": "Nyabootmon",
+      "condition": "Given Gakuran"
+    }
+  ]
+}
