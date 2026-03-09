@@ -1,0 +1,15 @@
+{
+  "name": "Anubismon",
+  "stage": "mega",
+  "types": [
+    "Undead",
+    "Holy"
+  ],
+  "description": "Level 54 Digivolution of Cerberusmon",
+  "image": "anubismon.png",
+  "abilities": [
+    "Guard Dog",
+    "Shadow Tag"
+  ],
+  "evolves_to": []
+}
