@@ -1,0 +1,20 @@
+{
+  "name": "ShineGreymon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Flying"
+  ],
+  "description": "Digivolution of MetalGreymon when given Auspicious Armour",
+  "image": "shinegreymon.png",
+  "abilities": [
+    "Solar Power",
+    "Drought"
+  ],
+  "evolves_to": [
+    {
+      "name": "ShineGreymon  Burst Mode",
+      "condition": "(Mega Evolution) while holding Shine Soul"
+    }
+  ]
+}
