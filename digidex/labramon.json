@@ -1,0 +1,23 @@
+{
+  "name": "Labramon",
+  "stage": "child",
+  "types": [
+    "Normal",
+    "Null"
+  ],
+  "description": "Base. Found in Route 101",
+  "image": "labramon.png",
+  "abilities": [
+    "Frisbee Fetch",
+    "Intimidate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Seasarmon",
+      "condition": "Level 18"
+    },
+    {
+      "name": "Dobermon",
+      "condition": "Level 18"
+  ]
+}
