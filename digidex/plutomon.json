@@ -1,0 +1,15 @@
+{
+  "name": "Plutomon",
+  "stage": "mega",
+  "types": [
+    "Dark",
+    "Null"
+  ],
+  "description": "Level 54 Digivolution of Cerberusmon Werewolf Mode",
+  "image": "plutomon.png",
+  "abilities": [
+    "Strong Jaw",
+    "Dark Aura"
+  ],
+  "evolves_to": []
+}
