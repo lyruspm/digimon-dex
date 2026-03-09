@@ -1,0 +1,20 @@
+{
+  "name": "Cerberusmon Werewolf Mode",
+  "stage": "perfect",
+  "types": [
+    "Dark",
+    "Fire"
+  ],
+  "description": "Slide Digivolution of Cerberusmon",
+  "image": "cerberusmonwerewolf.png",
+  "abilities": [
+    "Strong Jaw",
+    "Parental Bond"
+  ],
+  "evolves_to": [
+    {
+      "name": "Plutomon",
+      "condition": "Level 54"
+    }
+  ]
+}
