@@ -1,0 +1,14 @@
+{
+  "name": "ShineGreymon Burst Mode",
+  "stage": "ultra",
+  "types": [
+    "Fire",
+    "Holy"
+  ],
+  "description": "Mega Evolution of ShineGreymon with Shine Soul",
+  "image": "shinegreymonburst.png",
+  "abilities": [
+    "Orichalum Pulse"
+  ],
+  "evolves_to": []
+}
