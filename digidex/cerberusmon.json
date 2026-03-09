@@ -13,8 +13,8 @@
   ],
   "evolves_to": [
     {
-      "name": "Cerberusmon",
-      "condition": "(Slide Digivolution) Using Signature Move"
+      "name": "Anubimon",
+      "condition": "Level 54"
     }
   ]
 }
