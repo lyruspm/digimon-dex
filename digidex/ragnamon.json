@@ -1,0 +1,15 @@
+{
+  "name": "Ragnamon",
+  "stage": "mega",
+  "types": [
+    "Chaos",
+    "Steel"
+  ],
+  "description": "Level 54 Digivolution of Snatchmon",
+  "image": "ragnamon.png",
+  "abilities": [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  "evolves_to": []
+}
