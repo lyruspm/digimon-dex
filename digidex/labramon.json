@@ -13,11 +13,12 @@
   ],
   "evolves_to": [
     {
-      "name": "Seasarmon",
+      "name": "Seasarmon (Lowkey)",
       "condition": "Level 18"
     },
     {
-      "name": "Dobermon",
+      "name": "Dobermon (Amped)",
       "condition": "Level 18"
+    }
   ]
 }
