@@ -1,0 +1,15 @@
+{
+  "name": "Erlangmon",
+  "stage": "perfect",
+  "types": [
+    "Holy",
+    "None"
+  ],
+  "description": "Level 54 Digivolution of Caturamon",
+  "image": "erlangmon.png",
+  "abilities": [
+    "Illusion",
+    "Super Luck"
+  ],
+  "evolves_to": []
+}
