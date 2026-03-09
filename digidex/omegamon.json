@@ -1,0 +1,14 @@
+{
+  "name": "Omegamon",
+  "stage": "ultra",
+  "types": [
+    "Fire",
+    "Ice"
+  ],
+  "description": "Jogress between WarGreymon (Primary) and MetalGarurumon",
+  "image": "aeroveedramon.png",
+  "abilities": [
+    "Protean"
+  ],
+  "evolves_to": []
+}
