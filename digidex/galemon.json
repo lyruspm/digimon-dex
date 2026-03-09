@@ -1,0 +1,20 @@
+{
+  "name": "Galemon",
+  "stage": "adult",
+  "types": [
+    "Flying",
+    "Null"
+  ],
+  "description": "Level 18 Digivolution of Pteromon",
+  "image": "grandgalemon.png",
+  "abilities": [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  "evolves_to": [
+    {
+      "name": "GrandGalemon",
+      "condition": "Level 32"
+    }
+  ]
+}
