@@ -1,0 +1,20 @@
+{
+  "name": "Seasarmon",
+  "stage": "adult",
+  "types": [
+    "Holy",
+    "Null"
+  ],
+  "description": "Level 18 Digivolution of Labramon",
+  "image": "seasarmon.png",
+  "abilities": [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Caturamon",
+      "condition": "Level 32"
+    }
+  ]
+}
