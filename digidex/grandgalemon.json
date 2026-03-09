@@ -1,0 +1,20 @@
+{
+  "name": "GrandGalemon",
+  "stage": "perfect",
+  "types": [
+    "Flying",
+    "Magic"
+  ],
+  "description": "Level 32 Digivolution of Galemon",
+  "image": "grandgalemon.png",
+  "abilities": [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  "evolves_to": [
+    {
+      "name": "Zephegamon",
+      "condition": "Level 54"
+    }
+  ]
+}
