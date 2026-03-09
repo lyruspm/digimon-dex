@@ -1,0 +1,20 @@
+{
+  "name": "WarGreymon",
+  "stage": "mega",
+  "types": [
+    "Fire",
+    "Dragon"
+  ],
+  "description": "Level 54 Digivolution of MetalGreymon",
+  "image": "wargreymon.png",
+  "abilities": [
+    "Tough Claws",
+    "Blaze"
+  ],
+  "evolves_to": [
+    {
+      "name": "Omegamon",
+      "condition": "Jogress Chip 2 with MetalGarurumon"
+    }
+  ]
+}
