@@ -1,0 +1,20 @@
+{
+  "name": "BlitzGreymon",
+  "stage": "mega",
+  "types": [
+    "Steel",
+    "Electric"
+  ],
+  "description": "Level 54 Digivolution of MetalGreymon in New Mauville",
+  "image": "blitzgreymon.png",
+  "abilities": [
+    "Lighting Rod",
+    "Electric Surge"
+  ],
+  "evolves_to": [
+    {
+      "name": "Omegamon Alter-S",
+      "condition": "Jogress Chip 2 with CresGarurumon"
+    }
+  ]
+}
