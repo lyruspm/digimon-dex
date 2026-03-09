@@ -1,0 +1,20 @@
+{
+  "name": "Agumon",
+  "stage": "child",
+  "types": [
+    "Fire",
+    "None"
+  ],
+  "description": "Base, Found in Route 102.",
+  "image": "agumon.png",
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "evolves_to": [
+    {
+      "name": "Greymon",
+      "condition": "Level 18"
+    }
+  ]
+}
