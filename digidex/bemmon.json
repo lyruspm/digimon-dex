@@ -1,0 +1,20 @@
+{
+  "name": "BEMmon",
+  "stage": "child",
+  "types": [
+    "Chaos",
+    "Null"
+  ],
+  "description": "Base Digimon. Found in Granite Cave F3",
+  "image": "bemmon.png",
+  "abilities": [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  "evolves_to": [
+    {
+      "name": "Snatchmon",
+      "condition": "Level 18"
+    }
+  ]
+}
