@@ -1,0 +1,30 @@
+{
+  "name": "Metal Greymon",
+  "stage": "perfect",
+  "types": [
+    "Steel",
+    "Fire"
+  ],
+  "description": "Level 32 Digivolution of Greymon",
+  "image": "aeroveedramon.png",
+  "abilities": [
+    "Blaze",
+    "Solar Power"
+  ],
+  "evolves_to": [
+    {
+      "name": "WarGreymon",
+      "condition": "Level 54"
+    },
+    {
+      "name": "LaeusGreymon",
+      "condition": "Given AW Data"
+
+    },
+    {
+      "name": "BlitzGreymon",
+      "condition": "Level 54 while in New Mauville"
+    
+    }
+  ]
+}
