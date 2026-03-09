@@ -1,0 +1,20 @@
+{
+  "name": "Snatchmon",
+  "stage": "adult",
+  "types": [
+    "Chaos",
+    "Null"
+  ],
+  "description": "Level 18 Digivolution of BEMmon",
+  "image": "snatchmon.png",
+  "abilities": [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  "evolves_to": [
+    {
+      "name": "Destromon",
+      "condition": "Level 32"
+    }
+  ]
+}
