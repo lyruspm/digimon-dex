@@ -1,0 +1,20 @@
+{
+  "name": "Shoemon",
+  "stage": "child",
+  "types": [
+    "Fairy",
+    "Normal"
+  ],
+  "description": "Base. Found in Route 101",
+  "image": "shoemon.png",
+  "abilities": [
+    "Suction cups",
+    "Simple"
+  ],
+  "evolves_to": [
+    {
+      "name": "Shoeshoemon",
+      "condition": "Level 18"
+    }
+  ]
+}
