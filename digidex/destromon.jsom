@@ -1,0 +1,20 @@
+{
+  "name": "AeroVeedramon",
+  "stage": "perfect",
+  "types": [
+    "Chaos",
+    "Steel"
+  ],
+  "description": "Level 32 Digivolution of Snatchmon",
+  "image": "aeroveedramon.png",
+  "abilities": [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  "evolves_to": [
+    {
+      "name": "Ragnamon",
+      "condition": "Level 54"
+    }
+  ]
+}
