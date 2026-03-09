@@ -1,0 +1,15 @@
+{
+  "name": "Nyabootmon",
+  "stage": "ultra",
+  "types": [
+    "Fairy",
+    "Normal"
+  ],
+  "description": "Slide Digivolution of Cendrillmon, Digivolution of Chaperomon when given Gakuran",
+  "image": "nyabootmon.png",
+  "abilities": [
+    "Justified",
+    "Technician"
+  ],
+  "evolves_to": []
+}
