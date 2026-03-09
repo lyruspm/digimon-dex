@@ -1,0 +1,20 @@
+{
+  "name": "Caturamon",
+  "stage": "perfect",
+  "types": [
+    "Holy",
+    "Null"
+  ],
+  "description": "Level 34 Digivolution of Seasarmon",
+  "image": "caturamon.png",
+  "abilities": [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Erlangmon",
+      "condition": "Level 54"
+    }
+  ]
+}
