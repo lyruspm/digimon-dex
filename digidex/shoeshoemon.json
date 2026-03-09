@@ -1,0 +1,20 @@
+{
+  "name": "Shoeshoemon",
+  "stage": "adult",
+  "types": [
+    "Fairy",
+    "Normal"
+  ],
+  "description": "Level 18 Digivolution of Shoemon",
+  "image": "shoeshoemon.png",
+  "abilities": [
+    "Cheek Pouch",
+    "Simple"
+  ],
+  "evolves_to": [
+    {
+      "name": "Chaperomon",
+      "condition": "Level 32"
+    }
+  ]
+}
