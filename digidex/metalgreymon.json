@@ -24,7 +24,10 @@
     {
       "name": "BlitzGreymon",
       "condition": "Level 54 while in New Mauville"
-    
+    },
+    {
+      "name": "ShineGreymon"
+      "condition": "Auspicious Armour given to MetalGreymon"
     }
   ]
 }
