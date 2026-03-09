@@ -1,0 +1,20 @@
+{
+  "name": "Dobermon",
+  "stage": "adult",
+  "types": [
+    "Dark",
+    "None"
+  ],
+  "description": "Level 18 Digivolution of Labramon (Amped)",
+  "image": "dobermon.png",
+  "abilities": [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cerberusmon",
+      "condition": "Level 32"
+    }
+  ]
+}
