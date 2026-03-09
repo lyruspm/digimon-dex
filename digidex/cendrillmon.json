@@ -1,0 +1,20 @@
+{
+  "name": "Cendrillmon",
+  "stage": "mega",
+  "types": [
+    "Fairy",
+    "None"
+  ],
+  "description": "Level 54 Digivolution of Chaperomon",
+  "image": "cendrillmon.png",
+  "abilities": [
+    "Skill Link",
+    "Dancer"
+  ],
+  "evolves_to": [
+    {
+      "name": "Nyabootmon",
+      "condition": "Given Metal Data"
+    }
+  ]
+}
