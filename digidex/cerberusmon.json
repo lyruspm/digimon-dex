@@ -1,0 +1,20 @@
+{
+  "name": "Cerberusmon",
+  "stage": "perfect",
+  "types": [
+    "Dark",
+    "Null"
+  ],
+  "description": "Level 32 Digivolution of Dobermon",
+  "image": "cerberusmon.png",
+  "abilities": [
+    "Guard Dog",
+    "Intimidate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Cerberusmon",
+      "condition": "(Slide Digivolution) Using Signature Move"
+    }
+  ]
+}
