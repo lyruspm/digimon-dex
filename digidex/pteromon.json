@@ -1,0 +1,20 @@
+{
+  "name": "Pteromon",
+  "stage": "child",
+  "types": [
+    "Flying",
+    "Null"
+  ],
+  "description": "Base, Route 103",
+  "image": "pteromon.png",
+  "abilities": [
+    "Gale Wings",
+    "Wind Rider"
+  ],
+  "evolves_to": [
+    {
+      "name": "Galemon",
+      "condition": "Level 18"
+    }
+  ]
+}
