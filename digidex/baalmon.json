@@ -1,0 +1,20 @@
+{
+  "name": "Baalmon",
+  "stage": "perfect",
+  "types": [
+    "Dark",
+    "Magic"
+  ],
+  "description": "Level 32 Digivolution of Wizarmon",
+  "image": "baalmon.png",
+  "abilities": [
+    "Magic Guard",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Beelzemon",
+      "condition": "Level 54"
+    }
+  ]
+}
