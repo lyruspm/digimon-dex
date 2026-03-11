@@ -18,6 +18,10 @@
     },
     {
       "name": "Golemon",
+      "condition": "Given Earth Data"
+    },
+    {
+      "name": "Landramon",
       "condition": "Level 18"
     }
   ]
