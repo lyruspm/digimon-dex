@@ -1,0 +1,24 @@
+{
+  "name": "Sunarizamon",
+  "stage": "child",
+  "types": [
+    "Ground",
+    "Null"
+  ],
+  "description": "Base. Can be found in Route 103",
+  "image": "sunarizamon.png",
+  "abilities": [
+    "Sand Veil",
+    "Sand Force"
+  ],
+  "evolves_to": [
+    {
+      "name": "Tortomon",
+      "condition": "Level 18 while learning Withraw"
+    },
+    {
+      "name": "Golemon",
+      "condition": "Level 18"
+    }
+  ]
+}
