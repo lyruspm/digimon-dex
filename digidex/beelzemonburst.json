@@ -1,0 +1,14 @@
+{
+  "name": "Beelzemon Burst Mode",
+  "stage": "ultra",
+  "types": [
+    "Dark",
+    "Steel"
+  ],
+  "description": "Mega Evolution of Beelzemon while holding Toy Gun",
+  "image": "beelzemonburst.png",
+  "abilities": [
+    "Mega Launcher"
+  ],
+  "evolves_to": []
+}
