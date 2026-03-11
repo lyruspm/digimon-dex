@@ -1,0 +1,20 @@
+{
+  "name": "Gabumon",
+  "stage": "child",
+  "types": [
+    "Fire",
+    "Ice"
+  ],
+  "description": "Base form. Can be found at Route 102.",
+  "image": "gabumon.png",
+  "abilities": [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  "evolves_to": [
+    {
+      "name": "Garurumon",
+      "condition": "Level 18"
+    }
+  ]
+}
