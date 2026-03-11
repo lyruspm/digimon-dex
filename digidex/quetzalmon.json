@@ -1,0 +1,20 @@
+{
+  "name": "Quetzalmon",
+  "stage": "adult",
+  "types": [
+    "Holy",
+    "Poison"
+  ],
+  "description": "Light Data given to Wormmon",
+  "image": "quetzalmon.png",
+  "abilities": [
+    "Levitate",
+    "Shed Skin"
+  ],
+  "evolves_to": [
+    {
+      "name": "Minervamon",
+      "condition": "Level 32"
+    }
+  ]
+}
