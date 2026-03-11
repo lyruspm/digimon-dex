@@ -1,0 +1,20 @@
+{
+  "name": "Alphamon",
+  "stage": "mega",
+  "types": [
+    "Steel",
+    "Null"
+  ],
+  "description": "Auspicious Armor given to DORUguremon",
+  "image": "alphamon.png",
+  "abilities": [
+    "Anticipation",
+    "Multiscale"
+  ],
+  "evolves_to": [
+    {
+      "name": "Alphamon Ouryuken",
+      "condition": "Jogress Chip 2 with Ouryumon"
+    }
+  ]
+}
