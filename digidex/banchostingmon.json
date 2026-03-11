@@ -1,0 +1,15 @@
+{
+  "name": "BanchoStingmon",
+  "stage": "mega",
+  "types": [
+    "Bug",
+    "Fighting"
+  ],
+  "description": "Gakuran given to JewelBeemon",
+  "image": "banchostingmon.png",
+  "abilities": [
+    "Sniper",
+    "Super Luck"
+  ],
+  "evolves_to": []
+}
