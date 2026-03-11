@@ -1,0 +1,24 @@
+{
+  "name": "WereGarurumon",
+  "stage": "perfect",
+  "types": [
+    "Ice",
+    "Fighting"
+  ],
+  "description": "Level 32 Digivolution of Garurumon",
+  "image": "weregarurumon.png",
+  "abilities": [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  "evolves_to": [
+    {
+      "name": "Metal Garurumon",
+      "condition": "Level 54"
+    },
+    {
+      "name": "CresGarurumon",
+      "condition": "Given Auspicious Armor"
+    }
+  ]
+}
