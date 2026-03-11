@@ -1,0 +1,20 @@
+{
+  "name": "Beelzemon",
+  "stage": "mega",
+  "types": [
+    "Dark",
+    "Steel"
+  ],
+  "description": "Level 54 Digivolution of Baalmon",
+  "image": "beelzemon.png",
+  "abilities": [
+    "Beast Boost",
+    "Power of Alchemy"
+  ],
+  "evolves_to": [
+    {
+      "name": "Beelzemon Blast Mode",
+      "condition": "(Mega Evolution) Beelzemon holding Toy Gun"
+    }
+  ]
+}
