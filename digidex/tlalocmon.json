@@ -1,0 +1,14 @@
+{
+  "name": "Tlalocmon",
+  "stage": "ultra",
+  "types": [
+    "Electric",
+    "Grass"
+  ],
+  "description": "Jogress between ElDoradimon and SaberLeomon",
+  "image": "tlalocmon.png",
+  "abilities": [
+    "Primordial Sea"
+  ],
+  "evolves_to": []
+}
