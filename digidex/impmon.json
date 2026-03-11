@@ -1,0 +1,20 @@
+{
+  "name": "Impmon",
+  "stage": "child",
+  "types": [
+    "Dark",
+    "Null"
+  ],
+  "description": "Base. Can be found in Route 102",
+  "image": "impmon.png",
+  "abilities": [
+    "Prankster",
+    "Run Away"
+  ],
+  "evolves_to": [
+    {
+      "name": "Wizarmon",
+      "condition": "Level 18"
+    }
+  ]
+}
