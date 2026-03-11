@@ -1,0 +1,20 @@
+{
+  "name": "Magneticdramon",
+  "stage": "Ultra",
+  "types": [
+    "Rock",
+    "Electric"
+  ],
+  "description": "Electirizer given to Proganomon, or Thunder Data given to Pyramidimon",
+  "image": "magneticdramon.png",
+  "abilities": [
+    "Magnetic Pull",
+    "Electric Surge"
+  ],
+  "evolves_to": [
+    {
+      "name": "Pyramidimon",
+      "condition": "Reverses when given Earth Data"
+    }
+  ]
+}
