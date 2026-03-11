@@ -1,0 +1,20 @@
+{
+  "name": "Tortamon",
+  "stage": "adult",
+  "types": [
+    "Ground",
+    "Null"
+  ],
+  "description": "Level 18 Digivolution of Sunarizamon with Withdraw",
+  "image": "tortomon.png",
+  "abilities": [
+    "Shell Armor",
+    "Sap Zipper"
+  ],
+  "evolves_to": [
+    {
+      "name": "Jagamon",
+      "condition": "Level 32"
+    }
+  ]
+}
