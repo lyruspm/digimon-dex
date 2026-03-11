@@ -15,6 +15,10 @@
     {
       "name": "Pyramidimon",
       "condition": "Level 54"
+    },
+    {
+      "name": "Magneticdramon",
+      "condition": "Given Electirizer"
     }
   ]
 }
