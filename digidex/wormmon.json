@@ -1,0 +1,24 @@
+{
+  "name": "Wormmon",
+  "stage": "child",
+  "types": [
+    "Bug",
+    "Poison"
+  ],
+  "description": "Base, can be found in Petalburg Woods",
+  "image": "wormmon.png",
+  "abilities": [
+    "Run Away",
+    "Defeatist"
+  ],
+  "evolves_to": [
+    {
+      "name": "Stingmon",
+      "condition": "Level 18"
+    },
+    {
+      "name": "Quetzalmon",
+      "condition": "Given Light Data"
+    }
+  ]
+}
