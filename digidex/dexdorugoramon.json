@@ -1,0 +1,15 @@
+{
+  "name": "DexDORUgoramon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Undead"
+  ],
+  "description": "Level 32 Digivolution of ExVeemon",
+  "image": "dexdorugoramon.png",
+  "abilities": [
+    "SteelWorker",
+    "Galvanize"
+  ],
+  "evolves_to": []
+}
