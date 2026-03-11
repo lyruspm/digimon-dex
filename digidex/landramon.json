@@ -1,0 +1,20 @@
+{
+  "name": "Landramon",
+  "stage": "adult",
+  "types": [
+    "Rock",
+    "Ground"
+  ],
+  "description": "Level 18 Digivolution of Sunarizamon",
+  "image": "landramon.png",
+  "abilities": [
+    "Sand Force",
+    "Dry Skin"
+  ],
+  "evolves_to": [
+    {
+      "name": "Proganomon",
+      "condition": "Level 32"
+    }
+  ]
+}
