@@ -1,0 +1,24 @@
+{
+  "name": "Gogmamon",
+  "stage": "perfect",
+  "types": [
+    "Rock",
+    "Ground"
+  ],
+  "description": "Level 32 Digivolution of Golemon",
+  "image": "gogmamon.png",
+  "abilities": [
+    "Earth Eater",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Blastmon",
+      "condition": "Level 54"
+    },
+    {
+      "name": "BanchoGolemon",
+      "condition": "Given the Gakuran"
+    }
+  ]
+}
