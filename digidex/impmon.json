@@ -15,6 +15,10 @@
     {
       "name": "Wizarmon",
       "condition": "Level 18"
+    },
+    {
+      "name": "Punkmon",
+      "condition": "Given Dark Data"
     }
   ]
 }
