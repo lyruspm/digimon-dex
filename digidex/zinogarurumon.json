@@ -1,0 +1,15 @@
+{
+  "name": "ZinoGarurumon",
+  "stage": "mega",
+  "types": [
+    "Electric",
+    "Ice"
+  ],
+  "description": "Digivolution of Garurumon when given AW Data",
+  "image": "zinogarurumon.png",
+  "abilities": [
+    "Hadron Engine",
+    "Motor Drive"
+  ],
+  "evolves_to": []
+}
