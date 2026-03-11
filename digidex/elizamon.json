@@ -1,0 +1,20 @@
+{
+  "name": "Elizamon",
+  "stage": "child",
+  "types": [
+    "Dragon",
+    "Null"
+  ],
+  "description": "Base. Can be found in Route 102",
+  "image": "elizamon.png",
+  "abilities": [
+    "Regenerator",
+    "HeatProof"
+  ],
+  "evolves_to": [
+    {
+      "name": "Dimetromon",
+      "condition": "Level 18"
+    }
+  ]
+}
