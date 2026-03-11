@@ -1,0 +1,14 @@
+{
+  "name": "Omegamon Alter-S",
+  "stage": "ultra",
+  "types": [
+    "Electric",
+    "Fighting"
+  ],
+  "description": "Jogress between CresGarurumon (Primary) and BlitzGreyon",
+  "image": "omegamonalters.png",
+  "abilities": [
+    "Speed Boost"
+  ],
+  "evolves_to": []
+}
