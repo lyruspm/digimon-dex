@@ -1,0 +1,15 @@
+{
+  "name": "Dynasmon",
+  "stage": "mega",
+  "types": [
+    "Magic",
+    "Dragon"
+  ],
+  "description": "Level 54 Digivolution of Mistymon",
+  "image": "dynasmon.png",
+  "abilities": [
+    "Neuroforce",
+    "Magic Bounce"
+  ],
+  "evolves_to": []
+}
