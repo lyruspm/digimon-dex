@@ -1,0 +1,20 @@
+{
+  "name": "Minervamon",
+  "stage": "mega",
+  "types": [
+    "Fighting",
+    "Null"
+  ],
+  "description": "Level 50 Digivolution of Sandiramon",
+  "image": "minervamon.png",
+  "abilities": [
+    "Sheer Force",
+    "Sharpness"
+  ],
+  "evolves_to": [
+    {
+      "name": "Mervamon",
+      "condition": "Level 72"
+    }
+  ]
+}
