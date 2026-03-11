@@ -1,0 +1,24 @@
+{
+  "name": "Stingmon",
+  "stage": "adult",
+  "types": [
+    "Bug",
+    "Poison"
+  ],
+  "description": "Level 18 Digivolution of Wormmon",
+  "image": "stingmon.png",
+  "abilities": [
+    "Sniper",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "DinoBeemon",
+      "condition": "Level 32 with ExVeemon in party"
+    },
+    {
+      "name": "JewelBeemon",
+      "condition": "Level 32 without ExVeemon in party"
+    }
+  ]
+}
