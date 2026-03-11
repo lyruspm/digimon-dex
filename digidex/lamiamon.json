@@ -1,0 +1,20 @@
+{
+  "name": "Lamiamon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Poison"
+  ],
+  "description": "Level 32 Digivolution of Dimetromon",
+  "image": "lamiamon.png",
+  "abilities": [
+    "Corrosion",
+    "Merciless"
+  ],
+  "evolves_to": [
+    {
+      "name": "Medusamon",
+      "condition": "Level 54"
+    }
+  ]
+}
