@@ -1,0 +1,20 @@
+{
+  "name": "ElDoradimon",
+  "stage": "mega",
+  "types": [
+    "Ground",
+    "Grass"
+  ],
+  "description": "Level 54 Digivolution of Jagamon or SkullScorpiomon",
+  "image": "eldoradimon.png",
+  "abilities": [
+    "Solid Rock",
+    "Sap Sipper"
+  ],
+  "evolves_to": [
+    {
+      "name": "Tlalocmon",
+      "condition": "Jogress Chip 2 with SaberLeomon"
+    }
+  ]
+}
