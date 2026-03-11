@@ -15,6 +15,10 @@
     {
       "name": "WereGarurumon",
       "condition": "Level 32"
+    },
+    {
+      "name": "ZinoGarurumon",
+      "condition": "Given AW Data"
     }
   ]
 }
