@@ -1,0 +1,20 @@
+{
+  "name": "JewelBeemon",
+  "stage": "perfect",
+  "types": [
+    "Bug",
+    "Poison"
+  ],
+  "description": "Level 32 Digivolution of Stingmon",
+  "image": "jewelbeemon.png",
+  "abilities": [
+    "Sniper",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "BanchoStingmon",
+      "condition": "Given Gakuran"
+    }
+  ]
+}
