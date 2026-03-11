@@ -1,0 +1,15 @@
+{
+  "name": "DORUgoramon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Level 54 Digivolution of DORUguremon",
+  "image": "dorugoramon.png",
+  "abilities": [
+    "Clear Body",
+    "Magic Guard"
+  ],
+  "evolves_to": []
+}
