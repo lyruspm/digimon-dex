@@ -1,0 +1,24 @@
+{
+  "name": "Bakemon",
+  "stage": "adult",
+  "types": [
+    "Undead",
+    "Null"
+  ],
+  "description": "Level 18 Digivolution of Ghostmon",
+  "image": "bakemon.png",
+  "abilities": [
+    "Frisk",
+    "Cursed Body"
+  ],
+  "evolves_to": [
+    {
+      "name": "Phantomon",
+      "condition": "Level 32"
+    },
+    {
+      "name": "Pumpkimon",
+      "condition": "Given Earth Data"
+    }
+  ]
+}
