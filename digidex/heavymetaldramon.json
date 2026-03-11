@@ -1,0 +1,15 @@
+{
+  "name": "HeavyMetaldramon",
+  "stage": "mega",
+  "types": [
+    "Dark",
+    "Dragon"
+  ],
+  "description": "Level 54 Digivolution of Loudmon",
+  "image": "heavymetaldramon.png",
+  "abilities": [
+    "Punk Rock",
+    "SoundProof"
+  ],
+  "evolves_to": []
+}
