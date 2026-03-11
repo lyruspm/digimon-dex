@@ -1,0 +1,20 @@
+{
+  "name": "Jagamon",
+  "stage": "perfect",
+  "types": [
+    "Grass",
+    "Ground"
+  ],
+  "description": "Level 32 Digivolution of Tortamon",
+  "image": "jagamon.png",
+  "abilities": [
+    "Shell Armor",
+    "Sap Sipper"
+  ],
+  "evolves_to": [
+    {
+      "name": "Eldoradimon",
+      "condition": "Level 54"
+    }
+  ]
+}
