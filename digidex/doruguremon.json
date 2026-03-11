@@ -1,0 +1,24 @@
+{
+  "name": "DORUguremon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Level 32 Digivolution of DORUgamon",
+  "image": "doruguremon.png",
+  "abilities": [
+    "Clear Body",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "DORUgoramon",
+      "condition": "Level 54"
+    },
+    {
+      "name": "Alphamon",
+      "condition": "Given Auspicious Armor"
+    }
+  ]
+}
