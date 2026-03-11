@@ -1,0 +1,20 @@
+{
+  "name": "Punkmon",
+  "stage": "adult",
+  "types": [
+    "Dark",
+    "Dragon"
+  ],
+  "description": "Digivolution of Impmon when given Dark Data",
+  "image": "punkmon.png",
+  "abilities": [
+    "Punk Rock",
+    "SoundProof"
+  ],
+  "evolves_to": [
+    {
+      "name": "Loudmon",
+      "condition": "Level 32"
+    }
+  ]
+}
