@@ -1,0 +1,15 @@
+{
+  "name": "Medusamon",
+  "stage": "mega",
+  "types": [
+    "Dragon",
+    "Poison"
+  ],
+  "description": "Level 54 Digivolution of Lamiamon",
+  "image": "medusamon.png",
+  "abilities": [
+    "Corrosion",
+    "Merciless"
+  ],
+  "evolves_to": []
+}
