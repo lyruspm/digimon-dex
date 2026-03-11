@@ -1,0 +1,24 @@
+{
+  "name": "DORUmon",
+  "stage": "child",
+  "types": [
+    "Steel",
+    "Null"
+  ],
+  "description": "Base, can be found in Rusturf Tunnel",
+  "image": "dorumon.png",
+  "abilities": [
+    "Clear Body",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "DORUgamon",
+      "condition": "Level 18"
+    },
+    {
+      "name": "DexDORUgamon",
+      "condition": "Given Dark Data"
+    }
+  ]
+}
