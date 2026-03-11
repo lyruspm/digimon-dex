@@ -1,0 +1,20 @@
+{
+  "name": "Ghostmon",
+  "stage": "child",
+  "types": [
+    "Undead",
+    "Null"
+  ],
+  "description": "Base. Can be found in Granite Cave F2",
+  "image": "ghostmon.png",
+  "abilities": [
+    "Frisk",
+    "Cursed Body"
+  ],
+  "evolves_to": [
+    {
+      "name": "Bakemon",
+      "condition": "Level 18"
+    }
+  ]
+}
