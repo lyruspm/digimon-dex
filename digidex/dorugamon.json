@@ -1,0 +1,20 @@
+{
+  "name": "DORUgamon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Level 18 Digivolution of DORUmon",
+  "image": "dorugamon.png",
+  "abilities": [
+    "Clear Body",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "DORUguremon",
+      "condition": "Level 32"
+    }
+  ]
+}
