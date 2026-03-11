@@ -1,0 +1,20 @@
+{
+  "name": "Pyramidimon",
+  "stage": "mega",
+  "types": [
+    "Rock",
+    "Ground"
+  ],
+  "description": "Level 54 Digivolution of Proganomon",
+  "image": "pyramidimon.png",
+  "abilities": [
+    "Sand Stream",
+    "Earth Earther"
+  ],
+  "evolves_to": [
+    {
+      "name": "Magneticdramon",
+      "condition": "Given Thunder Data"
+    }
+  ]
+}
