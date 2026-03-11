@@ -1,0 +1,20 @@
+{
+  "name": "DexDORUgamon",
+  "stage": "adult",
+  "types": [
+    "Dragon",
+    "Undead"
+  ],
+  "description": "Dark Data given to DORUmon",
+  "image": "dexdorugamon.png",
+  "abilities": [
+    "SteelWorker",
+    "Galvanize"
+  ],
+  "evolves_to": [
+    {
+      "name": "DexDORUguremon",
+      "condition": "Level 32"
+    }
+  ]
+}
