@@ -1,0 +1,15 @@
+{
+  "name": "Alphamon Ouryuken",
+  "stage": "ultra",
+  "types": [
+    "Dragon",
+    "Steel"
+  ],
+  "description": "Jogress between Alphamon (primary) and Ouryumon",
+  "image": "alphamonouryuken.png",
+  "abilities": [
+    "Anticipation",
+    "Multiscale"
+  ],
+  "evolves_to": []
+}
