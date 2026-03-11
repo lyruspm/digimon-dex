@@ -1,0 +1,20 @@
+{
+  "name": "Mistymon",
+  "stage": "perfect",
+  "types": [
+    "Magic",
+    "Fire"
+  ],
+  "description": "Level 32 Digivolution of Impmon Lowkey",
+  "image": "mistymon.png",
+  "abilities": [
+    "Long Reach",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Dynasmon",
+      "condition": "Level 54"
+    }
+  ]
+}
