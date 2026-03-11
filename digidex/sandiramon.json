@@ -1,0 +1,24 @@
+{
+  "name": "Sandiramon",
+  "stage": "perfect",
+  "types": [
+    "Poison",
+    "Null"
+  ],
+  "description": "Level 32 Digivolution of Quetzalmon or Tylomon",
+  "image": "sandiramon.png",
+  "abilities": [
+    "Merciless",
+    "Corossion"
+  ],
+  "evolves_to": [
+    {
+      "name": "Minervamon",
+      "condition": "Level 50"
+    },
+  {
+    "name": "Xuanwumon",
+    "condition": "Given Genku Core"
+  }
+  ]
+}
