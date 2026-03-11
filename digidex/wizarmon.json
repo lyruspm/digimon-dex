@@ -1,0 +1,23 @@
+{
+  "name": "Wizarmon",
+  "stage": "adult",
+  "types": [
+    "Dark",
+    "Magic"
+  ],
+  "description": "Level 18 Digivolution of Impmon",
+  "image": "wizarmon.png",
+  "abilities": [
+    "Magic Guard",
+    "Magic Bounce"
+  ],
+  "evolves_to": [
+    {
+      "name": "Baalmon",
+      "condition": "Level 54 Amped"
+    },
+    {
+      "name": "Mistymon",
+      "condition": "Level 54 Lowkey"
+  ]
+}
