@@ -1,0 +1,15 @@
+{
+  "name": "Mervamon",
+  "stage": "ultra",
+  "types": [
+    "Fighting",
+    "Poison"
+  ],
+  "description": "Level 72 Digivolution of Minervamon",
+  "image": "mervamon.png",
+  "abilities": [
+    "Merciless",
+    "Sharpness"
+  ],
+  "evolves_to": []
+}
