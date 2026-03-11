@@ -1,0 +1,20 @@
+{
+  "name": "DexDORUguremon",
+  "stage": "perfect",
+  "types": [
+    "Dragon",
+    "Null"
+  ],
+  "description": "Level 32 Digivolution of DexDORUgamon",
+  "image": "dexdoruguremon.png",
+  "abilities": [
+    "SteelWorker",
+    "Galvanize"
+  ],
+  "evolves_to": [
+    {
+      "name": "DexDORUgoramon",
+      "condition": "Level 54"
+    }
+  ]
+}
