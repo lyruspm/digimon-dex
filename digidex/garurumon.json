@@ -1,0 +1,20 @@
+{
+  "name": "Garurumon",
+  "stage": "adult",
+  "types": [
+    "Fire",
+    "Ice"
+  ],
+  "description": "Level 18 Digivolution of Gabumon, or Strabimon",
+  "image": "garurumon.png",
+  "abilities": [
+    "Fur Coat",
+    "Snow Cloak"
+  ],
+  "evolves_to": [
+    {
+      "name": "WereGarurumon",
+      "condition": "Level 32"
+    }
+  ]
+}
