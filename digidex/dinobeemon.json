@@ -1,0 +1,20 @@
+{
+  "name": "Dinobeemon",
+  "stage": "perfect",
+  "types": [
+    "Bug",
+    "Dragon"
+  ],
+  "description": "Level 32 Digivolution of Stingmon with ExVeemon in party",
+  "image": "dinobeemon.png",
+  "abilities": [
+    "Sniper",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "Imperialdramon Dragon Mode",
+      "condition": "Level 54"
+    }
+  ]
+}
