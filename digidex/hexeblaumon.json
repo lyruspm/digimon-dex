@@ -1,0 +1,15 @@
+{
+  "name": "Hexeblaumon",
+  "stage": "mega",
+  "types": [
+    "Ice",
+    "Magic"
+  ],
+  "description": "Mega form of Blucomon line. Digivolution of CrysPaledramon at Level 54",
+  "image": "hexeblaumon.png",
+  "abilities": [
+    "Snow Warning",
+    "Slush Rush"
+  ],
+  "evolves_to": []
+}
