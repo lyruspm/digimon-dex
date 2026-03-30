@@ -1,0 +1,20 @@
+{
+  "name": "CrysPaledramon",
+  "stage": "perfect",
+  "types": [
+    "Ice",
+    "Dragon"
+  ],
+  "description": "Level 32 Digivolution of Paledramon",
+  "image": "cryspaledramon.png",
+  "abilities": [
+    "Thermal Exchange",
+    "Slush Rush"
+  ],
+  "evolves_to": [
+    {
+      "name": "Hexeblaumon",
+      "condition": "Level 54"
+    }
+  ]
+}
