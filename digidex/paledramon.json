@@ -1,0 +1,20 @@
+{
+  "name": "Paledramon",
+  "stage": "adult",
+  "types": [
+    "Ice",
+    "Dragon"
+  ],
+  "description": "Level 18 Digivolution of Blucomon",
+  "image": "paledramon.png",
+  "abilities": [
+    "Dry Skin",
+    "Slush Rush"
+  ],
+  "evolves_to": [
+    {
+      "name": "CrysPaledramon",
+      "condition": "Level 32"
+    }
+  ]
+}
