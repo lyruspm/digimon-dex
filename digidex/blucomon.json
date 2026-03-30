@@ -1,0 +1,24 @@
+{
+  "name": "Blucomon",
+  "stage": "rookie",
+  "types": [
+    "Ice",
+    "Dragon"
+  ],
+  "description": "Base Digimon. Can be found in F1 of Granite Cave or North of Route 104",
+  "image": "blucomon.png",
+  "abilities": [
+    "Ice Scales",
+    "Refrigerate"
+  ],
+  "evolves_to": [
+    {
+      "name": "Paledramon",
+      "condition": "Level 18"
+    },
+    {
+      "name": "Sorcerimon",
+      "condition": "Given the Ice Data"
+    }
+  ]
+}
