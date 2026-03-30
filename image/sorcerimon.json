@@ -1,0 +1,20 @@
+{
+  "name": "Sorcerimon",
+  "stage": "adult",
+  "types": [
+    "Ice",
+    "Magic"
+  ],
+  "description": "Digivolution of Blucomon when given Ice Data",
+  "image": "sorcerimon.png",
+  "abilities": [
+    "Healer",
+    "Snow Warning"
+  ],
+  "evolves_to": [
+    {
+      "name": "Panjyamon X",
+      "condition": "Level 32"
+    }
+  ]
+}
