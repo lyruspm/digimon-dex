@@ -1,0 +1,20 @@
+{
+  "name": "Ludomon",
+  "stage": "child",
+  "types": [
+    "Steel",
+    "None"
+  ],
+  "description": "Base Digimon. Can be found in Rusturf Tunnel",
+  "image": "ludomon.png",
+  "abilities": [
+    "Bullet Proof",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "TiaLudomon",
+      "condition": "Level 18"
+    }
+  ]
+}
