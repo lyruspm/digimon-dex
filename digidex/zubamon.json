@@ -1,0 +1,20 @@
+{
+  "name": "Zubamon",
+  "stage": "child",
+  "types": [
+    "Steel",
+    "None"
+  ],
+  "description": "Base Digimon, can be found in Rusturf Tunnel",
+  "image": "zubamon.png",
+  "abilities": [
+    "Sharpness",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "ZubaEagermon",
+      "condition": "Level 18"
+    }
+  ]
+}
