@@ -1,0 +1,24 @@
+{
+  "name": "Flamon",
+  "stage": "child",
+  "types": [
+    "Fire",
+    "None"
+  ],
+  "description": "Base Digimon. Can be found in Rusturf Tunnel",
+  "image": "flamon.png",
+  "abilities": [
+    "Flash Fire",
+    "Blaze"
+  ],
+  "evolves_to": [
+    {
+      "name": "Meramon",
+      "condition": "Level 18",
+    },
+    {
+      "name": "Agnimon",
+      "condition": "Given Fire Data",
+    }
+  ]
+}
