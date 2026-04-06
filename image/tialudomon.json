@@ -1,0 +1,20 @@
+{
+  "name": "TiaLudomon",
+  "stage": "adult",
+  "types": [
+    "Ice",
+    "Steel"
+  ],
+  "description": "Digivolution of Ludomon at level 18",
+  "image": "tialudomon.png",
+  "abilities": [
+    "Bullet Proof",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "RaijiLudomon",
+      "condition": "Level 32"
+    }
+  ]
+}
