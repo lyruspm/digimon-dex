@@ -1,0 +1,24 @@
+{
+  "name": "Agnimon",
+  "stage": "adult",
+  "types": [
+    "Fire",
+    "Fighting"
+  ],
+  "description": "Digivolution of Flamon when given Fire Data",
+  "image": "agnimon.png",
+  "abilities": [
+    "Flash Fire",
+    "Blaze"
+  ],
+  "evolves_to": [
+    {
+      "name": "Aldamon",
+      "condition": "Level 32"
+    },
+    {
+      "name": "BurningGreymon",
+      "condition": "Using signature move (Slide Digivolution)",
+    }
+  ]
+}
