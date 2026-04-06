@@ -1,0 +1,20 @@
+{
+  "name": "Panjyamon X",
+  "stage": "perfect",
+  "types": [
+    "Ice",
+    "Magic"
+  ],
+  "description": "Digivolution of Sorcerimon at level 32",
+  "image": "panjyamonx.png",
+  "abilities": [
+    "Healer",
+    "Snow Warning"
+  ],
+  "evolves_to": [
+    {
+      "name": "FrosVelgrmon",
+      "condition": "Level 54"
+    }
+  ]
+}
