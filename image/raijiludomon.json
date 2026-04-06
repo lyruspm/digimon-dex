@@ -1,0 +1,20 @@
+{
+  "name": "RaijiLudomon",
+  "stage": "perfect",
+  "types": [
+    "Electric",
+    "Steel"
+  ],
+  "description": "Digivolution of TiaLudomon at Level 32",
+  "image": "raijiludomon.png",
+  "abilities": [
+    "Bullet Proof",
+    "Magic Guard"
+  ],
+  "evolves_to": [
+    {
+      "name": "Bryweludramon",
+      "condition": "Level 54"
+    }
+  ]
+}
