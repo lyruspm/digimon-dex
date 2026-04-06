@@ -1,0 +1,15 @@
+{
+  "name": "Blastmon",
+  "stage": "mega",
+  "types": [
+    "Rock",
+    "Ground"
+  ],
+  "description": "Level 54 Digivolution of Gogmamon",
+  "image": "blastmon.png",
+  "abilities": [
+    "Earth Eater",
+    "Magic Bounce"
+  ],
+  "evolves_to": []
+}
