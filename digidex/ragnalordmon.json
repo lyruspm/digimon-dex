@@ -1,0 +1,15 @@
+{
+  "name": "RagnaLordmon",
+  "stage": "ultra",
+  "types": [
+    "Steel",
+    "Fire"
+  ],
+  "description": "Jogress between Durandamon (primary) and Bryweludramon (secondary)",
+  "image": "ragnalordmon.png",
+  "abilities": [
+    "Stance Change",
+    "None"
+  ],
+  "evolves_to": []
+}
