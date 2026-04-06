@@ -1,0 +1,19 @@
+{
+  "name": "Aldamon",
+  "stage": "perfect",
+  "types": [
+    "Fire",
+    "Dragon"
+  ],
+  "description": "Level 32 Digivolution of Agnimon",
+  "image": "aldamon.png",
+  "abilities": [
+    "Flash Fire",
+    "Solar Power"
+  ],
+  "evolves_to": [
+    {
+      "name": "Ancient Greymon",
+      "condition": "Level 54"
+  ]
+}
