@@ -1,0 +1,15 @@
+{
+  "name": "FrostVelgrmon",
+  "stage": "mega",
+  "types": [
+    "Ice",
+    "Flying"
+  ],
+  "description": "Digivolution of Panjyamon X at level 54. Base Digimon Blucomon",
+  "image": "sorcerimon.png",
+  "abilities": [
+    "Snow Cloak",
+    "Snow Warning"
+  ],
+  "evolves_to": []
+}
