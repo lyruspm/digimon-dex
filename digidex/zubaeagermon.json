@@ -1,0 +1,20 @@
+{
+  "name": "ZubaEagermon",
+  "stage": "adult",
+  "types": [
+    "Steel",
+    "None"
+  ],
+  "description": "Digivolution of Zubamon at Level 18",
+  "image": "zubaeagermon.png",
+  "abilities": [
+    "Sharpness",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "Duramon",
+      "condition": "Level 32"
+    }
+  ]
+}
