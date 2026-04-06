@@ -1,0 +1,20 @@
+{
+  "name": "AncientGreymon",
+  "stage": "mega",
+  "types": [
+    "Fire",
+    "Dragon"
+  ],
+  "description": "Level 54 Digivolution of Aldamon",
+  "image": "ancientgreymon.png",
+  "abilities": [
+    "Orichalum Pulse",
+    "Dragon's Maw"
+  ],
+  "evolves_to": [
+    {
+      "name": "Susanoomon",
+      "condition": "Jogress Chip 2 with AncientGarurumon"
+    }
+  ]
+}
