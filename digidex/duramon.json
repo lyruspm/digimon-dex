@@ -1,0 +1,20 @@
+{
+  "name": "Duramon",
+  "stage": "perfect",
+  "types": [
+    "Steel",
+    "None"
+  ],
+  "description": "Digivolution of ZubaEagermon at Level 32",
+  "image": "duramon.png",
+  "abilities": [
+    "Sharpness",
+    "Super Luck"
+  ],
+  "evolves_to": [
+    {
+      "name": "Durandamon",
+      "condition": "Level 54"
+    }
+  ]
+}
