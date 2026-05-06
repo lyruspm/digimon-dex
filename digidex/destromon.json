@@ -1,12 +1,12 @@
 {
-  "name": "AeroVeedramon",
+  "name": "Destromon",
   "stage": "perfect",
   "types": [
     "Chaos",
     "Steel"
   ],
   "description": "Level 32 Digivolution of Snatchmon",
-  "image": "aeroveedramon.png",
+  "image": "destromon.png",
   "abilities": [
     "Beast Boost",
     "Power of Alchemy"
